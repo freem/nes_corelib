@@ -45,7 +45,7 @@ body{
 
 p{
 	margin-top:0.25em;
-	margin-bottom:0.25em;
+	margin-bottom:0.5em;
 	padding-top:0;
 	padding-bottom:0;
 }
@@ -68,16 +68,16 @@ h2{
 
 h3{
 	font-size: 1.5em;
-	margin-top:0.25em;
-	margin-bottom:0.25em;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
 	padding-top:0;
 	padding-bottom:0;
 }
 
 h4{
 	font-size: 1.25em;
-	margin-top:0.25em;
-	margin-bottom:0.25em;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
 	padding-top:0;
 	padding-bottom:0;
 }
@@ -85,7 +85,42 @@ h4{
 h5{
 	font-size: 1.125em;
 	margin-top:0.5em;
-	margin-bottom:0.25em;
+	margin-bottom:0.5em;
 	padding-top:0;
 	padding-bottom:0;
+}
+
+table.referenceTable{
+	border-spacing: 0px;
+	width: 100%;
+}
+
+th{
+	background-color: #cce;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+td.refHeader{
+	background-color: #ddf;
+	text-align: center;
+	border: 1px solid #cce;
+}
+
+.refHeadDesc{
+	font-weight:normal;
+}
+
+td.refData{
+	border-left: 1px solid #bbd;
+	border-right: 1px solid #bbd;
+	border-bottom: 1px solid #bbd;
+	padding: 0.5em;
+}
+
+td.tableFooter{
+	height:1em;
+	background-color: #bbd;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }

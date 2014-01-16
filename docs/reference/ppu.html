@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>PPU Routines | freemco NES Corelib Reference</title>
+<link rel="stylesheet" type="text/css" href="./reference.css" />
+</head>
+
+<body id="base">
+<body id="base">
+<div id="header">
+	<span class="headertext">freemco NES Corelib</span>
+</div>
+
+<div id="content">
+<h1>PPU (Graphics) Routines</h1>
+<p>Anything that has to do with poking the PPU belongs here.</p>
+
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#ppu.s"><code>ppu.s</code></a></li>
+<li><a href="#chr-ram.s"><code>ppu/chr-ram.s</code></a></li>
+<li><a href="#nametable.s"><code>ppu/nametable.s</code></a></li>
+<li><a href="#oam.s"><code>ppu/oam.s</code></a></li>
+<li><a href="#palette.s"><code>ppu/palette.s</code></a></li>
+<li><a href="#vrambuf.s"><code>ppu/vrambuf.s</code></a></li>
+</ul>
+
+<h2>PPU Function Reference</h2>
+<table class="referenceTable">
+	<a name="ppu.s"><thead></a>
+		<tr>
+			<th colspan=3>ppu.s<br/><small class="refHeadDesc">Main PPU Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">Writes the value of <code>A</code> to <code>$2000</code>
+			(<code>PPU_CTRL</code>) and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">Writes the value of <code>A</code> to <code>$2001</code>
+			(<code>PPU_MASK</code>) and the internal "last $2001" variable (<code>int_ppuMask</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Mask
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeScroll</code></td>
+			<td class="refData">Writes the values from <code>X</code> and <code>Y</code>
+			into <code>$2005</code> (<code>PPU_SCROLL</code>) and the internal scroll
+			registers (<code>int_scrollX</code> and <code>int_scrollY</code>).</td>
+			<td class="refData">
+				<strong>X</strong> - New X scroll value<br/>
+				<strong>Y</strong> - New Y scroll value
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeScrollInt</code></td>
+			<td class="refData">Writes the values from <code>X</code> and <code>Y</code>
+			into the internal scroll registers (<code>int_scrollX</code> and <code>int_scrollY</code>).</td>
+			<td class="refData">
+				<strong>X</strong> - New X internal scroll value<br/>
+				<strong>Y</strong> - New Y internal scroll value
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeScrollSame</code></td>
+			<td class="refData">Writes the same value (<code>A</code>) to the X
+			and Y scroll and internal scroll registers.</td>
+			<td class="refData">
+				<strong>A</strong> - New scroll value
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeScrollIntSame</code></td>
+			<td class="refData">Writes the same value (<code>A</code>) to the X
+			and Y internal scroll registers.</td>
+			<td class="refData">
+				<strong>A</strong> - New internal scroll value
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_resetScroll</code></td>
+			<td class="refData">Resets the scroll to the first nametable by writing
+			to <code>PPU_CTRL</code> and <code>PPU_SCROLL</code>.</td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_sprite0HitCheck</code></td>
+			<td class="refData">Probes <code>PPU_STATUS</code> once to see if the
+			Sprite 0 hit has been triggered. Returns the result in <code>A</code>.
+			(0 = not triggered, 1 = triggered)<br/>
+			<small>freem's Note: This probably isn't the best way to check for a Sprite 0 hit.</small></td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_waitVBLSet</code></td>
+			<td class="refData">Waits for the VBlank flag to become set.<br/>
+			<small>freem's Note: Code from one of dwedit's demos.</small></td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_waitVBLClear</code></td>
+			<td class="refData">Waits for the VBlank flag to become cleared.<br/>
+			<small>freem's Note: Code from one of dwedit's demos.</small></td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_setAddr</code></td>
+			<td class="refData">Sets the current PPU address.</td>
+			<td class="refData">
+				<strong>X</strong> - PPU Address High Byte ($<u>00</u>00)<br/>
+				<strong>Y</strong> - PPU Address Low Byte ($00<u>00</u>)
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_resetPalNTPos</code></td>
+			<td class="refData">resets palette (<code>$3F00</code>) and nametable (<code>$0000</code>) positions.</td>
+			<td class="refData">None</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>waitNMI</code></td>
+			<td class="refData">Waits for an NMI to be fired.</td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_enableNMI</code></td>
+			<td class="refData">Quickly enable NMIs.</td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_disableNMI</code></td>
+			<td class="refData">Quickly disable NMIs.</td>
+			<td class="refData">None</td>
+		</tr>
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="chr-ram.s"><thead></a>
+		<tr>
+			<th colspan=3>chr-ram.s<br/><small class="refHeadDesc">CHR-RAM Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<!--
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">
+			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
+			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="nametable.s"><thead></a>
+		<tr>
+			<th colspan=3>nametable.s<br/><small class="refHeadDesc">Nametable Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<!--
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">
+			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
+			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="oam.s"><thead></a>
+		<tr>
+			<th colspan=3>oam.s<br/><small class="refHeadDesc">OAM (Sprite) Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<!--
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">
+			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
+			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="palette.s"><thead></a>
+		<tr>
+			<th colspan=3>palette.s<br/><small class="refHeadDesc">Palette Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<!--
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">
+			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
+			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="vrambuf.s"><thead></a>
+		<tr>
+			<th colspan=3>vrambuf.s<br/><small class="refHeadDesc">VRAM Buffer Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<!--
+		ppu_clearCHR
+		ppu_clearAllCHR
+		ppu_clearCHRPartial
+		ppu_loadTiles
+		ppu_loadTiles4K
+		ppu_loadTiles8K
+		ppu_loadTilesCompressed
+		ppu_updateTile
+		ppu_writeSolidTile
+		-->
+
+		<!--
+		<tr>
+			<td class="refData"><code>ppu_writeCtrl</code></td>
+			<td class="refData">
+			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
+			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
+			<td class="refData">
+				<strong>A</strong> - New value to write to PPU Control
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+</div>
+
+<div id="footer">
+<a href="https://github.com/freem/nes_corelib">freemco NES Corelib</a>, a product of <a href="http://freem.co/">freemco</a>.<br/>
+<small>freemco is not affiliated with Nintendo Co. Ltd. or any of its subsidaries.<br/>
+"Nintendo" and "Nintendo Entertainment System" are trademarks of Nintendo.</small>
+</div>
+</body>
+
+</html>
