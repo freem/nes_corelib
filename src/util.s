@@ -1,4 +1,4 @@
-; shared utility code
+; freemco NES Corelib | shared utility code
 ;------------------------------------------------------------------------------;
 ; Sources:
 ; http://wiki.nesdev.com/w/index.php/Synthetic_Instructions
