@@ -1,0 +1,4 @@
+I'm not sure how many UNIF headers I'm going to end up defining...
+
+References
+http://mednafen.sourceforge.net/documentation/09x/nes.html#Introduction%01File+Formats%01UNIF

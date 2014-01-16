@@ -1,0 +1,108 @@
+"Unlicensed" is relative to officially licensed companies.
+I consider these different from the mappers in pirate.txt because they have
+publisher logos on the NESdev Wiki's Mapper page. Technically, though, some
+(or most) of these games are pirates. Tengen black carts are considered
+unlicensed for the purposes of this file.
+
+[Single Entry]
+011		Color Dreams
+038		(gradiente) Crime Busters (BR)
+144		(AGCI) Death Race (U)
+168		(RacerMate) RacerMate Challenge II
+228		(Active) Action 52
+
+[Waixing]
+the king of pirate mappers
+015		100 In 1 - Contra Function 16
+074		Waixing Type A ("Taiwan MMC3")
+164		Final Fantasy V
+176		BMC_FK23C
+178		WAIXING_SGZLZ ("SuborWin 2000 (R)[!]", "Windows 2000 (Ch)[!]", etc.)
+191		Waixing Type B (FCEUX: "Pirate TQROM variant")
+192		Waixing Type C (FCEUX: "Taiwan MMC3+VRAM Rev. B")
+194		Waixing Type D (FCEUX: "Taiwan MMC3+VRAM Rev. C")
+195		Waixing Type E (FCEUX: "Taiwan MMC3+VRAM Rev. D")
+198		Waixing Type F (FCEUX: "Taiwan MMC3+VRAM Rev. E")
+199		Waixing Type G
+223		Waixing Type I
+224		Waixing Type J
+242		Waixing 74HC161 (Dragon Quest VII)
+245		Waixing MMC3 Type H
+249		Waixing w/Security
+252		San Guo Zhi Pirate
+
+[American Video Entertainment]
+034.1	NINA-001
+079		NINA-03/NINA-06
+113		Multicart NINA-03/NINA-06
+234		Maxi 15
+
+[TXC/Micro Genius]
+036		TXC_POLICEMAN
+061		(TXC) 20-in-1
+132		TXC_22211A (shitty ass Creatom)
+172		TXC_22211B
+173		TXC_22211C
+189		"Thunder Warrior", "Mario Fighter III (Unl) [!]"
+241		TXC_MXMDHTWO (e.g. "Fan Kong Jing Ying")
+
+[Subor]
+039		SUBOR Study & Game
+166		SUBOR Type 1
+167		SUBOR Type 0
+
+[NTDEC]
+041		Caltron 6-in-1
+112		NTDEC/Asder (e.g. "Huang Di", "San Guo Zhi - Qun Xiong Zheng Ba")
+174		(NTDEC)
+193		"Fighting Hero", "War in the Gulf"
+
+[Kaiser]
+056		SMB3 Pirate
+142		KS7032 (SMB2j Pirate (KS 202))
+171		KS7058
+175		"15-in-1 (Kaiser - KS-122) (Unl)"
+
+[Tengen]
+064		800032 (RAMBO-1)
+158		800037 "Alien Syndrome" (RAMBO-1 with alternate mirroring)
+
+[Codemasters]
+071		UNROM-like
+071.1	071 with mapper-controlled single screen mirroring (Firehawk)
+104		Camerica Golden Five
+232		Quattro Multicarts
+
+[JY Company]
+090		No extended Nametable control (e.g. Super Mario World, Tekken 2, etc.)
+091		MMC3-like with odd IRQ (e.g. Street Fighter 3)
+209		(e.g. Shin Samurai Spirits 2)
+211		Always extended Nametable control (e.g. Donkey Kong Country 4)
+
+[NT/Ka Sheng]
+115		MMC3-alike (e.g. "Yuu Yuu Hakusho Final - Makai Saikyou Retsuden")
+
+[Sachen]
+second to waixing in number of mappers.
+133		SA72008
+136		TCU02
+137		S8259D ("Great Wall")
+138		S8259B
+139		S8259C
+141		S8259A
+143		NROM w/Copy protection (TC-A001-72P/Dancing Blocks, SA-014/Magical Mathematics)
+145		SA-72007
+146		"Galactic Crusader" (Sachen)
+147		TC-U01-1.5M (Challenge of the Dragon)
+148		SA-004 (72pin)/SA-0037 (60pin) (Mahjong Trap)
+149		SA-0036 (Taiwan Mahjong)
+150		SA-72008-VX (Joval Race)
+243		Sachen 74LS374N (e.g. "Honey", "Poker III 5-in-1")
+
+[Nanjing]
+163		"Lei Dian Huang Bi Ka Qiu Chuan Shuo (NJ046)"
+
+[C&E]
+240		(C&E) e.g. "Jing Ke Xin Zhuan", "Sheng Huo Lie Zhuan"
+244		(C&E) e.g. "Decathlon"
+246		(C&E) e.g. "Fong Shen Bang - Zhu Lu Zhi Zhan"

@@ -1,0 +1,6 @@
+Homebrew boards are few and far between in the iNES mapper list, only being
+added recently. As time goes on, I'm sure more will be added.
+
+028		Multi-discrete Multicart (design:tepples,hw/verilog:InfiniteNESlives)
+029		RET-CUFROM (bunnyboy)
+218		Magic Floor (nocash)

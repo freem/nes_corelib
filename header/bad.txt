@@ -1,0 +1,20 @@
+Looking for these mappers? You won't find them here!!
+
+006		FFE bullshit
+008		FFE bullshit
+017		FFE bullshit
+020		fake Famicom Disk System
+084		Reportedly "PC-SMB2J" used by "SMBJ2"
+100		see note below
+101		naïve misdumping of JF-10
+151		Vs. System VRC1
+248		mistakenly assigned to Chinese games that run on mapper 115.
+
+[Mapper 100]
+Different emulators treat mapper 100 differently. Most don't support it.
+
+Nestopia v1.4.0 uses it as a magic number to mean "anything whose dumps only
+exist as UNIF (and therefore has no iNES mapper number assigned)".
+
+Nintendulator uses it as a general-purpose debugging mapper, allowing PRG and
+CHR banks to be selected via a dialog.
