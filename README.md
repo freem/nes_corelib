@@ -25,5 +25,5 @@ There's a lot of things to do, but here are some main ones:
 - Missing a lot of functionality.
 
 ## "If it's this incomplete, why are you opening the source?"
-I needed an external kick in the ass to make this library happen, and two projects I'm working on for the [2014 NESDev compo](http://nesdevcompo.nintendoage.com/contest14/).
+I needed an external kick in the ass to make this library happen, and two projects I'm working on for the [2014 NESDev compo](http://nesdevcompo.nintendoage.com/contest14/) aren't enough. ;)
 As far as I know, there's no real "library" for coding NES games in ASM... Every project has their own version of the same code (and rightfully so; some games need different routines than others).
