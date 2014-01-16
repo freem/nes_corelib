@@ -3,9 +3,89 @@
 <head>
 <meta charset="utf-8" />
 <title>Main Page | freemco NES Corelib Reference</title>
+<link rel="stylesheet" type="text/css" href="./css/reference.css" />
 </head>
 
 <body id="base">
+<div id="header">
+	<span class="headertext">freemco NES Corelib</span>
+</div>
+
+<div id="content">
+<h1>freemco NES Corelib</h1>
+<p>This is a reference to the routines available in the freemco NES Corelib, as well
+as a reference to any tools you may want to use in developing NES games.</p>
+<hr />
+<h2>Function/Routine Reference</h2>
+(todo)
+<hr />
+<h2>Tools</h2>
+<p>When developing NES games, it's useful to have tools around.</p>
+
+<h3>Compilers</h3>
+<p>There are quite a few 6502-targeting compilers out there, but I've only tested
+and developed this code on ASM6 (and ASM6f).</p>
+
+<h4>ASM6</h4>
+<p><strong><a href="https://home.comcast.net/~olimar/NES/">ASM6</a></strong> is a 6502 compiler and linker by Loopy. The source code is a single C
+file containing portable code. If you're not afraid of the command line/terminal,
+ASM6 is available for all platforms. (Though you may need to compile it yourself.)</p>
+
+<h5>ASM6f</h5>
+<p><strong><a href="https://github.com/freem/asm6f">ASM6f</a></strong> is a fork of
+ASM6 by freem. While it's not required for using the Corelib, its ability to export
+<a href="http://www.fceux.com/web/home.html">FCEUX</a>-compatible .nl files may be
+helpful for debugging.</p>
+
+<h3>Graphics</h3>
+
+<h4>YY-CHR</h4>
+<p>YY-CHR is a pretty good program for editing the graphics of old video games
+(assuming the graphics aren't compressed). The <a href="http://www.geocities.jp/yy_6502/yychr/index.html">.NET version</a>
+works better in Windows 7, while the <a href="http://www.geocities.jp/yy_6502/yychr/0yychr.html">original C++ version</a>
+works better in Windows XP and Wine. The two versions are mostly similar, though
+the .NET version lacks the Selection tool and the half-tone pattern tools.</p>
+
+<h3>Nametables</h3>
+(todo: tepples' screen tools)
+
+<h4>NES Screen Tool</h4>
+<p>Shiru's <a href="http://shiru.untergrund.net/software.shtml">NES Screen Tool</a>
+allows you to interactively place tiles, change the palettes and attributes, and
+also edit the tiles if you need to. Works in Wine, but I've had interface-related
+problems sometimes.</p>
+
+<h3>Sounds and Music</h3>
+<p>By no means is this an exhaustive list.</p>
+
+<h4>Famitracker</h4>
+<p><a href="">Famitracker</a> is a very popular NES tracker that supports various sound extensions
+and has a playback engine available. This engine is good... if all you need to do
+is play music.</p>
+
+<h4>Muse</h4>
+<p><a href="http://kkfos.aspekt.fi/projects/nes/libraries/muse/">todo</a></p>
+
+<h4>Famitone2</h4>
+<p>Shiru recently released an update to <a href="http://shiru.untergrund.net/code.shtml">Famitone</a>,
+an engine capable of handling both sounds and music at the same time.</p>
+
+<h4>GradualGames's Engine</h4>
+<p><a href="http://forums.nesdev.com/viewtopic.php?t=6677">todo</a></p>
+
+<h4>bloopageddon</h4>
+<p>By ReaperSMS. <a href="http://average.truechiptilldeath.com/nesdev/bloopageddon.zip">todo</a></p>
+
+<h4>SuperNSF</h4>
+<p><a href="http://svn.mukunda.com/supernsf/">todo</a></p>
+
+</div>
+
+<div id="footer">
+<a href="https://github.com/freem/nes_corelib">freemco NES Corelib</a>, a product of <a href="http://freem.co/">freemco</a>.<br/>
+<small>freemco is not affiliated with Nintendo Co. Ltd. or any of its subsidaries.<br/>
+"Nintendo" and "Nintendo Entertainment System" are trademarks of Nintendo.</small>
+</div>
 </body>
 
 </html>

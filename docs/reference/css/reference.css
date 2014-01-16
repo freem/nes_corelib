@@ -1,0 +1,91 @@
+body{
+	margin: 0px;
+	background-color: #aab;
+}
+
+#header{
+	position:relative;
+	background-color: #111;
+	padding-right: 1em;
+	height: 5em;
+	border-bottom: 8px solid #88a;
+}
+
+.headertext{
+	position:absolute;
+	top:50%;
+	height: 2em;
+	padding-left: 1em;
+	margin-top: -0.75em;
+
+	color: #FFF;
+	font: Helvetica Neue, Segoe UI, Lucida Sans Unicode, sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#content{
+	margin: 1em;
+	padding:1em;
+	background-color: #eef;
+	border: 1px solid #eef;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+}
+
+#footer{
+	font-size:0.9em;
+	background-color: #99a;
+	text-align:center;
+	border-top:2px solid #abd;
+	border-bottom:2px solid #abd;
+	padding-top:0.25em;
+	padding-bottom:0.5em;
+}
+
+p{
+	margin-top:0.25em;
+	margin-bottom:0.25em;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+h1{
+	font-size: 2em;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+h2{
+	font-size: 1.75em;
+	margin-top:0em;
+	margin-bottom:0em;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+h3{
+	font-size: 1.5em;
+	margin-top:0.25em;
+	margin-bottom:0.25em;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+h4{
+	font-size: 1.25em;
+	margin-top:0.25em;
+	margin-bottom:0.25em;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+h5{
+	font-size: 1.125em;
+	margin-top:0.5em;
+	margin-bottom:0.25em;
+	padding-top:0;
+	padding-bottom:0;
+}
