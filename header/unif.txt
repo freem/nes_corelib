@@ -1,4 +1,6 @@
-I'm not sure how many UNIF headers I'm going to end up defining...
+I'm not sure how many UNIF headers I'm going to end up defining, or if it's
+worth the trouble of doing so.
 
 References
 http://mednafen.sourceforge.net/documentation/09x/nes.html#Introduction%01File+Formats%01UNIF
+http://mamedev.org/source/src/mess/machine/nes_unif.c.html

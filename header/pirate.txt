@@ -85,7 +85,7 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 045		Super 8-in-1, Super 4-in-1, Super 1000000-in-1 (Multicart)
 049		Super HIK 4-in-1 (Multicart)
 052		Mario 7 in 1 (Multicart)
-116		?
+116		Combined VRC2/MMC3/MMC1 clone?
 165		Fire Emblem (Unl)
 182		Pocahontas, Super Donkey Kong (removed, redefined to 114 by CRC check)
 205		15-in-1, 3-in-1 (Multicart)

@@ -51,8 +51,8 @@ References:
 027		CC-21 MI HUN CHE (was UNL_WORLDHERO, VRC4 variant)
 028		INL-ROM (Action 53 Function 16)
 029		RET-CUFROM (Glider)
-030		(currently unassigned?)
-031		(currently unassigned?)
+030		UNROM 512 (Battle Kid 2, Study Hall)
+031		2A03 Puritans NSF Album
 032		Irem G-101
   032.1		Hardwired single-screen mirroring, Fixed 8/8/16KB PRG bank style (Major League)
 033		Taito TC0190

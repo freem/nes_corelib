@@ -1,6 +1,9 @@
-Homebrew boards are few and far between in the iNES mapper list, only being
-added recently. As time goes on, I'm sure more will be added.
+Homebrew boards/mappers are currently few and far between in the iNES mapper
+space, as they're only a recent trend, and a number of the existing mappers
+work well for current developments.
 
 028		Multi-discrete Multicart (design:tepples,hw/verilog:InfiniteNESlives)
-029		RET-CUFROM (bunnyboy)
-218		Magic Floor (nocash)
+029		RET-CUFROM (bunnyboy/RetroUSB) (e.g. "Glider")
+030		UNROM-512 (bunnyboy/RetroUSB) (e.g. "Battle Kid 2", "Study Hall")
+031		"2A03 Puritans" modified NSF mapper (InfiniteNESlives)
+218		"Magic Floor" (nocash)
