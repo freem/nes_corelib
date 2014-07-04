@@ -11,19 +11,9 @@ OAM_DMA			= $4014
 
 OAM_BUF			= $0200
 
+; pads
 JOYSTICK1		= $4016
 JOYSTICK2		= $4017
-
-; palettes
-PAL_SHAREDBG	= $3F00
-PAL_BG1			= $3F01
-PAL_BG2			= $3F05
-PAL_BG3			= $3F09
-PAL_BG4			= $3F0D
-PAL_SPR1		= $3F11
-PAL_SPR2		= $3F15
-PAL_SPR3		= $3F19
-PAL_SPR4		= $3F1D
 
 ; nametable stuff
 PPU_NT0			= $2000
