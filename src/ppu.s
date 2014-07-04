@@ -1,5 +1,5 @@
 ; freemco NES Corelib | shared PPU code
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; Internal PPU variables from engine.h:
 ; * int_ppuCtrl		Last write to PPU_CTRL/$2000
 ; * int_ppuMask		Last write to PPU_MASK/$2001
@@ -15,7 +15,7 @@
 ;==[External Routines]=========================================================;
 ;.include "ppu/nametable.s"		; NameTable routines
 .include "ppu/oam.s"			; OAM (Sprite) routines
-;.include "ppu/palette.s"		; Palette routines
+.include "ppu/palette.s"		; Palette routines
 ;.include "ppu/vrambuf.s"		; VRAM Buffer routines
 ;.include "ppu/chr-ram.s"		; CHR-RAM routines
 
@@ -27,7 +27,7 @@ ppu_writeCtrl:
 	sta int_ppuCtrl
 	sta PPU_CTRL
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_writeMask
 ; Writes the value of A to $2001 and the internal "last $2001" var.
 
@@ -35,7 +35,7 @@ ppu_writeMask:
 	sta int_ppuMask
 	sta PPU_MASK
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_writeScroll
 ; Writes the values from X and Y into $2005 and the internal scroll registers.
 
@@ -45,7 +45,7 @@ ppu_writeScroll:
 	sty int_scrollY
 	sty PPU_SCROLL
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_writeScrollInt
 ; Writes the values from X and Y into the internal scroll registers.
 
@@ -53,7 +53,7 @@ ppu_writeScrollInt:
 	stx int_scrollX
 	sty int_scrollY
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_writeScrollSame
 ; Writes the same value (A) to X and Y scroll values.
 
@@ -63,7 +63,7 @@ ppu_writeScrollSame:
 	sta int_scrollY
 	sta PPU_SCROLL
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_writeScrollIntSame
 ; Writes the same value (A) to the internal X and Y scroll values.
 
@@ -71,7 +71,7 @@ ppu_writeScrollIntSame:
 	sta int_scrollX
 	sta int_scrollY
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_resetScroll
 ; Resets the scroll to the first nametable by writing to PPU_CTRL and PPU_SCROLL.
 
@@ -89,7 +89,7 @@ ppu_resetScroll:
 	sta PPU_CTRL
 	sta int_ppuCtrl
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_sprite0HitCheck
 ; Probes PPU_STATUS once to see if the Sprite 0 hit has been triggered.
 ; Returns the result in A. (0 = not triggered, 1 = triggered)
@@ -106,7 +106,7 @@ ppu_sprite0HitCheck:
 
 @end:
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_waitVBLSet [dwedit]
 ; Waits for the vbl flag to become set.
 
@@ -114,7 +114,7 @@ ppu_waitVBLSet:
 	bit PPU_STATUS
 	bpl ppu_waitVBLSet
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_waitVBLClear [dwedit]
 ; Waits for the vbl flag to become cleared.
 
@@ -122,7 +122,7 @@ ppu_waitVBLClear:
 	bit PPU_STATUS
 	bmi ppu_waitVBLClear
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_setAddr
 ; Sets the current PPU address. (14 cycles)
 
@@ -135,7 +135,7 @@ ppu_setAddr:
 	sty PPU_ADDR
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_resetPalNTPos
 ; resets palette ($3F00) and nametable ($0000) positions.
 
@@ -149,10 +149,10 @@ ppu_resetPalNTPos:
 
 	rts
 
-;==[NMI-related Routines]=====================================================;
+;==[NMI-related Routines]======================================================;
 ; These used to live elsewhere but fuck it, they do shit with the PPU,
 ; so they probably belong here.
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; waitNMI
 ; Waits for an NMI to be fired.
 ; This code MIGHT belong somewhere else, I'm not sure.
@@ -171,7 +171,7 @@ waitNMI:
 	; at the end of NMI
 
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_enableNMI
 ; Enable NMIs.
 
@@ -181,7 +181,7 @@ ppu_enableNMI:
 	sta int_ppuCtrl
 	sta PPU_CTRL
 	rts
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; ppu_disableNMI
 ; Used to quickly disable NMIs from the PPU.
 

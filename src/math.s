@@ -1,5 +1,5 @@
 ; freemco NES Corelib | shared math code
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; Quick Division routines. Shifts values to the right.
 
 ; div_32: Divide by 32
@@ -16,7 +16,7 @@ div_8:
 	lsr
 	lsr
 	rts
-;--------------------------------;
+;==============================================================================;
 ; Quick Multiply routines. Shifts values to the left.
 
 ; mul_32: Multiply by 32
@@ -34,9 +34,36 @@ mul_8:
 	asl
 	rts
 
-;------------------------------------------------------------------------------;
-; Fast Multiply by 10, by Leo Nechaev
+;==============================================================================;
+; add16
+; 16-bit addition, by FMan
+; Sourced from http://www.codebase64.org/doku.php?id=base:16bit_addition_and_subtraction
+
+; Params:
+; tmp00			First number Low byte
+; tmp01			First number High byte
+; tmp02			First number Low byte
+; tmp03			First number High byte
+
+; Returns:
+; tmp04			Result Low byte
+; tmp05			Result High byte
+
+add16:
+	clc
+	lda tmp00			; num1lo
+	adc tmp02			; num2lo
+	sta tmp04			; resultLo
+	lda tmp01			; num1hi
+	adc tmp03			; num2hi
+	sta tmp05			; resultHi
+	rts
+
+;==============================================================================;
+; mul_10
+; Fast Multiply by 10, by Leo Nechaev.
 ; Sourced from http://6502.org/source/integers/fastx10.htm
+
 mul_10:
 	asl					; multiply by 2
 	sta tmp00
@@ -46,13 +73,15 @@ mul_10:
 	adc tmp00			; A = x*8 + x*2
 	rts
 
-;------------------------------------------------------------------------------;
-; Fast modulus 255
+;==============================================================================;
+; modulus255
+; Fast modulus 255.
 ; Sourced from http://6502org.wikidot.com/software-math-fastmod
 
 ; Params:
 ; tmp00		Low byte
 ; tmp01		High byte
+
 modulus255:
 	clc
 	lda tmp00
@@ -61,11 +90,13 @@ modulus255:
 	sbc #0
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
+; fastRand8
 ; fast 8-bit linear feedback shift register-based random number generator
 ; Sourced from http://codebase64.org/doku.php?id=base:small_fast_8-bit_prng
 
-; todo: figure out how to properly use multiple values in the routine
+; todo: throw some variance into how numbers get XORed; the current setup might
+; be a bit too predictable...
 
 ; These values run a complete loop of all 256 values:
 randGenXorVals:
@@ -83,12 +114,12 @@ fastRand8:
 	and #$0F			; mask with $0F (max index of randGenXorVals)
 	tay
 	pla					; restore cur seed value
-	eor randGenXorVals+4	; xor with one of the values from the table.
+	eor randGenXorVals,y	; xor with one of the values from the table.
 @noXor:
 	sta randSeed8
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; fast 16-bit linear feedback shift register-based random number generator
 ; Sourced from http://codebase64.org/doku.php?id=base:small_fast_16-bit_prng
 
