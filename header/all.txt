@@ -7,7 +7,7 @@ References:
 * FCEUX source code
 * http://wiki.nesdev.com/w/index.php/NES_2.0_submappers
 * http://blog.kevtris.org/blogfiles/nes/submappers.txt
-------------------------------------------------------------------------------
+==============================================================================
 000		NROM
   000.1		NROM with battery-backed WRAM (Family Basic)
 001		MMC1 (SxROM)
@@ -27,6 +27,7 @@ References:
   007.2		ENFORCE bus conflicts (AMROM)
 008		[BAD] FFE bullshit
 009		MMC2 (PxROM)
+------------------------------------------------------------------------------
 010		MMC4 (FxROM)
 011		Color Dreams (74*377)
 013		CPROM
@@ -41,6 +42,7 @@ References:
 018		Jaleco SS88006
 019		Namco 129/163
   019.1		Mindseeker
+------------------------------------------------------------------------------
 020		[BAD] Famicom Disk System
 021		Konami VRC4 (a/c)
 022		Konami VRC2a
@@ -51,6 +53,7 @@ References:
 027		CC-21 MI HUN CHE (was UNL_WORLDHERO, VRC4 variant)
 028		INL-ROM (Action 53 Function 16)
 029		RET-CUFROM (Glider)
+------------------------------------------------------------------------------
 030		UNROM 512 (Battle Kid 2, Study Hall)
 031		2A03 Puritans NSF Album
 032		Irem G-101
@@ -64,6 +67,7 @@ References:
 037		Super Mario Bros/Tetris/Nintendo World Cup Soccer (MMC3)
 038		Crime Busters (74*138/74*161)
 039		SUBOR_STUDYNGAME
+------------------------------------------------------------------------------
 040		SMB2j Pirate
 041		Caltron 6-in-1
 042		Hacked FDS -> Cart conversions (Mario Baby, Ai Senshi Nicol)
@@ -74,6 +78,7 @@ References:
 047		Super Spike V'ball/Nintendo World Cup Soccer (MMC3)
 048		Taito TC0190 with IRQs
 049		1993 Super HiK 4-in-1 (MMC3)
+------------------------------------------------------------------------------
 050		SMB2j pirate cart "Super Mario Bros. (JU) (Alt Levels)"/SMB2j rev. A
 051		11 in 1 Ball Series
 052		Mario 7 in 1 (MMC3)
@@ -84,6 +89,7 @@ References:
 057		GK 47-in-1, 6-in-1
 058		68-in-1 (Game Star), Study & Game 32 in 1
 059		T3H53
+------------------------------------------------------------------------------
 060		Reset-triggered 4-in-1
 061		20-in-1
 062		Super 700-in-1
@@ -96,6 +102,7 @@ References:
 068		SUNSOFT-4
   068.1		NTB-ROM (128KB PRG-ROM, optional external 128KB option ROM)
 069		Sunsoft FME-7
+------------------------------------------------------------------------------
 070		Bandai (74*161/161/32 A)
 071		Camerica BF9093/BF9097
   071.1		Mapper-controlled single-screen mirroring (Fire Hawk)
@@ -111,6 +118,7 @@ References:
   078.2		Vertical mirroring, optional 8K of battery-backed WRAM
   078.3		Mapper-controlled mirroring (H/V)
 079		AVE NINA-03/NINA-06/MB-91, TXC 74*138/175
+------------------------------------------------------------------------------
 080		Taito X1-005
 081		(currently unassigned?)
 082		Taito X1-017
@@ -125,6 +133,7 @@ References:
 087		Jaleco 74*138/7474 (JF-05 to JF-10), Konami 74*139/74
 088		Namco 118 with special CHR banking (3433, 3443)
 089		Sunsoft 74161/7432
+------------------------------------------------------------------------------
 090		Hummer/JY board
 091		PC-HK-SF3
 092		Moero!! Pro
@@ -135,6 +144,7 @@ References:
 097		Kaiketsu Yanchamaru
 098		(currently unassigned?)
 099		VS Unisystem
+------------------------------------------------------------------------------
 100		(emulator-specific)
   Nintendulator		Debugging Mapper
   FCEUX				Not assigned
@@ -147,6 +157,7 @@ References:
 107		Magic Dragon
 108		FDS UNROM Board (WHIRLWIND_2706)
 109		(currently unassigned?)
+------------------------------------------------------------------------------
 110		(currently unassigned?)
 111		(currently unassigned?)
 112		Asder/NTDEC Board
@@ -157,6 +168,7 @@ References:
 117		Future Media Board
 118		TKSROM/TLSROM (MMC3)
 119		TQROM (MMC3)
+------------------------------------------------------------------------------
 120		FDS Tobidase Daisakusen
 121		Pirate Prot. A (MMC3)
 122		(currently unassigned?)
@@ -167,6 +179,7 @@ References:
 127		Double Dragon pirate
 128		(currently unassigned?)
 129		(currently unassigned?)
+------------------------------------------------------------------------------
 130		(currently unassigned?)
 131		(currently unassigned?)
 132		TXC 22111A (Creatom)
@@ -177,6 +190,7 @@ References:
 137		Sachen (S8259D)
 138		Sachen (S8259B)
 139		Sachen (S8259C)
+------------------------------------------------------------------------------
 140		Jaleco JF-11/14
 141		Sachen (S8259A)
 142		UNL_KS7032 (SMB2j Pirate (KS 202))
@@ -187,6 +201,7 @@ References:
 147		Sachen (TC-U01-1.5M)
 148		Sachen (SA-004/SA-0037)
 149		Sachen (SA-0036)
+------------------------------------------------------------------------------
 150		Sachen (SA-72008-VX)
 151		[BAD] VS System VRC1
 152		Arkanoid 2, Bandai (74*161/161/32 B)
@@ -197,6 +212,7 @@ References:
 157		Bandai Barcode/Datach
 158		Tengen 800037 (Alien Syndrome)
 159		Bandai LZ93D50 + 24C01
+------------------------------------------------------------------------------
 160		SA009
 161		(currently unassigned?)
 162		UNL_FS304
@@ -207,6 +223,7 @@ References:
 167		SUBOR Rev. B
 168		RacerMate Challenge II
 169		(currently unassigned?)
+------------------------------------------------------------------------------
 170		Fujiya Standard
 171		Kaiser KS7058
 172		TXC 22211B
@@ -217,6 +234,7 @@ References:
 177		Henggedianzi Standard
 178		Waixing SGZLZ
 179		Henggedianzi XJZB
+------------------------------------------------------------------------------
 180		UNROM (Crazy Climber)
 181		[FCEUX: variant of mapper 185]
 182		(Deprecated) Super Donkey Kong
@@ -229,6 +247,7 @@ References:
 188		Bandai Karaoke Studio
   188.1		256K PRG-ROM karaoke ROMs
 189		Thunder Warrior
+------------------------------------------------------------------------------
 190		(currently unassigned?)
 191		Pirate TQROM variant [Nestopia: Waixing Type B]
 192		Taiwan MMC3+VRAM Rev. B [Nestopia: Waixing Type C]
@@ -239,6 +258,7 @@ References:
 197		UNL_SuperFighter3
 198		Taiwan MMC3+VRAM Rev. E [Nestopia: Waixing Type F]
 199		Waixing Type G
+------------------------------------------------------------------------------
 200		1200-in-1, 36-in-1
 201		8-in-1, 21-in-1 (2006-CA) (Unl)
 202		150-in-1
@@ -249,6 +269,7 @@ References:
 207		Taito X1-005 w/alternate mirroring
 208		Gouder 37017
 209		JY Company Type B
+------------------------------------------------------------------------------
 210		Namco 175/340 (like N163 but w/hardwired mirroring)
 211		JY Company Type C
 212		Super HIK 300-in-1
@@ -259,6 +280,7 @@ References:
 217		Golden Card 6-in-1
 218		Magic Floor
 219		UNL_A9746
+------------------------------------------------------------------------------
 220		(emulator-specific?)
   FCEUX				"Debug Mapper" (UNLKS7057)
 221		UNL_N625092
@@ -270,6 +292,7 @@ References:
 227		1200-in-1
 228		Action 52
 229		31-in-1
+------------------------------------------------------------------------------
 230		BMC Contra/22-in-1
 231		20-in-1
 232		Camerica 9096 (Quattro multicarts)
@@ -281,6 +304,7 @@ References:
 237		(currently unassigned?)
 238		UNL_6035052
 239		(currently unassigned?)
+------------------------------------------------------------------------------
 240		C&E (Jing Ke Xin Zhuan, Sheng Huo Lie Zhuan)
 241		TXC MXMDH Two ("Fan Kong Jing Ying (Unl) (Ch)")
 242		Waixing 74HC161
@@ -292,6 +316,7 @@ References:
 247		(currently unassigned?)
 248		(currently unassigned?)
 249		Waixing w/Security
+------------------------------------------------------------------------------
 250		Time Diver Avenger (MMC3 Variant)
 251		[FCEUX: "No good dumps for this mapper, use UNIF version"]
 252		San Guo Zhi Pirate
