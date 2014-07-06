@@ -51,7 +51,7 @@ References:
 025		Konami VRC4 (b/d), VRC2 (351948)
 026		Konami VRC6b/053328 (A1/A0) (Esper Dream 2, Madara)
 027		CC-21 MI HUN CHE (was UNL_WORLDHERO, VRC4 variant)
-028		INL-ROM (Action 53 Function 16)
+028		INL-ROM Multi-Discrete (Action 53 Function 16)
 029		RET-CUFROM (Glider)
 ------------------------------------------------------------------------------
 030		UNROM 512 (Battle Kid 2, Study Hall)
@@ -64,7 +64,7 @@ References:
   034.2		Union Bond (BNROM with 1MB PRG-ROM + 8KB battery-backed WRAM)
 035		SC-127 "Warioland II (Unl)[!]"
 036		TXC Policeman
-037		Super Mario Bros/Tetris/Nintendo World Cup Soccer (MMC3)
+037		PAL-ZZ (MMC3 multicart) (Super Mario Bros/Tetris/Nintendo World Cup Soccer)
 038		Crime Busters (74*138/74*161)
 039		SUBOR_STUDYNGAME
 ------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ References:
 067		Sunsoft Mapper #3
 068		SUNSOFT-4
   068.1		NTB-ROM (128KB PRG-ROM, optional external 128KB option ROM)
-069		Sunsoft FME-7
+069		Sunsoft FME-7, 5A, 5B
 ------------------------------------------------------------------------------
 070		Bandai (74*161/161/32 A)
 071		Camerica BF9093/BF9097
@@ -152,7 +152,7 @@ References:
 102		(currently unassigned?)
 103		BTL_2708 ("FDS DokiDoki Full")
 104		Camerica Golden Five
-105		NES-EVENT (Nintendo World Championship
+105		NES-EVENT (Nintendo World Championship)
 106		SMB3 Pirate A
 107		Magic Dragon
 108		FDS UNROM Board (WHIRLWIND_2706)
