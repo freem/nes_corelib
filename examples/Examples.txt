@@ -1,0 +1,37 @@
+freemco NES Corelib Examples
+============================
+A number of example projects for the freemco NES Corelib are included.
+The projects use relative paths to the corelib source files, which means you'll
+want to edit those paths if you're working on them in a different place. Sorry!
+
+Aside from the corelib files, each project is meant to be self-contained.
+
+The examples are meant to be short, while trying to show enough possibilities of
+what can be done.
+
+[00_skeleton]
+A skeleton setup, used for the other examples.
+
+[01_helloBG]
+"Hello World" on the background layer.
+
+[02_helloSpr]
+"Hello World" on the sprite layer.
+
+[03_paletteBasics]
+NES palette basics.
+
+[04_inputBasics]
+Basic introduction to input handling (regular controllers only).
+
+Other examples are yet to be thought of...
+* Nametable stuff (e.g. using unrle, updating the BG)
+* Scrolling
+* Collision (sprite->sprite, sprite->background)
+* Metasprites
+* Sound (2A03 only; others are introduced with mappers)
+* CHR-RAM
+* PRG-RAM
+* Basic Mappers (e.g. anything less complex than MMC1)
+* Intermediate Mappers (e.g. anything less complex than MMC5)
+* Advanced Mappers (e.g. MMC5, etc.)
