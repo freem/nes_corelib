@@ -1,0 +1,74 @@
+; various NES-related defines.
+PPU_CTRL		= $2000
+PPU_MASK		= $2001
+PPU_STATUS		= $2002
+OAM_ADDR		= $2003
+OAM_DATA		= $2004
+PPU_SCROLL		= $2005
+PPU_ADDR		= $2006
+PPU_DATA		= $2007
+OAM_DMA			= $4014
+
+OAM_BUF			= $0200
+
+; pads
+JOYSTICK1		= $4016
+JOYSTICK2		= $4017
+
+; nametable stuff
+PPU_NT0			= $2000
+PPU_ATTRIB0		= $23C0
+PPU_NT1			= $2400
+PPU_ATTRIB1		= $27C0
+PPU_NT2			= $2800
+PPU_ATTRIB2		= $2BC0
+PPU_NT3			= $2C00
+PPU_ATTRIB3		= $2FC0
+
+; APU stuff
+;--;
+APU_PULSE1_MAIN		= $4000
+APU_PULSE1_SWEEP	= $4001
+APU_PULSE1_TIMELO	= $4002
+APU_PULSE1_LEN		= $4003
+;--;
+APU_PULSE2_MAIN		= $4004
+APU_PULSE2_SWEEP	= $4005
+APU_PULSE2_TIMELO	= $4006
+APU_PULSE2_LEN		= $4007
+;--;
+APU_TRI_MAIN		= $4008
+; $4009 is unused
+APU_TRI_TIMELO		= $400A
+APU_TRI_LEN			= $400B
+;--;
+; unsure of names for these...
+APU_NOISE_MAIN		= $400C
+; $400D is unused
+APU_NOISE_LOOP		= $400E
+APU_NOISE_LEN		= $400F
+;--;
+APU_DMC_FREQ		= $4010
+APU_DMC_DIRECT		= $4011		; 7-bit load counter
+APU_SAMP_ADDR		= $4012
+APU_SAMP_LEN		= $4013
+;--;
+APU_STATUS			= $4015		; status and control
+APU_FRAMECOUNT		= $4017
+
+; 2A03 channel bitmasks (for use with $4015/APU_STATUS and/or apu_enableChan)
+APU_CHAN1 = %00000001			; pulse 1
+APU_CHAN2 = %00000010			; pulse 2
+APU_CHAN3 = %00000100			; triangle
+APU_CHAN4 = %00001000			; noise
+APU_CHAN5 = %00010000			; dpcm
+
+; joypad defines
+PAD_A			= %10000000
+PAD_B			= %01000000
+PAD_SELECT		= %00100000
+PAD_START		= %00010000
+PAD_UP			= %00001000
+PAD_DOWN		= %00000100
+PAD_LEFT		= %00000010
+PAD_RIGHT		= %00000001

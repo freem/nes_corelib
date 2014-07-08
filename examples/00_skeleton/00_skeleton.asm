@@ -11,33 +11,33 @@
 ;.include ""
 
 ; defines
-.include "../../src/nes.inc"	; NES hardware defines
+.include "nes.inc"			; NES hardware defines
 
 ;==============================================================================;
 ; program code
-.org $8000				; starting point for NROM-256
-;.org $C000				; starting point for NROM-128
+.org $8000					; starting point for NROM-256
+;.org $C000					; starting point for NROM-128
 
 ;==============================================================================;
 ; NMI
 
 NMI:
 	; save registers
-	pha					; 1) push A
+	pha						; 1) push A
 	txa
-	pha					; 2) push X
+	pha						; 2) push X
 	tya
-	pha					; 3) push Y
+	pha						; 3) push Y
 
 	; "proper" NMI code belongs here.
 
 NMI_end:
 	; restore registers
-	pla					; 3) pull Y
+	pla						; 3) pull Y
 	tay
-	pla					; 2) pull X
+	pla						; 2) pull X
 	tax
-	pla					; 1) pull A
+	pla						; 1) pull A
 	rti
 
 ;==============================================================================;
@@ -53,16 +53,16 @@ IRQ:
 ; Handles NES initialization
 
 Reset:
-	sei					; disable IRQs
-	cld					; clear decimal mode, in case some Famiclone is too smart for its own good
+	sei						; disable IRQs
+	cld						; clear decimal mode, in case some Famiclone is too smart for its own good
 	ldx #$40
-	stx JOYSTICK2		; disable APU frame IRQ
+	stx JOYSTICK2			; disable APU frame IRQ
 	ldx #$FF
-	txs					; set up stack
-	inx					; (X is now $00)
-	stx PPU_CTRL		; disable NMIs
-	stx PPU_MASK		; disable rendering
-	stx APU_DMC_FREQ	; disable DMC IRQ
+	txs						; set up stack
+	inx						; (X is now $00)
+	stx PPU_CTRL			; disable NMIs
+	stx PPU_MASK			; disable rendering
+	stx APU_DMC_FREQ		; disable DMC IRQ
 
 	; if you're using a mapper, you should probably initialize it here.
 
@@ -74,7 +74,7 @@ Reset:
 	bpl @waitVBL1
 
 	; clear all RAM (except page $0200, which is used as OAM/Sprite memory)
-	txa					; (A is now $00)
+	txa						; (A is now $00)
 @clearRAM:
 	sta $000,x
 	sta $100,x

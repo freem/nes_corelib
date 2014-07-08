@@ -7,7 +7,7 @@
 .include "NROM-128.asm"
 
 ; defines
-.include "../../src/nes.inc"	; NES hardware defines
+.include "nes.inc"				; NES hardware defines
 .include "ram.inc"				; program RAM defines
 
 ;==============================================================================;
