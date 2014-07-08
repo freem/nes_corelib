@@ -28,8 +28,6 @@ NMI:
 	tya
 	pha						; 3) push Y
 
-	inc vblanked			; increment vblanked value
-
 	; increment framecount
 	inc <frameCount
 	bne @afterFrameCount
@@ -39,6 +37,9 @@ NMI:
 	; "proper" NMI code belongs here.
 
 NMI_end:
+	lda #0
+	sta vblanked			; clear vblanked flag
+
 	; restore registers
 	pla						; 3) pull Y
 	tay
@@ -57,7 +58,7 @@ IRQ:
 
 ;==============================================================================;
 ; Reset
-; Handles NES initialization
+; Handles NES initialization.
 
 Reset:
 	sei						; disable IRQs
@@ -173,7 +174,23 @@ Reset:
 
 	; and then run your program's main loop.
 MainLoop:
+	; things before vblank
+
+	jsr waitVBlank				; wait for vblank
+
+	; things after vblank
+
 	jmp MainLoop
+
+;==============================================================================;
+; waitVBlank: waits for VBlank
+
+waitVBlank:
+	inc vblanked
+@waitLoop:
+	lda vblanked
+	bne @waitLoop
+	rts
 
 ;==============================================================================;
 ; Vectors
