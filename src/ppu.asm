@@ -1,4 +1,4 @@
-; freemco NES Corelib | shared PPU code
+; freemco NES Corelib | ppu.asm - shared PPU code
 ;==============================================================================;
 ; Internal PPU variables from engine.h:
 ; * int_ppuCtrl		Last write to PPU_CTRL/$2000

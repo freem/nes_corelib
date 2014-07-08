@@ -1,4 +1,4 @@
-; freemco NES Corelib | shared math code
+; freemco NES Corelib | math.asm - shared math code
 ;==============================================================================;
 ; Quick Division routines. Shifts values to the right.
 
