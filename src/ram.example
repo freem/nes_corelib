@@ -1,8 +1,8 @@
-; Example engine.inc file
-; DO NOT EDIT! Copy this file and rename it to "engine.inc" before editing.
+; Example ram.inc file
+; DO NOT EDIT! Copy this file and rename it to "ram.inc" before editing.
 
-; engine.inc - Engine stuff (shared variables, defines, and other crap.)
-;------------------------------------------------------------------------------;
+; RAM.inc - RAM layout (shared variables, defines, etc.)
+;==============================================================================;
 ;-- zero page --------------------------------;
 	; $00-$0F: "Operating Space"
 	; temp space for function arguments, etc.
