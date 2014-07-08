@@ -23,7 +23,7 @@ oam_clearAll:
 	bne @clrOAM1
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_update
 ; Updates all OAM data by transferring OAM_BUF contents via OAM_DMA.
 
@@ -34,7 +34,7 @@ oam_update:
 	sta OAM_DMA
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryData
 ; Updates a single OAM data entry at the specified index.
 
@@ -60,7 +60,7 @@ oam_setEntryData:
 
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryY
 ; Sets the Y value for the specified OAM entry.
 
@@ -69,14 +69,16 @@ oam_setEntryData:
 ; X				new Y value
 
 oam_setEntryY:
+	pha
 	asl
 	asl
 	tay					; set base OAM index
 	txa
 	sta OAM_BUF,y		; set new Y position
+	pla
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; [M] oam_setSingleEntry
 ; A macro used by the oam_setEntry* routines for values other than Y.
 
@@ -85,6 +87,7 @@ oam_setEntryY:
 ; X				new value
 
 .macro oam_setSingleEntry slot
+	pha
 	asl
 	asl
 	clc
@@ -92,9 +95,10 @@ oam_setEntryY:
 	tay
 	txa
 	sta OAM_BUF,y
+	pla
 .endm
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryTile
 ; Sets the tile index for the specified OAM entry.
 
@@ -110,7 +114,7 @@ oam_setEntryTile:
 	oam_setSingleEntry $01
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryTile816
 ; Sets the tile index for the specified OAM entry for 8x16 sprite modes.
 
@@ -140,7 +144,7 @@ oam_setEntryTile816:
 	sta OAM_BUF,y
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryAttr
 ; Sets the attributes for the specified OAM entry.
 
@@ -161,7 +165,7 @@ oam_setEntryAttr:
 	oam_setSingleEntry $02
 	rts
 
-;------------------------------------------------------------------------------;
+;==============================================================================;
 ; oam_setEntryX
 ; Sets the X value for the specified OAM entry.
 
@@ -172,3 +176,25 @@ oam_setEntryAttr:
 oam_setEntryX:
 	oam_setSingleEntry $03
 	rts
+
+;==============================================================================;
+; Metasprites
+
+; 8x8 mode:		All tiles are based on 8x8.
+; 8x16 mode:	Width (tiles) is based on 8x8, Height (tiles) is based on 8x16.
+
+; Metasprites need the following data:
+; * metasprite width (tiles)
+; * metasprite height (tiles)
+; * general metasprite attributes (h/v flip status)
+; {
+; * metasprite tilemaps
+; * specific metasprite attributes (palette)
+; }
+
+; When adding a metasprite, you need to know:
+; * Initial sprite index (may get OAM cycled)
+; * Base X position
+; * Base Y position
+
+; something about Metasprites and Animation frames
