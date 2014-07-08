@@ -1,0 +1,2 @@
+# ignore any built binaries in the examples folder
+examples/*/*.nes
