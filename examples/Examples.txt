@@ -27,14 +27,26 @@ NES palette basics.
 [04_inputBasics]
 Basic introduction to input handling (two regular controllers only).
 
-Other examples are yet to be thought of...
-* Nametable stuff (e.g. using unrle, updating the BG)
-* Scrolling
-* Collision (sprite->sprite, sprite->background)
+Other examples are yet to be thought of... These are in no particular order.
+
+<Basic/Intro>
 * Metasprites
-* Sound (2A03 only; others are introduced with mappers)
-* CHR-RAM
-* PRG-RAM
+* Nametable stuff (e.g. using unrle, updating the BG)
+* Basic Scrolling (across two screens)
 * Basic Mappers (e.g. anything less complex than MMC1)
+* CHR-RAM Basics
+
+<Intermediate>
+* Scrolling (across multiple screens)
+* Collision (sprite->sprite, sprite->background)
+* Compressed CHR-RAM (using tokumaru's code)
+* Sound (2A03 only; others are introduced with mappers)
+* PRG-RAM (both as save and work RAM)
+* Four-player input handling (NES and Famicom)
 * Intermediate Mappers (e.g. anything less complex than MMC5)
+
+<Advanced>
+* Handling various third party controllers
+* Raster effects
+* Extending VBlank (by shutting off the PPU at the right times)
 * Advanced Mappers (e.g. MMC5, etc.)
