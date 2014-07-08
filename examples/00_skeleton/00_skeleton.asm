@@ -56,7 +56,7 @@ Reset:
 	sei						; disable IRQs
 	cld						; clear decimal mode, in case some Famiclone is too smart for its own good
 	ldx #$40
-	stx JOYSTICK2			; disable APU frame IRQ
+	stx APU_FRAMECOUNT		; disable APU frame IRQ
 	ldx #$FF
 	txs						; set up stack
 	inx						; (X is now $00)
