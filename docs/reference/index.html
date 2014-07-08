@@ -22,7 +22,7 @@ The freemco NES Corelib is split into multiple parts based on the functionality
 they expose.
 
 <ul>
-<li>Quick Overview (includes <code>nes.inc</code> and <code>engine.inc</code>)</li>
+<li><a href="./overview.html">Quick Overview</a> (includes <code>nes.inc</code> and <code>ram.inc</code>)</li>
 <li><a href="./ppu.html">PPU</a> (Graphics)</li>
 <li>APU (Sound)</li>
 <li>I/O (Controllers)</li>
@@ -48,9 +48,9 @@ ASM6 is available for all platforms. (Though you may need to compile it yourself
 
 <h5>ASM6f</h5>
 <p><strong><a href="https://github.com/freem/asm6f">ASM6f</a></strong> is a fork of
-ASM6 by freem. While it's not required for using the Corelib, its ability to export
-<a href="http://www.fceux.com/web/home.html">FCEUX</a>-compatible .nl files may be
-helpful for debugging.</p>
+ASM6 by freem (hey, that's me!). While it's not required for using the Corelib, its
+ability to export <a href="http://www.fceux.com/web/home.html">FCEUX</a>-compatible
+.nl files may be helpful for debugging.</p>
 
 <h3>Graphics</h3>
 
@@ -67,8 +67,7 @@ the .NET version lacks the Selection tool and the half-tone pattern tools.</p>
 <h4>NES Screen Tool</h4>
 <p>Shiru's <a href="http://shiru.untergrund.net/software.shtml">NES Screen Tool</a>
 allows you to interactively place tiles, change the palettes and attributes, and
-also edit the tiles if you need to. Works in Wine, but I've had interface-related
-problems sometimes.</p>
+also edit the tiles if you need to. Works in Wine, if you're not on Windows.</p>
 
 <h3>Sounds and Music</h3>
 <p>By no means is this an exhaustive list.</p>
@@ -84,6 +83,11 @@ is play music.</p>
 <h4>Famitone2</h4>
 <p>Shiru recently released an update to <a href="http://shiru.untergrund.net/code.shtml">Famitone</a>,
 an engine capable of handling both sounds and music at the same time.</p>
+
+<h4>MetalSlime's Engine</h4>
+<p>MetalSlime's sound engine is presented as a tutorial in ten parts; the first part
+is available <a href="http://nintendoage.com/forum/messageview.cfm?catid=22&threadid=22484">here</a>.
+The sound engine I'm working on for the corelib is based off of this tutorial.</p>
 
 <h4>GradualGames's Engine</h4>
 <p><a href="http://forums.nesdev.com/viewtopic.php?t=6677">todo</a></p>

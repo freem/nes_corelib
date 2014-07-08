@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>PPU Routines | freemco NES Corelib Reference</title>
+<link rel="stylesheet" type="text/css" href="./reference.css" />
+</head>
+
+<body id="base">
+<body id="base">
+<div id="header">
+	<span class="headertext"><a href="./index.html">freemco NES Corelib</a></span>
+</div>
+
+<div id="content">
+<h1>Quick Overview</h1>
+<p>The freemco NES Corelib is a set of defines, macros, and routines for programming
+the NES in assembly language.</p>
+
+<h2>nes.inc</h2>
+<table class="referenceTable">
+	<a name="nes.inc"><thead></a>
+		<tr>
+			<th colspan=3>nes.inc<br/><small class="refHeadDesc">NES System Defines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Address</td>
+			<td class="refHeader">Description</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>PPU_CTRL</code></td>
+			<td class="refData">$2000</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_MASK</code></td>
+			<td class="refData">$2001</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_STATUS</code></td>
+			<td class="refData">$2002</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>OAM_ADDR</code></td>
+			<td class="refData">$2003</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>OAM_DATA</code></td>
+			<td class="refData">$2004</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_SCROLL</code></td>
+			<td class="refData">$2005</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_ADDR</code></td>
+			<td class="refData">$2006</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_DATA</code></td>
+			<td class="refData">$2007</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>OAM_DMA</code></td>
+			<td class="refData">$4014</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>OAM_BUF</code></td>
+			<td class="refData">$0200</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>JOYSTICK1</code></td>
+			<td class="refData">$4016</td>
+			<td class="refData">Player 1 pad input</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>JOYSTICK2</code></td>
+			<td class="refData">$4017</td>
+			<td class="refData">Player 2 pad input</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_NT0</code></td>
+			<td class="refData">$2000</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_ATTRIB0</code></td>
+			<td class="refData">$23C0</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_NT1</code></td>
+			<td class="refData">$2400</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_ATTRIB1</code></td>
+			<td class="refData">$27C0</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_NT2</code></td>
+			<td class="refData">$2800</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_ATTRIB2</code></td>
+			<td class="refData">$2BC0</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_NT3</code></td>
+			<td class="refData">$2C00</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PPU_ATTRIB3</code></td>
+			<td class="refData">$2FC0</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>APU_PULSE1_MAIN</code></td>
+			<td class="refData">$4000</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE1_SWEEP</code></td>
+			<td class="refData">$4001</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE1_TIMELO</code></td>
+			<td class="refData">$4002</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE1_LEN</code></td>
+			<td class="refData">$4003</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE2_MAIN</code></td>
+			<td class="refData">$4004</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE2_SWEEP</code></td>
+			<td class="refData">$4005</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE2_TIMELO</code></td>
+			<td class="refData">$4006</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_PULSE2_LEN</code></td>
+			<td class="refData">$4007</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_TRI_MAIN</code></td>
+			<td class="refData">$4008</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_TRI_TIMELO</code></td>
+			<td class="refData">$400A</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>APU_TRI_LEN</code></td>
+			<td class="refData">$400B</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_NOISE_MAIN</code></td>
+			<td class="refData">$400C</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_NOISE_LOOP</code></td>
+			<td class="refData">$400E</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_NOISE_LEN</code></td>
+			<td class="refData">$400F</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_DMC_FREQ</code></td>
+			<td class="refData">$4010</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_DMC_DIRECT</code></td>
+			<td class="refData">$4011</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_SAMP_ADDR</code></td>
+			<td class="refData">$4012</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_SAMP_LEN</code></td>
+			<td class="refData">$4013</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_STATUS</code></td>
+			<td class="refData">$4015</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_FRAMECOUNT</code></td>
+			<td class="refData">$4017</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>APU_CHAN1</code></td>
+			<td class="refData">%00000001</td>
+			<td class="refData">Channel 1 (Pulse 1) APU bitmask</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_CHAN2</code></td>
+			<td class="refData">%00000010</td>
+			<td class="refData">Channel 2 (Pulse 2) APU bitmask</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_CHAN3</code></td>
+			<td class="refData">%00000100</td>
+			<td class="refData">Channel 3 (Triangle) APU bitmask</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_CHAN4</code></td>
+			<td class="refData">%00001000</td>
+			<td class="refData">Channel 4 (Noise) APU bitmask</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>APU_CHAN5</code></td>
+			<td class="refData">%00010000</td>
+			<td class="refData">Channel 5 (DPCM) APU bitmask</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_A</code></td>
+			<td class="refData">%10000000</td>
+			<td class="refData">Bitmask for A button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_B</code></td>
+			<td class="refData">%01000000</td>
+			<td class="refData">Bitmask for B button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_SELECT</code></td>
+			<td class="refData">%00100000</td>
+			<td class="refData">Bitmask for Select button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_START</code></td>
+			<td class="refData">%00010000</td>
+			<td class="refData">Bitmask for Start button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_UP</code></td>
+			<td class="refData">%00001000</td>
+			<td class="refData">Bitmask for Up button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_DOWN</code></td>
+			<td class="refData">%00000100</td>
+			<td class="refData">Bitmask for Down button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_LEFT</code></td>
+			<td class="refData">%00000010</td>
+			<td class="refData">Bitmask for Left button</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>PAD_RIGHT</code></td>
+			<td class="refData">%00000001</td>
+			<td class="refData">Bitmask for Right button</td>
+		</tr>
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<h2>ram.inc</h2>
+
+</div>
+
+<div id="footer">
+<a href="https://github.com/freem/nes_corelib">freemco NES Corelib</a>, a product of <a href="http://freem.co/">freemco</a>.<br/>
+<small>freemco is not affiliated with Nintendo Co. Ltd. or any of its subsidaries.<br/>
+"Nintendo" and "Nintendo Entertainment System" are trademarks of Nintendo.</small>
+</div>
+</body>
+
+</html>

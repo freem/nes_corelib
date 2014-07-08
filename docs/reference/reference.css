@@ -24,6 +24,14 @@ body{
 	font-weight: bold;
 }
 
+.headertext a{
+	color: #BDF;
+}
+
+.headertext a:hover{
+	color: #8CE;
+}
+
 #content{
 	margin: 1em;
 	padding:1em;

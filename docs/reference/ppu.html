@@ -9,7 +9,7 @@
 <body id="base">
 <body id="base">
 <div id="header">
-	<span class="headertext">freemco NES Corelib</span>
+	<span class="headertext"><a href="./index.html">freemco NES Corelib</a></span>
 </div>
 
 <div id="content">
@@ -18,19 +18,19 @@
 
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#ppu.s"><code>ppu.s</code></a></li>
-<li><a href="#chr-ram.s"><code>ppu/chr-ram.s</code></a></li>
-<li><a href="#nametable.s"><code>ppu/nametable.s</code></a></li>
-<li><a href="#oam.s"><code>ppu/oam.s</code></a></li>
-<li><a href="#palette.s"><code>ppu/palette.s</code></a></li>
-<li><a href="#vrambuf.s"><code>ppu/vrambuf.s</code></a></li>
+<li><a href="#ppu.asm"><code>ppu.asm</code></a></li>
+<li><a href="#chr-ram.asm"><code>ppu/chr-ram.asm</code></a></li>
+<li><a href="#nametable.asm"><code>ppu/nametable.asm</code></a></li>
+<li><a href="#oam.asm"><code>ppu/oam.asm</code></a></li>
+<li><a href="#palette.asm"><code>ppu/palette.asm</code></a></li>
+<li><a href="#vrambuf.asm"><code>ppu/vrambuf.asm</code></a></li>
 </ul>
 
 <h2>PPU Function Reference</h2>
 <table class="referenceTable">
-	<a name="ppu.s"><thead></a>
+	<a name="ppu.asm"><thead></a>
 		<tr>
-			<th colspan=3>ppu.s<br/><small class="refHeadDesc">Main PPU Routines</small></th>
+			<th colspan=3>ppu.asm<br/><small class="refHeadDesc">Main PPU Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -153,9 +153,9 @@
 <hr/>
 
 <table class="referenceTable">
-	<a name="chr-ram.s"><thead></a>
+	<a name="chr-ram.asm"><thead></a>
 		<tr>
-			<th colspan=3>chr-ram.s<br/><small class="refHeadDesc">CHR-RAM Routines</small></th>
+			<th colspan=3>chr-ram.asm<br/><small class="refHeadDesc">CHR-RAM Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -188,9 +188,9 @@
 <hr/>
 
 <table class="referenceTable">
-	<a name="nametable.s"><thead></a>
+	<a name="nametable.asm"><thead></a>
 		<tr>
-			<th colspan=3>nametable.s<br/><small class="refHeadDesc">Nametable Routines</small></th>
+			<th colspan=3>nametable.asm<br/><small class="refHeadDesc">Nametable Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -223,9 +223,9 @@
 <hr/>
 
 <table class="referenceTable">
-	<a name="oam.s"><thead></a>
+	<a name="oam.asm"><thead></a>
 		<tr>
-			<th colspan=3>oam.s<br/><small class="refHeadDesc">OAM (Sprite) Routines</small></th>
+			<th colspan=3>oam.asm<br/><small class="refHeadDesc">OAM (Sprite) Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -233,6 +233,125 @@
 			<td class="refHeader">Name</td>
 			<td class="refHeader">Description</td>
 			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_clearAll</code></td>
+			<td class="refData">Properly clears the OAM by hiding sprites.<br/>
+			<small>freem's Note: Code from Shiru's NES library.</small></td>
+			<td class="refData">None</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_update</code></td>
+			<td class="refData">Updates all OAM data by transferring OAM_BUF contents via OAM_DMA.</td>
+			<td class="refData">None</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryData</code></td>
+			<td class="refData">Updates a single OAM data entry at the specified index.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>tmp00</strong> - Data Location Low Byte ($00<u>00</u>)<br/>
+				<strong>tmp01</strong> - Data Location High Byte ($<u>00</u>00)
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryY</code></td>
+			<td class="refData">Sets the Y value for the specified OAM entry.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>X</strong> - New Y value
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryTile</code></td>
+			<td class="refData">Sets the tile index for the specified OAM entry.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>X</strong> - New tile index
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryTile816</code></td>
+			<td class="refData">Sets the tile index for the specified OAM entry for 8x16 sprite modes.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>X</strong> - New tile index<br/>
+				<strong>Y</strong> - Pattern table select ($00 or $01)<br/>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryAttr</code></td>
+			<td class="refData">Sets the attributes for the specified OAM entry.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>X</strong> - New attributes
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>oam_setEntryX</code></td>
+			<td class="refData">Sets the X value for the specified OAM entry.</td>
+			<td class="refData">
+				<strong>A</strong> - OAM Index ($00-$3F)<br/>
+				<strong>X</strong> - New X value
+			</td>
+		</tr>
+
+		<!--
+		<tr>
+			<td class="refData"><code>oam_</code></td>
+			<td class="refData">&nbsp;</td>
+			<td class="refData">&nbsp;</td>
+		</tr>
+		-->
+	</tbody>
+	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
+</table>
+
+<hr/>
+
+<table class="referenceTable">
+	<a name="palette.asm"><thead></a>
+		<tr>
+			<th colspan=3>palette.asm<br/><small class="refHeadDesc">Palette Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>ppu_clearPal</code></td>
+			<td class="refData">Resets the entire palette to black ($0F) using the PPU addresses.<br/>
+			RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!</td>
+			<td class="refData">None</td>
+		</tr>
+
+
+		<tr>
+			<td class="refData"><code>ppu_XferFullPalToPPU</code></td>
+			<td class="refData">Transfers 32 bytes of palette data to the PPU via $3F00.<br/>
+			RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!</td>
+			<td class="refData">
+				<strong>tmp00</strong> - Address Low Byte ($00<u>00</u>)<br/>
+				<strong>tmp01</strong> - Address High Byte ($<u>00</u>00)
+			</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>ppu_palBufToPPU</code></td>
+			<td class="refData">Transfers data from the Palette Buffer to the PPU. Clobbers A,X,Y.</td>
+			<td class="refData">None</td>
 		</tr>
 
 		<!--
@@ -246,7 +365,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="refData"><code>ppu_writeMask</code></td>
+			<td class="refData"><code>ppu_clearPal</code></td>
 			<td class="refData">&nbsp;</td>
 			<td class="refData">&nbsp;</td>
 		</tr>
@@ -258,44 +377,9 @@
 <hr/>
 
 <table class="referenceTable">
-	<a name="palette.s"><thead></a>
+	<a name="vrambuf.asm"><thead></a>
 		<tr>
-			<th colspan=3>palette.s<br/><small class="refHeadDesc">Palette Routines</small></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="refHeader">Name</td>
-			<td class="refHeader">Description</td>
-			<td class="refHeader">Parameters</td>
-		</tr>
-
-		<!--
-		<tr>
-			<td class="refData"><code>ppu_writeCtrl</code></td>
-			<td class="refData">
-			Writes the value of <code>A</code> to <code>$2000</code> (<code>PPU_CTRL</code>)
-			and the internal "last $2000" variable (<code>int_ppuCtrl</code>).</td>
-			<td class="refData">
-				<strong>A</strong> - New value to write to PPU Control
-			</td>
-		</tr>
-		<tr>
-			<td class="refData"><code>ppu_writeMask</code></td>
-			<td class="refData">&nbsp;</td>
-			<td class="refData">&nbsp;</td>
-		</tr>
-		-->
-	</tbody>
-	<tfoot><tr><td class="tableFooter" colspan=3></td></tr></tfoot>
-</table>
-
-<hr/>
-
-<table class="referenceTable">
-	<a name="vrambuf.s"><thead></a>
-		<tr>
-			<th colspan=3>vrambuf.s<br/><small class="refHeadDesc">VRAM Buffer Routines</small></th>
+			<th colspan=3>vrambuf.asm<br/><small class="refHeadDesc">VRAM Buffer Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
