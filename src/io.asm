@@ -1,4 +1,4 @@
-; freemco NES Corelib | shared I/O code
+; freemco NES Corelib | io.asm - shared I/O code
 ;==============================================================================;
 ; Code for io_readJoy and io_readJoySafe comes from
 ; http://wiki.nesdev.com/w/index.php/Controller_Reading
@@ -44,16 +44,16 @@ io_readJoySafe:
 
 	; read pads first time around
 	jsr io_readJoy
-	lda tmp00			; player 1
-	sta tmp02
-	lda tmp01			; player 2
-	sta tmp03
+	lda tmp00			; get player 1
+	sta tmp02			; store first P1 read
+	lda tmp01			; get player 2
+	sta tmp03			; store first P2 read
 	jsr io_readJoy		; read again
 
 	ldx #1
 @fixKeys:
-	lda tmp00,x
-	cmp tmp02,x
+	lda tmp00,x			; get new P1/P2 read
+	cmp tmp02,x			; compare with first P1/P2 read
 	bne @keepLastPress
 	sta pad1State,x
 
