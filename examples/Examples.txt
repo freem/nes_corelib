@@ -1,10 +1,7 @@
 freemco NES Corelib Examples
 ============================
 A number of example projects for the freemco NES Corelib are included.
-The projects use relative paths to the corelib source files, which means you'll
-want to edit those paths if you're working on them in a different place. Sorry!
-
-Aside from the corelib files, each project is meant to be self-contained.
+Each project is meant to be self-contained, including the necessary corelib files.
 
 The examples are meant to be short, while trying to show enough possibilities of
 what can be done.
@@ -28,7 +25,7 @@ A skeleton setup (NROM), used for the other examples.
 NES palette basics.
 
 [04_inputBasics]
-Basic introduction to input handling (regular controllers only).
+Basic introduction to input handling (two regular controllers only).
 
 Other examples are yet to be thought of...
 * Nametable stuff (e.g. using unrle, updating the BG)
