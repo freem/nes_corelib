@@ -1,10 +1,15 @@
 freemco NES Corelib
 ===================
 The freemco NES Corelib is a set of routines for coding stuff on the NES.
+As far as I know, there's no real "library" for coding NES games in ASM...
+Every project has their own version of the same code (and rightfully so; some
+games need different routines than others).
 
-However, this hasn't been tested on real hardware, and it's nowhere near complete.
+However, this hasn't been tested on real hardware, as I've got no way to run
+the code on the console at the moment. Furthermore, this library is nowhere near
+complete.
 
-If you're not me, good luck.
+If you're not me, good luck using it.
 
 -freem
 
@@ -24,6 +29,6 @@ There's a lot of things to do, but here are some main ones:
 - "VRAM Buffer" routines not yet complete
 - Missing a lot of functionality.
 
-## "If it's this incomplete, why are you opening the source?"
-I needed an external kick in the ass to make this library happen, and two projects I'm working on for the [2014 NESDev compo](http://nesdevcompo.nintendoage.com/contest14/) aren't enough. ;)
-As far as I know, there's no real "library" for coding NES games in ASM... Every project has their own version of the same code (and rightfully so; some games need different routines than others).
+## Contributions
+I am open to allowing external contributions, especially if you fix something
+that wasn't working on real hardware.
