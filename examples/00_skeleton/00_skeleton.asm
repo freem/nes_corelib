@@ -58,7 +58,7 @@ Reset:
 	ldx #$40
 	stx APU_FRAMECOUNT		; disable APU frame IRQ
 	ldx #$FF
-	txs						; set up stack
+	txs						; set up stack at $01FF
 	inx						; (X is now $00)
 	stx PPU_CTRL			; disable NMIs
 	stx PPU_MASK			; disable rendering

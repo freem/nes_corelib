@@ -112,6 +112,8 @@ Reset:
 
 	; at this point, you can start setting up your program.
 
+	; todo: make sure the PPU is on +1 increments
+
 	; in our case, we're going to set up a simple palette...
 	ldx #$3F					; the Palette begins at PPU address $3F00.
 	ldy #$00
