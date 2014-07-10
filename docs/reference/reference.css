@@ -98,6 +98,11 @@ h5{
 	padding-bottom:0;
 }
 
+div.centeredImage{
+	width: 100%;
+	text-align: center;
+}
+
 table.referenceTable{
 	border-spacing: 0px;
 	width: 100%;
@@ -132,3 +137,9 @@ td.tableFooter{
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 }
+
+td.ntsc_00{ background-color:#656565; color:#FFF; }
+td.ntsc_01{ background-color:#002B9B; color:#FFF; }
+td.ntsc_02{ background-color:#110EC0; color:#FFF; }
+td.ntsc_03{ background-color:#3F00BC; color:#FFF; }
+td.ntsc_04{ background-color:#66008F; color:#FFF; }
