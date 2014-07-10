@@ -17,6 +17,7 @@
 ; program code
 .org $C000					; starting point for NROM-128
 
+; include freemco corelib files here, before any data
 	.include "corelib/oam.asm"	; freem Corelib OAM (Sprite) routines [excerpt]
 
 ; ["Hello World" sprite tiles]
@@ -299,7 +300,7 @@ Reset:
 
 	; "World" will be displayed via freemco Corelib OAM functionality.
 
-	; first via manual writes
+	; first, via manual writes:
 	lda #11
 	ldx spr_yPos_Top2
 	jsr oam_setEntryY
@@ -350,7 +351,7 @@ Reset:
 	ldx spr_xPos_05
 	jsr oam_setEntryX
 
-	; then via oam_setEntryData
+	; then, via oam_setEntryData:
 	lda #<sprDataBot_W
 	sta tmp00
 	lda #>sprDataBot_W
