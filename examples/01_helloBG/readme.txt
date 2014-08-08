@@ -10,6 +10,7 @@ like a "proper" program! We'll get to that in another example, though.
 [Files]
 _c.bat				Batch file for compiling with asm6
 01_helloBG.asm		Main source file
+Makefile			Makefile for compiling with asm6
 nes.inc				NES system defines
 NROM-128.asm		Header for iNES Mapper 000, NROM-128 configuration
 ram.inc				Program RAM defines
