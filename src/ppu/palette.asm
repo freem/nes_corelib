@@ -53,6 +53,8 @@ ppu_XferFullPalToPPU:
 	cpy #$20			; 32 bytes
 	bne @loop
 
+	rts
+
 ;==[Palette Buffer Routines]===================================================;
 ; ppu_palBufToPPU
 ; Transfers data from the Palette Buffer to the PPU. Clobbers A,X,Y.
