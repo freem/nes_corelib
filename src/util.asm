@@ -53,6 +53,7 @@
 ; delay
 ; Delays for a number of milliseconds (equiv. to 1790*(Y+5) cycles).
 ; (1790 is somehow derived from the 1.79MHz of the 2A03/6502.)
+; xxx: the jsr and rts are not included in the above calculation... are they?
 
 ; Params:
 ; Y				Number of milliseconds to delay.
