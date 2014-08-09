@@ -1,4 +1,4 @@
-; freemco NES Corelib | ppu/palette.s
+; freemco NES Corelib | ppu/palette.asm
 ; PPU functionality, focusing specifically on Palettes.
 ;==============================================================================;
 ; [Quick Overview]
@@ -74,8 +74,30 @@ ppu_palBufToPPU:
 	bne @loop
 
 	rts
+
 ;------------------------------------------------------------------------------;
-; routine for transferring a set of bytes to the palette buffer.
-; params: location hi, location lo, number of bytes, start position
+; ppu_dataToPalBuf
+; Routine for transferring a set of bytes to the palette buffer.
+
+; Params:
+; A				number of bytes to transfer
+; X				position in palette buffer to begin writing at
+; tmp00			data location hi
+; tmp01			data location lo
+
+ppu_dataToPalBuf:
+	sta tmp02
+
+	ldy #0
+@loop:
+	lda (tmp00),y
+	sta palBufData,x
+	inx					; next position in pal buffer
+	iny					; next position in pal data
+	cpy tmp02			; check if we've reached the end
+	bne @loop
+
+	rts
+
 ;------------------------------------------------------------------------------;
 
