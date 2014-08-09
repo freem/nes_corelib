@@ -25,7 +25,7 @@
 		tmp0F			.dsb 1, $00
 	.ende
 
-	; $10-??: System Variables
+	; $10-$2F: System Variables
 	.enum $0010
 		vblanked			.dsb 1			; are we in vblank?
 		frameCount			.dsw 1			; frame counter
@@ -63,6 +63,9 @@
 		randSeed8			.dsb 1,$00		; random number seed for 8-bit randgen
 		randSeed16			.dsw 1,$0000	; random number seed for 16-bit randgen
 	.ende
+
+	; Free zero page space begins at $30, though there might be some holes
+	; in the System Variables section, depending on if you're using 4 players.
 
 	; tokumaru's tile decompression code vars at $C0-$DF
 	; mapper-specific variables typically at $E0-$EF (use more space if needed?)
