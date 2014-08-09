@@ -13,7 +13,7 @@ or you can download my fork, which includes sonder's FCEUX .nl-exporting code:
 https://github.com/freem/asm6f/
 
 [00_skeleton]
-A skeleton setup (NROM), used for the other examples.
+A skeleton setup (NROM), used for most of the other examples.
 
 [01_helloBG]
 "Hello World" on the background layer.
@@ -30,11 +30,12 @@ Basic introduction to input handling (two regular controllers only).
 Other examples are yet to be thought of... These are in no particular order.
 
 <Basic/Intro>
-* Metasprites
 * Nametable stuff (e.g. using unrle, updating the BG)
+* Metasprites
 * Basic Scrolling (across two screens)
 * Basic Mappers (e.g. anything less complex than MMC1)
 * CHR-RAM Basics
+* Palette buffering (will also have color cycling example)
 
 <Intermediate>
 * Scrolling (across multiple screens)
@@ -50,3 +51,4 @@ Other examples are yet to be thought of... These are in no particular order.
 * Raster effects
 * Extending VBlank (by shutting off the PPU at the right times)
 * Advanced Mappers (e.g. MMC5, etc.)
+* Mid-frame palette changes
