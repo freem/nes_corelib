@@ -153,25 +153,6 @@ ppu_resetPalNTPos:
 ; These used to live elsewhere but fuck it, they do shit with the PPU,
 ; so they probably belong here.
 ;==============================================================================;
-; waitNMI
-; Waits for an NMI to be fired.
-; This code MIGHT belong somewhere else, I'm not sure.
-
-waitNMI:
-	bit PPU_STATUS
-
-	; do actual NMI wait
-	lda #0
-	sta vblanked		; set vblank to 0 since nmi will update it
-
-@waitNMILoop:
-	lda vblanked
-	beq @waitNMILoop
-
-	; at the end of NMI
-
-	rts
-;==============================================================================;
 ; ppu_enableNMI
 ; Enable NMIs.
 
@@ -181,6 +162,7 @@ ppu_enableNMI:
 	sta int_ppuCtrl
 	sta PPU_CTRL
 	rts
+
 ;==============================================================================;
 ; ppu_disableNMI
 ; Used to quickly disable NMIs from the PPU.
