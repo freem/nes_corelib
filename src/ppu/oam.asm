@@ -1,4 +1,4 @@
-; freemco NES Corelib | ppu/oam.s
+; freemco NES Corelib | ppu/oam.asm
 ; PPU functionality, focusing specifically on OAM (Sprites).
 
 ; Sprites live at $0200-$02FF. (This can be changed)
