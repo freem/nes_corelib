@@ -114,7 +114,6 @@
 
 ; include freemco corelib files here, before any data
 	.include "corelib/palette.asm"	; freem Corelib Palette routines [excerpt]
-	.include "corelib/oam.asm"		; freem Corelib OAM (Sprite) routines [excerpt]
 
 ; [Palette Data]
 ; We were manually writing the palette data to the PPU in the previous two
@@ -135,10 +134,6 @@ palData:
 strPalettes:		.db "Palettes"
 strBackground:		.db "Background"
 strSprites:			.db "Sprites"
-
-; [Sprite data]
-; All sprites are 16x16 blocks.
-; Most sprites are similar, but the palette and position will be different.
 
 ;==============================================================================;
 ; NMI
