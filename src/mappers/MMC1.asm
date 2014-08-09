@@ -9,7 +9,7 @@
 	;curBankCHR1	.dsb 1, $00		; current CHR-ROM Bank (1)
 .ende
 
-;==[MMC1 Register defines]=============f========================================;
+;==[MMC1 Register defines]=====================================================;
 ; load register ($8000-$FFFF)
 MMC1_Load	= $8000
 ; 7654 3210
@@ -79,6 +79,8 @@ MMC1_Prg	= $E000
 ; +-------- PRG RAM chip enable (0: enabled; 1: disabled; ignored on MMC1A)
 
 ;==[MMC1 Routines]=============================================================;
+; I'm not sure how many of these are good, so be careful when using them.
+
 ; MMC1_WriteControl
 ; Writes data to the MMC1 Control Register ($8000-$9FFF).
 
