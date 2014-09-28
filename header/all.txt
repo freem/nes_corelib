@@ -7,6 +7,9 @@ References:
 * FCEUX source code
 * http://wiki.nesdev.com/w/index.php/NES_2.0_submappers
 * http://blog.kevtris.org/blogfiles/nes/submappers.txt
+
+References to look over later:
+* MESS source code (emu/bus/nes/*)
 ==============================================================================
 000		NROM
   000.1		NROM with battery-backed WRAM (Family Basic)
@@ -18,8 +21,9 @@ References:
 002		UxROM
 003		CNROM
 004		MMC3 (TxROM) (also MMC6; HKROM)
-  004.1		MMC6
-  004.2		MMC3 with hardware mirroring
+  004.1		Uses/Requires MC-ACC
+  004.2		Requires MMC3C
+  004.3		Game works fine with MMC3A and MMC3C
 005		MMC5 (ExROM)
 006		[BAD] FFE bullshit
 007		AxROM
@@ -30,8 +34,8 @@ References:
 ------------------------------------------------------------------------------
 010		MMC4 (FxROM)
 011		Color Dreams (74*377)
-013		CPROM
 012		REX DBZ 5
+013		CPROM
 014		REX SL-1632 (MMC3)
 015		100-in-1 Contra Function 16
 016		Bandai LZ93D50 + 24C02; Bandai FCG-1,FCG2
@@ -43,7 +47,7 @@ References:
 019		Namco 129/163
   019.1		Mindseeker
 ------------------------------------------------------------------------------
-020		[BAD] Famicom Disk System
+020		[BAD] Famicom Disk System (could also be seen as FDS RAM Adaptor?)
 021		Konami VRC4 (a/c)
 022		Konami VRC2a
 023		Konami VRC4 (e/f), VRC2b
@@ -126,7 +130,7 @@ References:
   FCEUX lists this as "Yoko VRC Rev. B".
   Nestopia also assigns BMC_DRAGONBOLLPARTY to mapper 83. (Mapper 083.2?)
   083.1		Cony with 2K CHR-ROM banks
-  083.2		Cony with 4-bit 256K CHR/PRG bank selection, battery-backed WRAM, one byte of RAM at $5103
+  083.2		Cony with 1K CHR-ROM banks, 4-bit 256K CHR/PRG bank selection, battery-backed WRAM, one byte of RAM at $5103
 084		(currently unassigned?)
 085		Konami VRC7
 086		Moero!! Pro Yakyuu
@@ -271,6 +275,8 @@ References:
 209		JY Company Type B
 ------------------------------------------------------------------------------
 210		Namco 175/340 (like N163 but w/hardwired mirroring)
+  210.1		N175 (hardwired mirroring, no IRQ)
+  210.2		N340 (1/H/V mirroring, no IRQ, no internal or external RAM)
 211		JY Company Type C
 212		Super HIK 300-in-1
 213		9999999-in-1
