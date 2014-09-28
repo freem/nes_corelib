@@ -13,11 +13,11 @@
 ; reset $2006." - tokumaru, http://forums.nesdev.com/viewtopic.php?p=84785#p84785
 
 ;==[External Routines]=========================================================;
-;.include "ppu/nametable.s"		; NameTable routines
-.include "ppu/oam.s"			; OAM (Sprite) routines
-.include "ppu/palette.s"		; Palette routines
-;.include "ppu/vrambuf.s"		; VRAM Buffer routines
-;.include "ppu/chr-ram.s"		; CHR-RAM routines
+;.include "ppu/nametable.asm"		; NameTable routines
+.include "ppu/oam.asm"			; OAM (Sprite) routines
+.include "ppu/palette.asm"		; Palette routines
+;.include "ppu/vrambuf.asm"		; VRAM Buffer routines
+;.include "ppu/chr-ram.asm"		; CHR-RAM routines
 
 ;==[PPU Register Routines]=====================================================;
 ; ppu_writeCtrl
