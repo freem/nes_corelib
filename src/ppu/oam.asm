@@ -118,6 +118,8 @@ oam_setEntryTile:
 ; oam_setEntryTile816
 ; Sets the tile index for the specified OAM entry for 8x16 sprite modes.
 
+; todo: make tile index selection more intuitive
+
 ; Params:
 ; A				OAM index
 ; X				new tile index (set as normal)
