@@ -30,6 +30,7 @@ ppu_clearPal:
 	bne @loop
 
 	rts
+
 ;------------------------------------------------------------------------------;
 ; ppu_XferFullPalToPPU
 ; Transfers 32 bytes of palette data to the PPU via $3F00.
