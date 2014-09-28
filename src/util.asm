@@ -50,6 +50,30 @@
 	tax
 .endm
 ;==============================================================================;
+; phx: Push X pseudo for NMOS 6502 (5 cycles, clobbers A)
+.macro phx
+	txa
+	pha
+.endm
+;==============================================================================;
+; phy: Push Y pseudo for NMOS 6502 (5 cycles, clobbers A)
+.macro phy
+	tya
+	pha
+.endm
+;==============================================================================;
+; plx: Pull X pseudo for NMOS 6502 (6 cycles, clobbers A)
+.macro plx
+	pla
+	tax
+.endm
+;==============================================================================;
+; ply: Pull Y pseudo for NMOS 6502 (6 cycles, clobbers A)
+.macro ply
+	pla
+	tay
+.endm
+;==============================================================================;
 ; delay
 ; Delays for a number of milliseconds (equiv. to 1790*(Y+5) cycles).
 ; (1790 is somehow derived from the 1.79MHz of the 2A03/6502.)
