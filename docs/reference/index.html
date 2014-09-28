@@ -24,10 +24,10 @@ they expose.
 <ul>
 <li><a href="./overview.html">Quick Overview</a> (includes <code>nes.inc</code> and <code>ram.inc</code>)</li>
 <li><a href="./ppu.html">PPU</a> (Graphics)</li>
-<li>APU (Sound)</li>
-<li>I/O (Controllers)</li>
-<li>Math</li>
-<li>Utilities</li>
+<li><a href="./apu.html">APU</a> (Sound)</li>
+<li><a href="./io.html">I/O</a> (Controllers)</li>
+<li><a href="./math.html">Math</a></li>
+<li><a href="./util.html">Utilities</a></li>
 <li>Mapper-Specific</li>
 <br/>
 <li>Appendix A: Palettes</li>
@@ -69,18 +69,22 @@ the .NET version lacks the Selection tool and the half-tone pattern tools.</p>
 <h4>NES Screen Tool</h4>
 <p>Shiru's <a href="http://shiru.untergrund.net/software.shtml">NES Screen Tool</a>
 allows you to interactively place tiles, change the palettes and attributes, and
-also edit the tiles if you need to. Works in Wine, if you're not on Windows.</p>
+also edit the tiles if you need to. Works in Wine, if you're not on Windows.
+(Unrelated to nametables, it also has a Metasprite builder, which you might find useful.)</p>
 
 <h3>Sounds and Music</h3>
-<p>By no means is this an exhaustive list.</p>
+<p>By no means is this an exhaustive list. This is blatantly missing various MML-based
+solutions. Do people still use NerdTracker 2?</p>
 
 <h4>Famitracker</h4>
-<p><a href="">Famitracker</a> is a very popular NES tracker that supports various sound extensions
-and has a playback engine available. This engine is good... if all you need to do
-is play music.</p>
+<p><a href="http://famitracker.com/">Famitracker</a> is a very popular NES tracker that supports various sound extensions
+and has a playback engine available. This engine is good for your games... if all
+you need to do is play music.</p>
 
 <h4>Muse</h4>
-<p><a href="http://kkfos.aspekt.fi/projects/nes/libraries/muse/">todo</a></p>
+<p>thefox has made a playback library called <a href="http://kkfos.aspekt.fi/projects/nes/libraries/muse/">MUSE</a>,
+which is more suited to NES games. Music data is exported from <a href="http://kkfos.aspekt.fi/projects/nes/tools/musetracker/">Musetracker</a>
+(formerly known as "Pornotracker", if you ever see references to that).</p>
 
 <h4>Famitone2</h4>
 <p>Shiru recently released an update to <a href="http://shiru.untergrund.net/code.shtml">Famitone</a>,
@@ -92,10 +96,13 @@ is available <a href="http://nintendoage.com/forum/messageview.cfm?catid=22&thre
 The sound engine I'm working on for the corelib is based off of this tutorial.</p>
 
 <h4>GradualGames's Engine</h4>
-<p><a href="http://forums.nesdev.com/viewtopic.php?t=6677">todo</a></p>
+<p>Derek Andrews of Gradual Games has <a href="http://forums.nesdev.com/viewtopic.php?f=6&t=11655">a sound engine</a>
+supporting four channels of music and two channels of sound effects.</p>
 
 <h4>bloopageddon</h4>
-<p>By ReaperSMS. <a href="http://average.truechiptilldeath.com/nesdev/bloopageddon.zip">todo</a></p>
+<p><a href="http://average.truechiptilldeath.com/nesdev/bloopageddon.zip">bloopageddon</a>
+by ReaperSMS is probably not fit for public consumption yet, based on the todo file.
+If you are brave enough, you might be able to do something with it.</p>
 
 <h4>SuperNSF</h4>
 <p><a href="http://svn.mukunda.com/supernsf/">todo</a></p>

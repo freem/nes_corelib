@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Math Routines | freemco NES Corelib Reference</title>
+<link rel="stylesheet" type="text/css" href="./reference.css" />
+</head>
+
+<body id="base">
+<div id="header">
+	<span class="headertext"><a href="./index.html">freemco NES Corelib</a></span>
+</div>
+
+<div id="content">
+<h1>Math Routines</h1>
+<p>Mathematical routines live here.</p>
+
+<h2>math.asm Function Reference</h2>
+<table class="referenceTable">
+	<thead>
+		<tr>
+			<th colspan=3>math.asm<br/><small class="refHeadDesc">Math Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>div_32</code></td>
+			<td class="refData">Divides a value by 32.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to divide
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>div_16</code></td>
+			<td class="refData">Divides a value by 16.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to divide
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>div_8</code></td>
+			<td class="refData">Divides a value by 8.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to divide
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>mul_32</code></td>
+			<td class="refData">Multiplies a value by 32.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to multiply
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>mul_16</code></td>
+			<td class="refData">Multiplies a value by 16.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to multiply
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>mul_8</code></td>
+			<td class="refData">Multiplies a value by 8.</td>
+			<td class="refData">
+				<strong>A</strong> - Value to multiply
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>add16</code></td>
+			<td class="refData">16-bit addition, by FMan. [<a href="http://www.codebase64.org/doku.php?id=base:16bit_addition_and_subtraction">Source</a>]<br/>
+			Returns low byte of result in <code>tmp04</code> and high byte of result in <code>tmp05</code>.</td>
+			<td class="refData">
+				<strong><code>tmp00</code></strong> - First number Low byte<br/>
+				<strong><code>tmp01</code></strong> - First number High byte<br/>
+				<strong><code>tmp02</code></strong> - Second number Low byte<br/>
+				<strong><code>tmp03</code></strong> - Second number High byte
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>mul_10</code></td>
+			<td class="refData">Fast Multiply by 10, by Leo Nechaev. [<a href="http://6502.org/source/integers/fastx10.htm">Source</a>]</td>
+			<td class="refData">
+				<strong>A</strong> - Value to multiply
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>modulus255</code></td>
+			<td class="refData">Fast modulus 255. [<a href="http://6502org.wikidot.com/software-math-fastmod">Source</a>]</td>
+			<td class="refData">
+				<strong><code>tmp00</code></strong> - Low byte<br/>
+				<strong><code>tmp01</code></strong> - High byte
+			</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>fastRand8</code></td>
+			<td class="refData">Fast 8-bit linear feedback shift register-based random number generator. [<a href="http://codebase64.org/doku.php?id=base:small_fast_8-bit_prng">Source</a>]</td>
+			<td class="refData">None</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+<div id="footer">
+<a href="https://github.com/freem/nes_corelib">freemco NES Corelib</a>, a product of <a href="http://freem.co/">freemco</a>.<br/>
+<small>freemco is not affiliated with Nintendo Co. Ltd. or any of its subsidaries.<br/>
+"Nintendo" and "Nintendo Entertainment System" are trademarks of Nintendo.</small>
+</div>
+</body>
+
+</html>

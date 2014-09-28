@@ -18,6 +18,9 @@
 the NES in assembly language.</p>
 
 <h2>nes.inc</h2>
+<p>These defines are mainly used by the library, but are provided in case you would
+like to perform hardware access without having to remember numbers as well. ;)</p>
+
 <table class="referenceTable">
 	<a name="nes.inc"><thead></a>
 		<tr>
@@ -34,12 +37,31 @@ the NES in assembly language.</p>
 		<tr>
 			<td class="refData"><code>PPU_CTRL</code></td>
 			<td class="refData">$2000</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">PPU Control<br/>
+<pre class="bitExplanation">76543210
+||||||||
+||||||++- Base nametable address (0=$2000; 1=$2400; 2=$2800; 3=$2C00)
+|||||+--- VRAM address increment (0=add 1; 1=add 32)
+||||+---- Sprite pattern table address for 8x8 sprites (0=$0000; 1=$1000; ignored in 8x16)
+|||+----- Background pattern table address (0=$0000; 1=$1000)
+||+------ Sprite size (0=8x8; 1=8x16)
+|+------- PPU Master/Slave select (0=backdrop from EXT pins; 1=output color on EXT pins)
++-------- Generate NMI at start of VBlank (0=off; 1=on)</pre></td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_MASK</code></td>
 			<td class="refData">$2001</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">PPU Mask<br/>
+<pre class="bitExplanation">76543210
+||||||||
+|||||||+- Grayscale (0=off; 1=on)
+||||||+-- Background in leftmost 8 pixels (0=hide; 1=display)
+|||||+--- Sprites in leftmost 8 pixels (0=hide; 1=display)
+||||+---- Background Display (0=off; 1=on)
+|||+----- Sprite Display (0=off; 1=on)
+||+------ Red Emphasis (NTSC)/Green Emphasis (PAL)
+|+------- Green Emphasis (NTSC)/Red Emphasis (PAL)
++-------- Blue Emphasis</pre></td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_STATUS</code></td>
@@ -64,7 +86,7 @@ the NES in assembly language.</p>
 		<tr>
 			<td class="refData"><code>PPU_ADDR</code></td>
 			<td class="refData">$2006</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">You must write this twice to fully set the address.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_DATA</code></td>
@@ -79,7 +101,7 @@ the NES in assembly language.</p>
 		<tr>
 			<td class="refData"><code>OAM_BUF</code></td>
 			<td class="refData">$0200</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">The OAM buffer lives at $0200 by default, though it does not have to.</td>
 		</tr>
 
 		<tr>
@@ -95,42 +117,42 @@ the NES in assembly language.</p>
 		<tr>
 			<td class="refData"><code>PPU_NT0</code></td>
 			<td class="refData">$2000</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of PPU Nametable 0.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_ATTRIB0</code></td>
 			<td class="refData">$23C0</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of PPU Nametable 0's attributes.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_NT1</code></td>
 			<td class="refData">$2400</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of  PPU Nametable 1.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_ATTRIB1</code></td>
 			<td class="refData">$27C0</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of PPU Nametable 1's attributes.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_NT2</code></td>
 			<td class="refData">$2800</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of  PPU Nametable 2.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_ATTRIB2</code></td>
 			<td class="refData">$2BC0</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of PPU Nametable 2's attributes.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_NT3</code></td>
 			<td class="refData">$2C00</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of  PPU Nametable 3.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_ATTRIB3</code></td>
 			<td class="refData">$2FC0</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Convienence alias for the address of PPU Nametable 3's attributes.</td>
 		</tr>
 
 		<tr>

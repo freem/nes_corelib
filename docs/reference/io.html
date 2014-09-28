@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>I/O Routines | freemco NES Corelib Reference</title>
+<link rel="stylesheet" type="text/css" href="./reference.css" />
+</head>
+
+<body id="base">
+<div id="header">
+	<span class="headertext"><a href="./index.html">freemco NES Corelib</a></span>
+</div>
+
+<div id="content">
+<h1>I/O (Controller) Routines</h1>
+<p>Anything that has to do with poking the NES I/O belongs here.</p>
+
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#io.asm"><code>io.asm</code></a></li>
+</ul>
+
+<h2>I/O Function Reference</h2>
+
+<a name="io.asm"><h3>io.asm</h3></a>
+<table class="referenceTable">
+	<thead>
+		<tr>
+			<th colspan=3>io.asm<br/><small class="refHeadDesc">Main I/O Routines</small></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="refHeader">Name</td>
+			<td class="refHeader">Description</td>
+			<td class="refHeader">Parameters</td>
+		</tr>
+
+		<tr>
+			<td class="refData"><code>io_readJoy</code></td>
+			<td class="refData">Reads Player 1 and 2 controllers (not DMC-fortified). Includes Famicom P3 and P4 controllers as P1 and P2.</td>
+			<td class="refData">None</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>io_readJoySafe</code></td>
+			<td class="refData">Reads Player 1 and 2 controllers (DMC-fortified). Includes Famicom P3 and P4 controllers as P1 and P2.</td>
+			<td class="refData">None</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+<div id="footer">
+<a href="https://github.com/freem/nes_corelib">freemco NES Corelib</a>, a product of <a href="http://freem.co/">freemco</a>.<br/>
+<small>freemco is not affiliated with Nintendo Co. Ltd. or any of its subsidaries.<br/>
+"Nintendo" and "Nintendo Entertainment System" are trademarks of Nintendo.</small>
+</div>
+</body>
+
+</html>

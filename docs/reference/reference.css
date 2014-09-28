@@ -133,9 +133,17 @@ td.refData{
 
 td.tableFooter{
 	height:1em;
-	background-color: #bbd;
+	background-color:#bbd;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
+}
+
+pre.bitExplanation{
+	background-color:#DDD;
+	padding-left:0.5em;
+	padding-right:0.5em;
+	padding-top:0.25em;
+	padding-bottom:0.25em;
 }
 
 td.ntsc_00{ background-color:#656565; color:#FFF; }
