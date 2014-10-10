@@ -13,6 +13,7 @@ NROM-128.asm			Header for iNES Mapper 000, NROM-128 configuration
 ram.inc					Program RAM defines
 readme.txt				This file!
 test.chr				Example CHR-ROM data.
+corelib/palette.asm		freemco NES Corelib Palette functionality
 
 ================================================================================
 [Setup]
@@ -69,20 +70,57 @@ pointer to the palette data in tmp00 and tmp01, then jsr ppu_XferFullPalToPPU.
 After resetting the PPU addresses, we draw some labels and lines with manual
 writes to the PPU. Then the fun begins!
 
+In the previous examples, the code has been pretty straightforward, and we
+haven't had a need for any macros. In the interest of de-duplicating code,
+there are two macros in this example: drawBgPalBox and drawSprPalBox.
+
 Many calls to drawBgPalBox are made, in order to draw the background tiles
 used to demonstrate the palettes. The arguments, in order, are as follows:
-tile to use, ppu address start high byte, ppu address start low byte, second ppu address low byte
+* tile to use
+* ppu address start high byte
+* ppu address start low byte
+* second ppu address low byte
 
-Now, if these were done by themselves, they'd still be using the first palette.
-In order to color them, we need to mess with the attribute data.
+Now, if this was all we did, all the swatches would be using the first palette.
+In order to color them properly, we need to mess with the attribute data.
 
-(todo)
+Attribute data on the NES is kind of tricky to deal with.
+Each byte of the attribute data deals with a 32x32 pixel section of the screen
+(aside from the bottom two rows), which is further divided into four 16x16
+sections. Each of these 16x16 sections can use one of the four background
+palette sets. This is very tricky to think about in practice.
+
+Where {} represents one byte and [] represents one 16x16px quadrant:
+{[A][B]
+ [C][D]}
+
+The value of each byte in the attribute data table follows this pattern:
+
+DDCCBBAA
+||||||||
+||||||++- Top left
+||||++--- Top right
+||++----- Bottom left
+++------- Bottom right
+
+The value of each of the two letter combinations, in binary:
+00		BG Palette 1
+01		BG Palette 2
+10		BG Palette 3
+11		BG Palette 4
+
+The NESdev wiki gives a simple equation for this:
+value = (topleft << 0) | (topright << 2) | (bottomleft << 4) | (bottomright << 6)
 
 With the attribute data out of the way, we can use the drawSprPalBox macro to
 draw various sprites. To create the equivalent of the background palette
 preview boxes, we'll need four 8x8 sprites.
 
 drawSprPalBox's arguments are as follows:
-starting sprite index, tile index, palette, x position, y position
+* starting sprite index
+* tile index
+* palette
+* x position
+* y position
 
 After that, the setup is complete and the example runs.

@@ -16,6 +16,7 @@ NROM-128.asm		Header for iNES Mapper 000, NROM-128 configuration
 ram.inc				Program RAM defines
 readme.txt			This file!
 test.chr			Example CHR-ROM data.
+corelib/oam.asm		freemco NES Corelib OAM (Sprite) functionality
 
 ================================================================================
 [Setup]
