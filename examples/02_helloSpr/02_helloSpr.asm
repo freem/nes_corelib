@@ -157,7 +157,7 @@ Reset:
 
 	; wait for the 2nd vblank
 @waitVBL2:
-	bit $2002
+	bit PPU_STATUS
 	bpl @waitVBL2
 
 	; at this point, you can start setting up your program.
