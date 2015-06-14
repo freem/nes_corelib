@@ -11,9 +11,15 @@ OAM_DMA			= $4014
 
 OAM_BUF			= $0200
 
-; pads
-JOYSTICK1		= $4016
-JOYSTICK2		= $4017
+; inputs
+.ifdef VS_SYSTEM
+	JOYSTICK2		= $4016
+	JOYSTICK1		= $4017
+	COIN_COUNTER	= $4020
+.else
+	JOYSTICK1		= $4016
+	JOYSTICK2		= $4017
+.endif
 
 ; nametable stuff
 PPU_NT0			= $2000
