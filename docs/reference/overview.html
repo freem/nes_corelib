@@ -66,7 +66,13 @@ like to perform hardware access without having to remember numbers as well. ;)</
 		<tr>
 			<td class="refData"><code>PPU_STATUS</code></td>
 			<td class="refData">$2002</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">PPU Status (also used as address latch for <code>PPU_SCROLL</code> and <code>PPU_ADDR</code>)<br/>
+<pre class="bitExplanation">76543210
+||||||||
+|||+++++- Least significant bits previously written into a PPU register
+||+------ Sprite Overflow flag
+|+------- Sprite 0 Hit flag
++-------- Vertical blank started? (0=not in vblank, 1=in vblank)</pre></td>
 		</tr>
 		<tr>
 			<td class="refData"><code>OAM_ADDR</code></td>
@@ -81,22 +87,23 @@ like to perform hardware access without having to remember numbers as well. ;)</
 		<tr>
 			<td class="refData"><code>PPU_SCROLL</code></td>
 			<td class="refData">$2005</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Scroll position. (values $00-$FF, though 239/$EF is the last "valid" vertical offset)</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_ADDR</code></td>
 			<td class="refData">$2006</td>
-			<td class="refData">You must write this twice to fully set the address.</td>
+			<td class="refData">PPU Address register. You must write this twice to fully set the address.
+			The first write sets the upper byte, and the second sets the lower byte.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_DATA</code></td>
 			<td class="refData">$2007</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">PPU Data port. Used to write to/read from the PPU.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>OAM_DMA</code></td>
 			<td class="refData">$4014</td>
-			<td class="refData">&nbsp;</td>
+			<td class="refData">Perform OAM DMA with data from <code>$XX00</code> &ndash; <code>$XXFF</code>.</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>OAM_BUF</code></td>
@@ -107,12 +114,17 @@ like to perform hardware access without having to remember numbers as well. ;)</
 		<tr>
 			<td class="refData"><code>JOYSTICK1</code></td>
 			<td class="refData">$4016</td>
-			<td class="refData">Player 1 pad input</td>
+			<td class="refData">Player 1 pad input. ($4017 if <code>VS_SYSTEM</code> is defined)</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>JOYSTICK2</code></td>
 			<td class="refData">$4017</td>
-			<td class="refData">Player 2 pad input</td>
+			<td class="refData">Player 2 pad input. ($4016 if <code>VS_SYSTEM</code> is defined)</td>
+		</tr>
+		<tr>
+			<td class="refData"><code>COIN_COUNTER</code></td>
+			<td class="refData">$4020</td>
+			<td class="refData">Vs. System coin counter. (only available if <code>VS_SYSTEM</code> is defined)</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>PPU_NT0</code></td>

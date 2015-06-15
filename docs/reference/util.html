@@ -19,57 +19,75 @@
 <table class="referenceTable">
 	<thead>
 		<tr>
-			<th colspan=3>util.asm<br/><small class="refHeadDesc">Utility Routines</small></th>
+			<th colspan=5>util.asm<br/><small class="refHeadDesc">Utility Routines</small></th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td class="refHeader">Name</td>
+			<td class="refHeader">Class</td>
 			<td class="refHeader">Description</td>
 			<td class="refHeader">Parameters</td>
+			<td class="refHeader">Notes</td>
 		</tr>
 
 		<tr>
 			<td class="refData"><code>b7c</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Transfer Bit 7 to Carry. (2 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>asr</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Arithmetic Shift Right (4 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>rsl</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Rotate Straight Left (4 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>neg</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Negate A (6 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>gbs</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Get Bits Set (6+ cycles; how many depends on how many branches) [<a href="http://6502org.wikidot.com/software-counting-bits">Source</a>]</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>txy</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Transfers X to Y, clobbering A. (4 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>tyx</code></td>
+			<td class="refData">Macro</td>
 			<td class="refData">Transfers Y to X, clobbering A. (4 cycles)</td>
 			<td class="refData">None</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="refData"><code>delay</code></td>
+			<td class="refData">Subroutine</td>
 			<td class="refData">Delays for a number of milliseconds (equivalent to 1790*(Y+5) cycles).</td>
 			<td class="refData">
 				<strong>Y</strong> - Number of milliseonds to delay
 			</td>
+			<td class="refData">&nbsp;</td>
 		</tr>
 	</tbody>
 </table>
