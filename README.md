@@ -24,11 +24,16 @@ Family Picross, as well as Bumpin' Cars.
 
 ## To Do
 There's a lot of things to do, but here are some main ones:
-- Private version of the code is further along but needs to be cleaned up, updated, and finished before release.
-- No APU/Sound support yet
-- "VRAM Buffer" routines not yet complete
+- Private version is further along but needs to be cleaned up, updated, and finished before release.
+- No APU/Sound support yet.
+- "VRAM Buffer" routines not yet complete.
 - Missing a lot of functionality.
+
+## License
+Aside from the half-joking statement in the license file, I have not decided on a
+proper license for this code. Currently leaning towards ISC, like the [freemlib for Neo-Geo](https://github.com/freem/freemlib-neogeo/),
+but open to suggestions that aren't the GPL.
 
 ## Contributions
 I am open to allowing external contributions, especially if you fix something
-that wasn't working on real hardware.
+that wasn't working on real hardware. See CONTRIBUTING.md for more information.
