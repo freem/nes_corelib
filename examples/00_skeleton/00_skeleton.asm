@@ -90,12 +90,16 @@ Reset:
 	ldx #0
 	lda #$FF
 @clearOAM:
-	sta $200,x
+	sta OAM_BUF,x
 	inx
 	inx
 	inx
 	inx
 	bne @clearOAM
+
+	; send sprite data to PPU
+	lda #2
+	sta OAM_DMA
 
 	; at this point, you can start setting up your program.
 
