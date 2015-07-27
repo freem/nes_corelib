@@ -6,6 +6,8 @@ drawing sprites on screen. Both raw writes and the freemco NES Corelib are
 used. As this is meant to be a basic "Hello World", the sprites don't move or
 do anything.
 
+(This code is broken; it's going to take me a bit to fix it, so please be patient.)
+
 ================================================================================
 [Files]
 _c.bat				Batch file for compiling with asm6
