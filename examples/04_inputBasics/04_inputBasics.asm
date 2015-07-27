@@ -406,6 +406,15 @@ Reset:
 	sty PPU_ADDR				; Reset overall PPU address 1/2
 	sty PPU_ADDR				; Reset overall PPU address 2/2
 
+	; clear first nametable's data
+	ldx #$20
+	ldy #$00
+	stx PPU_ADDR
+	sty PPU_ADDR
+.rept (32*30)+64
+	sty PPU_DATA
+.endr
+
 	; draw controllers
 
 	; "Player 1" text

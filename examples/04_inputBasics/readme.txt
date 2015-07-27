@@ -3,6 +3,9 @@ freemco NES Corelib Example 04: Input Basics
 [Introduction]
 The fourth example in the series introduces the basics of handling input.
 
+(todo: this code isn't perfect; the PPU scroll is blehh just before starting,
+plus there is sprite garbage)
+
 ================================================================================
 [Files]
 _c.bat					Batch file for compiling with asm6
