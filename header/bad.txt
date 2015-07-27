@@ -3,18 +3,54 @@ Looking for these mappers? You won't find them here!!
 006		FFE bullshit
 008		FFE bullshit
 017		FFE bullshit
-020		fake Famicom Disk System
+020		Famicom Disk System RAM Adapter
 084		Reportedly "PC-SMB2J" used by "SMBJ2"
 100		see note below
 101		naïve misdumping of JF-10
 151		Vs. System VRC1
 248		mistakenly assigned to Chinese games that run on mapper 115.
 
+--------------------------------------------------------------------------------
+["FFE bullshit"]
+These are only useful if you happen to have an old copier. If you really need
+more information, please see http://wiki.nesdev.com/w/index.php/INES_Mapper_006
+
+--------------------------------------------------------------------------------
+[Mapper 020]
+Emulators take various paths in emulating the FDS BIOS. Mapper 20 is typically
+only used interally by emulators to indicate that they're running FDS games.
+
+--------------------------------------------------------------------------------
+[Mapper 084]
+from http://wiki.nesdev.com/w/index.php/INES_Mapper_084 :
+"Details are unknown (maybe meant to be same FDS port as Mapper 40 or 50).
+At some point, FCEUX lost support for this."
+
+--------------------------------------------------------------------------------
 [Mapper 100]
 Different emulators treat mapper 100 differently. Most don't support it.
 
 Nestopia v1.4.0 uses it as a magic number to mean "anything whose dumps only
 exist as UNIF (and therefore has no iNES mapper number assigned)".
 
-Nintendulator uses it as a general-purpose debugging mapper, allowing PRG and
-CHR banks to be selected via a dialog.
+"Nintendulator uses it as a general-purpose debugging mapper, allowing PRG and
+CHR banks to be selected via a dialog."
+
+The "MMC3/Nestice/Trainer/Buugy Mode Used in hacked roms !!" phrase found in
+modern documentation comes from the fwNES readme(1).
+
+--------------------------------------------------------------------------------
+[Mapper 101]
+Similar to mapper 087.
+
+--------------------------------------------------------------------------------
+[Mapper 151]
+Use mapper 075 with the VS. System bit set instead.
+
+--------------------------------------------------------------------------------
+[Mapper 248]
+Mistakenly used for games that belong on mapper 115.
+
+--------------------------------------------------------------------------------
+References
+(1) http://www.retrogames.com/console/nes/readme/fwnes302.txt

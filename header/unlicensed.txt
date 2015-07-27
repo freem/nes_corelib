@@ -1,13 +1,13 @@
 "Unlicensed" is relative to officially licensed companies.
 I consider these different from the mappers in pirate.txt because they have
-publisher logos on the NESdev Wiki's Mapper page. Technically, though, some
+publisher logos on the NESdev Wiki's Mapper page(1). Technically, though, some
 (or most) of these games are pirates. Tengen black carts are considered
 unlicensed for the purposes of this file.
 
 [Single Entry]
-011		Color Dreams
 038		(gradiente) Crime Busters (BR)
 144		(AGCI) Death Race (U)
+156		(Daou) Open Corp. Daou 306
 168		(RacerMate) RacerMate Challenge II
 228		(Active) Action 52
 
@@ -30,6 +30,10 @@ the king of pirate mappers
 245		Waixing MMC3 Type H
 249		Waixing w/Security
 252		San Guo Zhi Pirate
+
+[Color Dreams, Wisdom Tree]
+011		Color Dreams
+046		GameStation/RumbleStation
 
 [American Video Entertainment]
 034.1	NINA-001
@@ -73,6 +77,9 @@ the king of pirate mappers
 104		Camerica Golden Five
 232		Quattro Multicarts
 
+[Cony]
+083		Cony Standard
+
 [JY Company]
 090		No extended Nametable control (e.g. Super Mario World, Tekken 2, etc.)
 091		MMC3-like with odd IRQ (e.g. Street Fighter 3)
@@ -106,3 +113,5 @@ second to waixing in number of mappers.
 240		(C&E) e.g. "Jing Ke Xin Zhuan", "Sheng Huo Lie Zhuan"
 244		(C&E) e.g. "Decathlon"
 246		(C&E) e.g. "Fong Shen Bang - Zhu Lu Zhi Zhan"
+
+(1) http://wiki.nesdev.com/w/index.php/Mapper

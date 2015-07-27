@@ -1,18 +1,15 @@
 Gee there sure are a lot of pirate mappers.
-The NESdev wiki Mapper page is the base reference for this list; chosen mappers
+The NESdev wiki Mapper page(1) is the base reference for this list; chosen mappers
 either have a skull and crossbones logo or a "generic" block icon.
 
 References:
 http://cah4e3.shedevr.org.ru/fceultra.php
 
 [Generic Blocks]
-012		REX DBZ 5
 027		CC-21 MI HUN CHE (was UNL_WORLDHERO, VRC4 variant)
-046		GameStation/RumbleStation
 054		BMC_NOVELDIAMOND
 059		T3H53
 063		Hello Kitty 255 in 1
-083		Cony Standard
 103		BTL_2708
 107		Magic Dragon
 108		FDS UNROM Board (WHIRLWIND_2706)
@@ -21,7 +18,6 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 120		FDS Tobidase Daisakusen
 121		Pirate Prot. A (MMC3)
 123		Pirate H2288 (MMC3)
-156		Open Corp. Daou 306
 170		Fujiya Standard
 177		Henggedianzi Standard
 179		Henggedianzi XJZB
@@ -32,8 +28,8 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 220		(emulator-specific?) FCEUX has "Debug Mapper" (UNLKS7057)
 221		UNL_N625092
 222		BTL_DragonNinja
-227		1200-in-1
-250		Time Diver Avenger (MMC3 Variant)
+227		1200-in-1, [NJXXX] Xiang Shuai Chuan Qi????
+250		Time Diver Avenger (MMC3 variant)
 253		"[ES-1064] Qi Long Zhu (C)" and "Shen Hua Jian Yun III (Ch)"
 254		BTL_PikachuY2K
 
@@ -50,13 +46,12 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 058		68-in-1 (Game Star), Study and Game 32-in-1
 060		Reset Based 4-in-1
 062		Super 700-in-1
-107		Magic Dragon
 125		"Monty on the Run (FDS hack)"
 126		
 162		"Xi You Ji Hou Zhuan (Ch)"
 183		
 187		
-196		
+196		"Super Mario Bros. 17" (MMC3 variant)
 197		
 200		1200-in-1, 36-in-1
 201		8-in-1, 21-in-1 (2006-CA) (Unl)
@@ -69,7 +64,6 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 215		(same as UNIF 8237)
 217		new discrete BMC mapper
 225		52 Games, 58-in-1, 64-in-1
-227		[NJXXX] Xiang Shuai Chuan Qi
 226		76-in-1, Super 42-in-1
 229		
 230		22-in-1
@@ -77,9 +71,11 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 233		42-in-1 multicart
 235		
 236		
+237		"Teletubbies 420-in-1 multicart"
 255		
 
 [Pirate MMC3]
+012		REX DBZ 5
 014		Samurai Spirits (Rex Soft)
 044		Super Big 7-in-1 (Multicart)
 045		Super 8-in-1, Super 4-in-1, Super 1000000-in-1 (Multicart)
@@ -90,3 +86,5 @@ http://cah4e3.shedevr.org.ru/fceultra.php
 182		Pocahontas, Super Donkey Kong (removed, redefined to 114 by CRC check)
 205		15-in-1, 3-in-1 (Multicart)
 238		BTL_6035052
+
+(1) http://wiki.nesdev.com/w/index.php/Mapper
