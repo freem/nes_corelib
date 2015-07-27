@@ -112,9 +112,13 @@ Reset:
 
 	; at this point, you can start setting up your program.
 
-	; todo: make sure the PPU is on +1 increments
+	; make sure the PPU is on +1 increments
+	lda int_ppuCtrl
+	and #%11111011
+	sta int_ppuCtrl
+	sta PPU_CTRL
 
-	; in our case, we're going to set up a simple palette...
+	; set up a simple palette
 	ldx #$3F					; the Palette begins at PPU address $3F00.
 	ldy #$00
 	stx PPU_ADDR				; write new PPU address 1/2
@@ -133,6 +137,19 @@ Reset:
 	sty PPU_ADDR				; Reset palette PPU address 2/2
 	sty PPU_ADDR				; Reset overall PPU address 1/2
 	sty PPU_ADDR				; Reset overall PPU address 2/2
+
+	; clear first nametable's data
+	ldx #$20
+	ldy #$00
+	stx PPU_ADDR
+	sty PPU_ADDR
+.rept (32*30)+64
+	sty PPU_DATA
+.endr
+
+	; send sprite data to PPU
+	lda #2
+	sta OAM_DMA
 
 	; and then write the "Hello World!" string to the screen.
 

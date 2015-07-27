@@ -59,12 +59,13 @@ these examples are meant to be simple, and I'm super lazy.
 <NMI>
 The NMI is a very important part of NES development. Though it's called a
 "non-maskable interrupt", it's possible to mask NMIs on the NES via a PPU write.
+(This is not recommended; todo: add note from NESDev wiki)
 
 The reason NMI is important is that it's guaranteed to run once per frame, so
 long as it's not disabled.
 
 It's important to note that "NMI" and "VBlank" are not interchangeable terms,
-as the NMI can run well outside of the VBlank period.
+as the NMI can run well outside of the VBlank period if too much is going on.
 
 In this demo, the NMI doesn't do much.
 1) Save the A,X,Y registers (since we could be in the middle of anything).
@@ -88,7 +89,7 @@ The code does a much better job of explaining the Reset process than I can write
 here.
 
 It should be noted that the "at this point, you can start setting up your program"
-comment might move around in other examples...
+comment might move around in the other examples.
 
 ================================================================================
 [Process]
@@ -102,9 +103,13 @@ In order to have anything visible on the screen, we'll need to write some
 palette data. The palette is 32 bytes long, but we only need to write four of
 them in this example. Writing to the palette involves doing some PPU writes.
 
-First, we need to set the PPU's address to $3F00, which is where the palettes
-begin. This is done by writing to PPU_ADDR twice, with the values in little
-endian format (unlike the rest of the NES!).
+Before doing anything, we need to ensure the PPU is using +1 increment. If this
+isn't set, the PPU will jump 32 bytes between PPU locations, which will be
+awkward for palette writes.
+
+In order to write the palettes, we need to set the PPU's address to $3F00, which
+is where the palette data begins. This is done by writing to PPU_ADDR twice, with
+the values in little endian format (unlike the rest of the NES/6502!).
 
 Once the PPU address is set, we can just write bytes to PPU_DATA, which will put
 them into the Palette.
@@ -121,12 +126,37 @@ What we're about to do is not going to work during a game, since rendering is
 unlikely to be turned off. However, since rendering is off in our setup, and
 this example is simple, we can get away with writing to the nametable now.
 
+Before doing anything, we need to ensure the memory in the Nametable section
+is cleared. There's a small looking section of code that expands to a large
+amount of PPU data writes. The 32*30 represents the main nametable area,
+while the 64 represents the attribute area.
+
+We also need to ensure that the sprite data we cleared above gets sent to the
+PPU, so there's a quick write to OAM_DMA just after clearing the nametable data.
+
 Like the palette setup before, we need to set the PPU_ADDR. This time, I've
 picked a cell location of (x10,y15) for the text to begin. The PPU needs these
 values converted to an address, so let's explain how this maps out.
 
 The NES background layer consists of multiple 8x8 tiles, and each location
 represents a point on this map. For example, (x0,y0) is $2000, (x1,y0) is $2001,
-(x0,y1) is $2020, and so on.
+(x0,y1) is $2020, and so on. From there, to get a PPU address from coordinates,
+it's simple multiplication (in hex, anyways.)
+
+After setting the PPU address, there's a small loop to write the "Hello World!"
+string from above to the PPU.
+
+Once that's finished, we ensure the PPU has the correct scroll values, as well
+as the PPU address itself, for extra measure.
+(note to self: look into this to see if this is required and/or good practice)
+
+In order to display anything, we need to re-enable the NMIs and turn the PPU
+back on. Sprites will be loaded from $1000-$1FFF in CHR data (the right side
+in various emulator's CHR viewers).
+
+We have finally reached the main loop. Since this example has the majority of
+the setup complete, there's not much we need to do in the main loop. Still,
+there are some comments placed which allow you to separate out the periods of
+the main loop.
 
 (todo: finish this)
