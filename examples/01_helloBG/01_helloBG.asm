@@ -130,8 +130,8 @@ Reset:
 	sta PPU_DATA				; write white palette value to PPU data
 	lda #$10					; Color $10 is a light gray.
 	sta PPU_DATA				; write white palette value to PPU data
-	lda #$00					; Color $00 is a dark gray.
-	sta PPU_DATA				; write white palette value to PPU data
+	; write to the PPU using the value in Y; Color $00 is a dark gray.
+	sty PPU_DATA				; write white palette value to PPU data
 
 	stx PPU_ADDR				; Reset palette PPU address 1/2
 	sty PPU_ADDR				; Reset palette PPU address 2/2
