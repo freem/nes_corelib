@@ -2,6 +2,8 @@
 ; http://bootgod.dyndns.org:7777/profile.php?id=3869
 ; http://wiki.nesdev.com/w/index.php/INES_Mapper_180
 ;------------------------------------------------------------------------------;
+; In this mapper, the fixed bank is at $8000-$BFFF, as opposed to $C000-$FFFF.
+
 ; UNROM mirroring is hardwired via solder pads.
 		  ; %0000 = Horizontal
 		  ; %0001 = Vertical
