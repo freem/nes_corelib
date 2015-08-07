@@ -3,7 +3,7 @@
 ; Used only for StarTropics and StarTropics II.
 ; (todo: use NES 2.0 mapper 004.1; remember to use 1024 bytes for SRAM)
 ;------------------------------------------------------------------------------;
-; HKROM mirroring is handled by MMC3.
+; HKROM mirroring is handled in the same fashion as MMC3.
 		  ; %0000 = Horizontal
 		  ; %0001 = Vertical
 MIRRORING = %0001
