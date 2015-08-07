@@ -1,5 +1,5 @@
 This is all of the currently known iNES mappers. UNIF mappers are in unif.txt.
-iNES v2.0 submapper variants are included where known.
+NES 2.0 submapper variants are included where known.
 
 References:
 * Nestopia source code

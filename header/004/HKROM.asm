@@ -1,7 +1,7 @@
 ; HKROM: (! MMC6 !) 256KB PRG-ROM + 8KB PRG-RAM + 256KB CHR-ROM
 ; http://bootgod.dyndns.org:7777/search.php?keywords=HKROM&kwtype=pcb
 ; Used only for StarTropics and StarTropics II.
-; (todo: use iNES v2.0 mapper 004.1; remember to use 1024 bytes for SRAM)
+; (todo: use NES 2.0 mapper 004.1; remember to use 1024 bytes for SRAM)
 ;------------------------------------------------------------------------------;
 ; HKROM mirroring is handled by MMC3.
 		  ; %0000 = Horizontal

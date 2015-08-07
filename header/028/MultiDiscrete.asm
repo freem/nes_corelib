@@ -7,7 +7,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0000
 
-; Mapper 028 (Multi-discrete) iNES v2.0 header
+; Mapper 028 (Multi-discrete) NES 2.0 header
 	.byte "NES",$1A
 	.byte $20				; 32x 16K PRG banks
 	.byte $00				; CHR-RAM

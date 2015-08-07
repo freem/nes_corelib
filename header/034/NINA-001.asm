@@ -1,14 +1,14 @@
 ; NINA-001: 64KB PRG-ROM + 8KB PRG-RAM + 32KB CHR-ROM
 ; http://bootgod.dyndns.org:7777/search.php?unif=AVE-NINA-01
 
-; todo: use iNES v2.0 submapper 034.1 instead
+; todo: use NES 2.0 submapper 034.1 instead
 ;------------------------------------------------------------------------------;
 ; BNROM mirroring is hardwired via solder pads.
 		  ; %0000 = Horizontal
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 034.1 (NINA-001) iNES v2.0 header
+; Mapper 034.1 (NINA-001) NES 2.0 header
 	.byte "NES",$1A
 	.byte $04				; 4x 16K PRG banks
 	.byte $04				; 4 8K CHR banks

@@ -1,7 +1,7 @@
 ; SXROM: (128,256KB,512)PRG-ROM + 32KB PRG-RAM + 8KB CHR-RAM/ROM
 ; http://bootgod.dyndns.org:7777/search.php?keywords=SXROM&kwtype=pcb
 
-; todo: iNES v2.0 Mapper 001.4 for Final Fantasy 1 & 2 (512K PRG-ROM)
+; todo: NES 2.0 Mapper 001.4 for Final Fantasy 1 & 2 (512K PRG-ROM)
 ;------------------------------------------------------------------------------;
 ; number of 16K PRG banks
 ; Valid configurations: $08 (128K), $10 (256K), $20 (512K)

@@ -1,4 +1,4 @@
-; HVC-FAMILYBASIC: 32KB PRG-ROM + 8KB PRG-RAM + 8KB CHR-ROM (iNES v2.0)
+; HVC-FAMILYBASIC: 32KB PRG-ROM + 8KB PRG-RAM + 8KB CHR-ROM (NES 2.0)
 ; http://bootgod.dyndns.org:7777/search.php?unif=HVC-FAMILYBASIC
 ;------------------------------------------------------------------------------;
 ; NROM mirroring is hardwired via solder pads.
@@ -6,7 +6,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 000.1 (HVC-FAMILYBASIC) iNES v2.0 header
+; Mapper 000.1 (HVC-FAMILYBASIC) NES 2.0 header
 	.byte "NES",$1A
 	.byte $02				; 1x 16K PRG banks
 	.byte $01				; 1x 8K CHR banks

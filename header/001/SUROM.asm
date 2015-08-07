@@ -1,7 +1,7 @@
 ; SUROM: 512KB PRG-ROM + 8KB PRG-RAM + 8KB CHR-RAM/ROM
 ; http://bootgod.dyndns.org:7777/search.php?keywords=SUROM&kwtype=pcb
 
-; todo: create iNES v2.0 Mapper 001.1 version and use that.
+; todo: create NES 2.0 Mapper 001.1 version and use that.
 ;------------------------------------------------------------------------------;
 ; number of 16k PRG banks
 ; Valid configurations: $08 (128K), $10 (256K)
