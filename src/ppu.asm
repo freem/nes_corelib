@@ -23,54 +23,60 @@
 ; ppu_writeCtrl
 ; Writes the value of A to $2000 and the internal "last $2000" var.
 
-ppu_writeCtrl:
+.macro ppu_writeCtrl
 	sta int_ppuCtrl
 	sta PPU_CTRL
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_writeMask
 ; Writes the value of A to $2001 and the internal "last $2001" var.
 
-ppu_writeMask:
+.macro ppu_writeMask
 	sta int_ppuMask
 	sta PPU_MASK
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_writeScroll
 ; Writes the values from X and Y into $2005 and the internal scroll registers.
 
-ppu_writeScroll:
+.macro ppu_writeScroll
 	stx int_scrollX
 	stx PPU_SCROLL
 	sty int_scrollY
 	sty PPU_SCROLL
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_writeScrollInt
 ; Writes the values from X and Y into the internal scroll registers.
 
-ppu_writeScrollInt:
+.macro ppu_writeScrollInt
 	stx int_scrollX
 	sty int_scrollY
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_writeScrollSame
 ; Writes the same value (A) to X and Y scroll values.
 
-ppu_writeScrollSame:
+.macro ppu_writeScrollSame
 	sta int_scrollX
 	sta PPU_SCROLL
 	sta int_scrollY
 	sta PPU_SCROLL
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_writeScrollIntSame
 ; Writes the same value (A) to the internal X and Y scroll values.
 
-ppu_writeScrollIntSame:
+.macro ppu_writeScrollIntSame
 	sta int_scrollX
 	sta int_scrollY
-	rts
+.endm
+
 ;==============================================================================;
 ; ppu_resetScroll
 ; Resets the scroll to the first nametable by writing to PPU_CTRL and PPU_SCROLL.
@@ -89,6 +95,7 @@ ppu_resetScroll:
 	sta PPU_CTRL
 	sta int_ppuCtrl
 	rts
+
 ;==============================================================================;
 ; ppu_sprite0HitCheck
 ; Probes PPU_STATUS once to see if the Sprite 0 hit has been triggered.
@@ -106,6 +113,7 @@ ppu_sprite0HitCheck:
 
 @end:
 	rts
+
 ;==============================================================================;
 ; ppu_waitVBLSet [dwedit]
 ; Waits for the vbl flag to become set.
@@ -114,6 +122,7 @@ ppu_waitVBLSet:
 	bit PPU_STATUS
 	bpl ppu_waitVBLSet
 	rts
+
 ;==============================================================================;
 ; ppu_waitVBLClear [dwedit]
 ; Waits for the vbl flag to become cleared.
@@ -122,6 +131,7 @@ ppu_waitVBLClear:
 	bit PPU_STATUS
 	bmi ppu_waitVBLClear
 	rts
+
 ;==============================================================================;
 ; ppu_setAddr
 ; Sets the current PPU address. (14 cycles)
@@ -130,46 +140,45 @@ ppu_waitVBLClear:
 ; X				High byte ($__00)
 ; Y				Low byte ($00__)
 
-ppu_setAddr:
+.macro ppu_setAddr
 	stx PPU_ADDR
 	sty PPU_ADDR
-	rts
+.endm
 
 ;==============================================================================;
 ; ppu_resetPalNTPos
 ; resets palette ($3F00) and nametable ($0000) positions.
 
-ppu_resetPalNTPos:
+.macro ppu_resetPalNTPos:
 	ldx #$3f
 	ldy #$00
-	jsr ppu_setAddr		; reset palette pos
-
+	stx PPU_ADDR
+	sty PPU_ADDR		; reset palette address
 	sty PPU_ADDR
 	sty PPU_ADDR		; reset PPU address
-
-	rts
+.endm
 
 ;==[NMI-related Routines]======================================================;
-; These used to live elsewhere but fuck it, they do shit with the PPU,
-; so they probably belong here.
+; These used to live elsewhere, but they mess with the PPU, so they probably
+; belong here.
 ;==============================================================================;
 ; ppu_enableNMI
 ; Enable NMIs.
 
-ppu_enableNMI:
+.macro ppu_enableNMI
 	lda int_ppuCtrl
 	ora #$80
 	sta int_ppuCtrl
 	sta PPU_CTRL
-	rts
+.endm
 
 ;==============================================================================;
 ; ppu_disableNMI
 ; Used to quickly disable NMIs from the PPU.
 
-ppu_disableNMI:
+.macro ppu_disableNMI
 	lda int_ppuCtrl
 	and #$7F
 	sta int_ppuCtrl
 	sta PPU_CTRL
-	rts
+.endm
