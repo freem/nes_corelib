@@ -16,6 +16,7 @@ div_8:
 	lsr
 	lsr
 	rts
+
 ;==============================================================================;
 ; Quick Multiply routines. Shifts values to the left.
 
