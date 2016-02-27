@@ -1,4 +1,19 @@
+; File: nes.inc
 ; various NES-related defines.
+
+; Constants: PPU registers
+; Named aliases for PPU registers.
+;
+; PPU_CTRL - PPU Control ($2000)
+; PPU_MASK - PPU Mask ($2001)
+; PPU_STATUS - PPU Status ($2002)
+; OAM_ADDR - OAM address ($2003)
+; OAM_DATA - OAM data ($2004)
+; PPU_SCROLL - PPU Scroll ($2005; write twice)
+; PPU_ADDR - PPU Address ($2006; write twice)
+; PPU_DATA - PPU Data ($2007)
+; OAM_DMA - Perform OAM DMA transfer ($4014)
+
 PPU_CTRL		= $2000
 PPU_MASK		= $2001
 PPU_STATUS		= $2002
@@ -22,7 +37,17 @@ OAM_BUF			= $0200
 	JOYSTICK2		= $4017
 .endif
 
-; nametable stuff
+; Constants: Nametable addresses
+; Named aliases for nametable addresses.
+;
+; PPU_NT0 - Nametable 0 data ($2000)
+; PPU_ATTRIB0 - Nametable 0 attributes ($23C0)
+; PPU_NT1 - Nametable 1 data ($2400
+; PPU_ATTRIB1 - Nametable 1 attributes ($27C0)
+; PPU_NT2 - Nametable 2 data ($2800)
+; PPU_ATTRIB2 - Nametable 2 attributes ($2BC0)
+; PPU_NT3 - Nametable 3 data ($2C00)
+; PPU_ATTRIB3 - Nametable 3 attributes ($2FC0)
 PPU_NT0			= $2000
 PPU_ATTRIB0		= $23C0
 PPU_NT1			= $2400
@@ -63,14 +88,31 @@ APU_SAMP_LEN		= $4013
 APU_STATUS			= $4015		; status and control
 APU_FRAMECOUNT		= $4017
 
+; Constants: APU channels
 ; 2A03 channel bitmasks (for use with $4015/APU_STATUS and/or apu_enableChan)
+;
+; APU_CHAN1 - Pulse 1
+; APU_CHAN2 - Pulse 2
+; APU_CHAN3 - Triangle
+; APU_CHAN4 - Noise
+; APU_CHAN5 - DPCM
 APU_CHAN1 = %00000001			; pulse 1
 APU_CHAN2 = %00000010			; pulse 2
 APU_CHAN3 = %00000100			; triangle
 APU_CHAN4 = %00001000			; noise
 APU_CHAN5 = %00010000			; dpcm
 
-; joypad defines
+; Constants: Joypad defines
+; Various button masks.
+;
+; PAD_A - A Button
+; PAD_B - B Button
+; PAD_SELECT - Select Button
+; PAD_START - Start Button
+; PAD_UP - D-Pad Up
+; PAD_DOWN - D-Pad Down
+; PAD_LEFT - D-Pad Left
+; PAD_RIGHT - D-Pad Right
 PAD_A			= %10000000
 PAD_B			= %01000000
 PAD_SELECT		= %00100000

@@ -1,7 +1,25 @@
+; File: ppu/decomp_tiles.asm
 ; PRG-ROM to CHR-RAM tile decompressor
+;
 ; Code by tokumaru, from http://forums.nesdev.com/viewtopic.php?f=2&t=5860
 
-	;variables in page 0
+; Variables: Tile decompressor variables
+; These variables are in the zero page starting at $00C0.
+;
+; ColorCount - number of colors that can follow each color
+; NextColor0 - first color that can follow each color
+; NextColor1 - second color that can follow each color
+; NextColor2 - third color that can follow each color
+; SpecifiedColor - color necessary to find all the colors that follow a color (shares location with TempBit)
+; TempBit - temporally holds a bit when reading 2 from the stream (shares location with SpecifiedColor)
+; CurrentColor - color that can be followed by other colors (shares location with CurrentRow)
+; CurrentRow - backup of the index of the row being worked on (shares location with CurrentColor)
+; InputStream - pointer to the data being decompressed
+; TileCount - number of tiles to decompress
+; BitBuffer - buffer of bits comming from the stream
+; Plane0 - lower plane of a tile's row
+; Plane1 - upper plane of a tile's row
+; PlaneBuffer - buffer that holds the second plane until it's time to output it
 .enum $00C0
 	ColorCount .dsb 4	;number of colors that can follow each color
 	NextColor0 .dsb 4	;first color that can follow each color
@@ -22,7 +40,8 @@
 	PlaneBuffer .dsb 8	;buffer that holds the second plane until it's time to output it
 .ende
 
-;decompresses a group of tiles from PRG-ROM to CHR-RAM
+; Routine: DecompressTiles
+; Decompresses a group of tiles from PRG-ROM to CHR-RAM.
 DecompressTiles:
 	;clear the bit buffer
 	lda #$80

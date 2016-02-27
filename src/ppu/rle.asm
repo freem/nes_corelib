@@ -1,6 +1,14 @@
+; File: ppu/rle.asm
 ; RLE decompressor by Shiru (ASM6 version)
-; uses 4 bytes in zero page (tmp00-tmp03)
-; decompress data from an address in X/Y to PPU_DATA
+;
+; Uses 4 bytes in zero page (tmp00-tmp03).
+
+; Routine: unrle
+; Decompress data from an address in X/Y to PPU_DATA.
+;
+; Parameters:
+; - *X* - Address low byte
+; - *Y* - Address high byte
 
 unrle:
 	stx tmp00			; RLE_LOW

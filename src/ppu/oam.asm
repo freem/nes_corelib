@@ -1,14 +1,15 @@
-; freemco NES Corelib | ppu/oam.asm
+; File: ppu/oam.asm
 ; PPU functionality, focusing specifically on OAM (Sprites).
-
+;
 ; Sprites live at $0200-$02FF. (This can be changed)
+;
 ; Get an index into the OAM by asl'ing a value from $00-$3F twice.
 ;==============================================================================;
 ; todo:
 ; * metasprites (multiple sprites operated as a single sprite)
 ;==============================================================================;
-; oam_clearAll [shiru]
-; Clears the OAM "properly", by hiding sprites.
+; Routine: oam_clearAll
+; [shiru] Clears the OAM "properly", by hiding sprites.
 
 oam_clearAll:
 	ldx #0
@@ -24,7 +25,7 @@ oam_clearAll:
 	rts
 
 ;==============================================================================;
-; oam_update
+; Routine: oam_update
 ; Updates all OAM data by transferring OAM_BUF contents via OAM_DMA.
 
 oam_update:
@@ -35,13 +36,13 @@ oam_update:
 	rts
 
 ;==============================================================================;
-; oam_setEntryData
+; Routine: oam_setEntryData
 ; Updates a single OAM data entry at the specified index.
-
-; Params:
-; A				OAM Index ($00-$3F)
-; tmp00			Data Location (Low)
-; tmp01			Data Location (High)
+;
+; Parameters:
+; - *A* - OAM Index ($00-$3F)
+; - *tmp00* - Data Location (Low byte)
+; - *tmp01* - Data Location (High byte)
 
 oam_setEntryData:
 	; multiply by 4 for initial OAM index
@@ -61,12 +62,12 @@ oam_setEntryData:
 	rts
 
 ;==============================================================================;
-; oam_setEntryY
+; Routine: oam_setEntryY
 ; Sets the Y value for the specified OAM entry.
-
-; Params:
-; A				OAM index
-; X				new Y value
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new Y value
 
 oam_setEntryY:
 	pha
@@ -79,12 +80,12 @@ oam_setEntryY:
 	rts
 
 ;==============================================================================;
-; [M] oam_setSingleEntry
+; Macro: oam_setSingleEntry
 ; A macro used by the oam_setEntry* routines for values other than Y.
-
-; Params:
-; A				OAM index
-; X				new value
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new value
 
 .macro oam_setSingleEntry slot
 	pha
@@ -99,31 +100,33 @@ oam_setEntryY:
 .endm
 
 ;==============================================================================;
-; oam_setEntryTile
+; Routine: oam_setEntryTile
 ; Sets the tile index for the specified OAM entry.
-
-; Note: When in 8x16 sprite mode, the LSB controls what bank to grab the tiles
+;
+; Note:
+; When in 8x16 sprite mode, the LSB controls what bank to grab the tiles
 ; from. Also, 8x16 sprite mode uses two consecutive tiles to make the sprite.
-; (Use oam_setEntryTile816 for 8x16 sprite-specific behavior.)
-
-; Params:
-; A				OAM index
-; X				new tile index
+; (Use <oam_setEntryTile816> for 8x16 sprite-specific behavior.)
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new tile index
 
 oam_setEntryTile:
 	oam_setSingleEntry $01
 	rts
 
 ;==============================================================================;
-; oam_setEntryTile816
+; Routine: oam_setEntryTile816
 ; Sets the tile index for the specified OAM entry for 8x16 sprite modes.
-
-; todo: make tile index selection more intuitive
-
-; Params:
-; A				OAM index
-; X				new tile index (set as normal)
-; Y -> tmp00	pattern table select ($00 or $01)
+;
+; todo:
+; make tile index selection more intuitive
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new tile index (set as normal)
+; - *Y* - pattern table select ($00 or $01)
 
 oam_setEntryTile816:
 	pha			; temporarily save OAM index
@@ -147,14 +150,15 @@ oam_setEntryTile816:
 	rts
 
 ;==============================================================================;
-; oam_setEntryAttr
+; Routine: oam_setEntryAttr
 ; Sets the attributes for the specified OAM entry.
-
-; Params:
-; A				OAM index
-; X				new attributes
-
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new attributes
+;
 ; Attributes:
+; (begin code)
 ; 76543210
 ; ||||||||
 ; ||||||++- Palette (4-7)
@@ -162,18 +166,19 @@ oam_setEntryTile816:
 ; ||+------ Priority (0: in front of background; 1: behind background)
 ; |+------- Horizontal flip
 ; +-------- Vertical flip
+; (end code)
 
 oam_setEntryAttr:
 	oam_setSingleEntry $02
 	rts
 
 ;==============================================================================;
-; oam_setEntryX
+; Routine: oam_setEntryX
 ; Sets the X value for the specified OAM entry.
-
-; Params:
-; A				OAM index
-; X				new X value
+;
+; Parameters:
+; - *A* - OAM index
+; - *X* - new X value
 
 oam_setEntryX:
 	oam_setSingleEntry $03

@@ -1,16 +1,22 @@
-; freemco NES Corelib | math.asm - shared math code
+; File: math.asm
+; Shared math code
 ;==============================================================================;
-; Quick Division routines. Shifts values to the right.
+; Routines: Quick Division routines
+; Shifts values to the right.
+;
+; div_32 - Divide by 32.
+; div_16 - Divide by 16.
+; div_8 - Divide by 8.
+;
+; Parameters:
+; - *A* - value to divide.
 
-; div_32: Divide by 32
 div_32:
 	lsr
 
-; div_16: Divide by 16
 div_16:
 	lsr
 
-; div_8: Divide by 8
 div_8:
 	lsr
 	lsr
@@ -18,17 +24,22 @@ div_8:
 	rts
 
 ;==============================================================================;
-; Quick Multiply routines. Shifts values to the left.
+; Routines: Quick Multiply routines
+; Shifts values to the left.
+;
+; mul_32 - Multiply by 32.
+; mul_16 - Multiply by 16.
+; mul_8 - Multiply by 8.
+;
+; Parameters:
+; - *A* - value to multiply.
 
-; mul_32: Multiply by 32
 mul_32:
 	asl
 
-; mul_16: Multiply by 16
 mul_16:
 	asl
 
-; mul_8: Multiply by 8
 mul_8:
 	asl
 	asl

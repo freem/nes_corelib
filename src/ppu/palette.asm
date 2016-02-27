@@ -1,5 +1,6 @@
-; freemco NES Corelib | ppu/palette.asm
+; File: ppu/palette.asm
 ; PPU functionality, focusing specifically on Palettes.
+
 ;==============================================================================;
 ; [Quick Overview]
 
@@ -13,9 +14,12 @@
 ;  - ppu_palBufToPPU		Transfers data from the Palette Buffer to the PPU.
 
 ;==[Palette Register Routines]=================================================;
-; ppu_clearPal
+
+; Routine: ppu_clearPal
 ; Resets the entire palette to black ($0F) using the PPU addresses.
-; RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!
+;
+; *RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!*
+;
 ; (usually only used at boot, but useful if you need to blank all pals)
 
 ppu_clearPal:
@@ -32,13 +36,14 @@ ppu_clearPal:
 	rts
 
 ;------------------------------------------------------------------------------;
-; ppu_XferFullPalToPPU
+; Routine: ppu_XferFullPalToPPU
 ; Transfers 32 bytes of palette data to the PPU via $3F00.
-; RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!
-
-; Params:
-; tmp00			Address low byte
-; tmp01			Address high byte
+;
+; *RENDERING MUST BE OFF FOR THIS TO HAVE A CHANCE AT WORKING!*
+;
+; Parameters:
+; - *tmp00* - Address low byte
+; - *tmp01* - Address high byte
 
 ppu_XferFullPalToPPU:
 	ldx #$3f
@@ -57,7 +62,8 @@ ppu_XferFullPalToPPU:
 	rts
 
 ;==[Palette Buffer Routines]===================================================;
-; ppu_palBufToPPU
+
+; Routine: ppu_palBufToPPU
 ; Transfers data from the Palette Buffer to the PPU. Clobbers A,X,Y.
 
 ppu_palBufToPPU:
@@ -77,14 +83,14 @@ ppu_palBufToPPU:
 	rts
 
 ;------------------------------------------------------------------------------;
-; ppu_dataToPalBuf
-; Routine for transferring a set of bytes to the palette buffer.
-
-; Params:
-; A				number of bytes to transfer
-; X				position in palette buffer to begin writing at
-; tmp00			data location hi
-; tmp01			data location lo
+; Routine: ppu_dataToPalBuf
+; Transfer a set of bytes to the palette buffer.
+;
+; Parameters:
+; - *A* - number of bytes to transfer
+; - *X* - position in palette buffer to begin writing at
+; - *tmp00* - data location hi
+; - *tmp01* - data location lo
 
 ppu_dataToPalBuf:
 	sta tmp02

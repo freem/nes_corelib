@@ -1,9 +1,9 @@
-; freemco NES Corelib | io/keyboard_fb.asm
+; File: io/keyboard_fb.asm
 ; I/O for the Family BASIC Keyboard (HVC-007).
 ;==============================================================================;
-; io_readKeyboard
+; Routine: io_readKeyboard
 ; Handles reading the keyboard hardware.
-
+;
 ; Data is stored starting at tmp00... (todo: find a better solution?)
 
 io_readKeyboard:

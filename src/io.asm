@@ -1,10 +1,12 @@
-; freemco NES Corelib | io.asm - shared I/O code
-;==============================================================================;
+; File: io.asm
+; shared I/O code.
+;
 ; Code for io_readJoy and io_readJoySafe comes from
 ; http://wiki.nesdev.com/w/index.php/Controller_Reading
+;
 ; However, I have modified the latter, with no indications as to why.
 ;==============================================================================;
-; io_readJoy
+; Routine: io_readJoy
 ; Reads P1 and P2 controllers (not DMC fortified)
 
 io_readJoy:
@@ -32,7 +34,7 @@ io_readJoy:
 	rts
 
 ;==============================================================================;
-; io_readJoySafe
+; Routine: io_readJoySafe
 ; Reads P1 and P2 controllers (DMC fortified)
 
 io_readJoySafe:
