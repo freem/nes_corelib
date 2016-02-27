@@ -1,0 +1,89 @@
+Format: 1.52
+
+
+Title: freemco NES corelib
+
+# You can also add a sub-title to your menu like this:
+# SubTitle: [subtitle]
+
+Footer: freemco NES corelib
+Timestamp: Generated on yyyy/mm/dd (d month)
+#   m     - One or two digit month.  January is "1"
+#   mm    - Always two digit month.  January is "01"
+#   mon   - Short month word.  January is "Jan"
+#   month - Long month word.  January is "January"
+#   d     - One or two digit day.  1 is "1"
+#   dd    - Always two digit day.  1 is "01"
+#   day   - Day with letter extension.  1 is "1st"
+#   yy    - Two digit year.  2006 is "06"
+#   yyyy  - Four digit year.  2006 is "2006"
+#   year  - Four digit year.  2006 is "2006"
+
+
+# --------------------------------------------------------------------------
+# 
+# Cut and paste the lines below to change the order in which your files
+# appear on the menu.  Don't worry about adding or removing files, Natural
+# Docs will take care of that.
+# 
+# You can further organize the menu by grouping the entries.  Add a
+# "Group: [name] {" line to start a group, and add a "}" to end it.
+# 
+# You can add text and web links to the menu by adding "Text: [text]" and
+# "Link: [name] ([URL])" lines, respectively.
+# 
+# The formatting and comments are auto-generated, so don't worry about
+# neatness when editing the file.  Natural Docs will clean it up the next
+# time it is run.  When working with groups, just deal with the braces and
+# forget about the indentation and comments.
+# 
+# --------------------------------------------------------------------------
+
+
+File: Main Page/Introduction  (readme.txt)
+
+Group: IO  {
+
+   Text: Input/Output devices
+   File: io.asm  (io.asm)
+   File: io/keyboard_fb.asm  (io/keyboard_fb.asm)
+   }  # Group: IO
+
+Group: Mappers  {
+
+   Text: Cartridge mappers
+   File: MMC1.asm  (mappers/MMC1.asm)
+   }  # Group: Mappers
+
+Group: PPU  {
+
+   Text: Graphics-related
+   File: ppu.asm  (ppu.asm)
+   File: ppu/decomp_tiles.asm  (ppu/decomp_tiles.asm)
+   File: ppu/oam.asm  (ppu/oam.asm)
+   File: ppu/palette.asm  (ppu/palette.asm)
+   File: ppu/rle.asm  (ppu/rle.asm)
+   }  # Group: PPU
+
+Group: Other  {
+
+   Text: Everything else
+   File: math.asm  (math.asm)
+   File: nes.inc  (nes.inc)
+   File: util.asm  (util.asm)
+   }  # Group: Other
+
+Group: Index  {
+
+   Index: Everything
+   Constant Index: Constants
+   File Index: Files
+   Function Index: Functions
+   Macro Index: Macros
+   Variable Index: Variables
+   }  # Group: Index
+
+
+
+##### Do not change or remove this line. #####
+Data: 2(h)
