@@ -1,2 +1,5 @@
 # ignore any built binaries in the examples folder
 examples/*/*.nes
+
+# ignore local copies of built docs; those go to the gh-pages branch
+pages/*
