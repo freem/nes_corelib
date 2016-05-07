@@ -1,4 +1,4 @@
-Format: 1.52
+Format: 1.51
 
 
 Title: freemco NES corelib
@@ -60,6 +60,7 @@ Group: PPU  {
    Text: Graphics-related
    File: ppu.asm  (ppu.asm)
    File: ppu/decomp_tiles.asm  (ppu/decomp_tiles.asm)
+   File: ppu/nametable.asm  (ppu/nametable.asm)
    File: ppu/oam.asm  (ppu/oam.asm)
    File: ppu/palette.asm  (ppu/palette.asm)
    File: ppu/rle.asm  (ppu/rle.asm)
