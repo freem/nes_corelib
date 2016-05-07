@@ -2,7 +2,7 @@
 ################################################################################
 # this primarily exists for creating the documentation.
 ################################################################################
-TOOL_NATURALDOCS = NaturalDocs
+TOOL_NATURALDOCS = naturaldocs
 
 DOCS_INPUT_SRC = src
 
