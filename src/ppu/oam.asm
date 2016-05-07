@@ -1,7 +1,7 @@
 ; File: ppu/oam.asm
 ; PPU functionality, focusing specifically on OAM (Sprites).
 ;
-; Sprites live at $0200-$02FF. (This can be changed)
+; Sprites live at $0200-$02FF. (This can be changed by setting OAM_BUF)
 ;
 ; Get an index into the OAM by asl'ing a value from $00-$3F twice.
 ;==============================================================================;
