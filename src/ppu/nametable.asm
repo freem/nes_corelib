@@ -188,7 +188,7 @@ ppu_ClearBuffer:
 @ppu_ClearBuffer_loop:
 	sta vramBufData,y
 	iny
-	cpy #$D0
+	cpy #$E0
 	bne @ppu_ClearBuffer_loop
 	rts
 
