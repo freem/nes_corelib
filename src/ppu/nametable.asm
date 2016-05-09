@@ -178,6 +178,20 @@ ppu_WriteBuffer:
 	sta int_ppuCtrl
 	rts
 
+;==============================================================================;
+; Routine: ppu_ClearBuffer
+; Clears the VRAM buffer.
+
+ppu_ClearBuffer:
+	ldy #0
+	lda #0
+@ppu_ClearBuffer_loop:
+	sta vramBufData,y
+	iny
+	cpy #$D0
+	bne @ppu_ClearBuffer_loop
+	rts
+
 ;==[Attribute Table Routines]==================================================;
 
 ; Routine: ppu_ClearAttrib
