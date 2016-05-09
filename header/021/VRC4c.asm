@@ -1,5 +1,7 @@
 ; Konami VRC4c: (up to 256KB) PRG-ROM + (0,2,8)KB PRG-RAM + (up to 512KB) CHR-ROM
 ; http://bootgod.dyndns.org:7777/search.php?keywords=21&kwtype=pcb
+;
+; This is the version with registers at $x000, $x040, $x080, $x0C0.
 ;------------------------------------------------------------------------------;
 ; number of 16K PRG banks
 PRG_BANKS = $04
