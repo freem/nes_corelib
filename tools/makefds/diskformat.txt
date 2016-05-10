@@ -1,0 +1,58 @@
+the fds disk format suuuuuuuuuuucks
+
+Sources:
+http://wiki.nesdev.com/w/index.php/Family_Computer_Disk_System
+http://forums.nesdev.com/viewtopic.php?f=2&t=11519#p132477
+
+================================================================================
+Block Type 1: Disk Information
+================================================================================
+.db $01
+.db "*NINTENDO-HVC*"
+.db (manufacturer code)
+.db "???" ; game name
+.db " "   ; game type
+.db (version)
+.db (disk side)
+.db (disk number)
+.db (disk type)
+.db (unknown 1)
+.db (boot read file code)
+.db $FF,$FF,$FF,$FF,$FF ; unknown 2
+.db $00,$00,$00 ; manufacturing date (BCD); year is relative to 1925
+.db (country code) ; only known value is $49=Japan.
+.db $61,$00,$00,$02 ; unknown 3, 4, and 5
+.db $00,$00,$00,$00,$00 ; unknown 6
+.db $00,$00,$00 ; disk write date (BCD)
+.db $00 ; unknown 7 (Othello, Pro Wrestling, Volleyball: $FF)
+.db $80 ; unknown 8
+.dw $0000 ; disk writer serial number
+.db $07 ; unknown 9
+.db $00 ; disk rewrite count
+.db $00 ; actual disk side
+.db $00 ; unknown 10
+.db $00 ; price (Knight Move: $04)
+.dw $0000 ; CRC
+
+================================================================================
+Block Type 2: Number of Files
+================================================================================
+.db $02
+.db (number of files)
+
+================================================================================
+Block Type 3: File Header
+================================================================================
+.db $03
+.db (file number)
+.db (file ID code)
+.db "FILENAME" ; (uppercase ASCII; 8 characters maximum)
+.dw (load address)
+.dw (file size)
+.db (file type) ; 0=PRG,1=CHR,2=VRAM
+
+================================================================================
+Block Type 4: File Data
+================================================================================
+.db $04
+; file data

@@ -1,0 +1,26 @@
+# example makefds script - fwNES header
+header
+totalsides:01
+manufacturer:00
+gamename:EXA
+gametype:normal
+version:00
+sidenum:00
+disknum:00
+disktype:00
+bootfile:0F
+makedate:900917
+unknown6a:00
+unknown6b:00
+unknown6c:00
+unknown6d:00
+unknown6e:00
+writedate:900917
+diskwriter:FFFF
+realdiskside:00
+price:00
+numfiles:03
+# file list
+file:0,0,"KYODAKU-",2800,NT,kyodaku.nt
+file:1,1,"EXAMPLE",6000,PRG,file.bin
+file:2,1,"CHRDATA",0000,CHR,graphics.chr
