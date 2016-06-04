@@ -2,10 +2,10 @@
 ; shared PPU code
 ;==============================================================================;
 ; Topic: Internal PPU variables
-; - *int_ppuCtrl* - Last write to PPU_CTRL/$2000
-; - *int_ppuMask* - Last write to PPU_MASK/$2001
-; - *int_scrollX* - Last X scroll (first write) to PPU_SCROLL/$2005
-; - *int_scrollY* - Last Y scroll (second write) to PPU_SCROLL/$2005
+; - *int_ppuCtrl* - Last write to <PPU_CTRL>/$2000
+; - *int_ppuMask* - Last write to <PPU_MASK>/$2001
+; - *int_scrollX* - Last X scroll (first write) to <PPU_SCROLL>/$2005
+; - *int_scrollY* - Last Y scroll (second write) to <PPU_SCROLL>/$2005
 ;
 ; "Resetting PPU_ADDR (i.e. writing $00 to $2006 twice) works in most cases,
 ; but the correct way to fully reset the scroll is to write to $2000 and $2005
@@ -14,10 +14,9 @@
 ; reset $2006." - tokumaru, <NESDev forums post at http://forums.nesdev.com/viewtopic.php?p=84785#p84785>
 
 ;==[External Routines]=========================================================;
-;.include "ppu/nametable.asm"		; NameTable routines
+.include "ppu/nametable.asm"		; Nametable routines
 .include "ppu/oam.asm"			; OAM (Sprite) routines
 .include "ppu/palette.asm"		; Palette routines
-;.include "ppu/vrambuf.asm"		; VRAM Buffer routines
 ;.include "ppu/chr-ram.asm"		; CHR-RAM routines
 
 ;==[PPU Register Routines]=====================================================;
@@ -26,7 +25,7 @@
 ; Writes the value of A to $2000 and the internal "last $2000" var.
 ;
 ; Parameters:
-; - *A* - new PPUCTRL value
+; - *A* - new <PPU_CTRL> value
 
 .macro ppu_writeCtrl
 	sta int_ppuCtrl
@@ -38,7 +37,7 @@
 ; Writes the value of A to $2001 and the internal "last $2001" var.
 ;
 ; Parameters:
-; - *A* - new PPUMASK value
+; - *A* - new <PPU_MASK> value
 
 .macro ppu_writeMask
 	sta int_ppuMask
@@ -62,7 +61,7 @@
 
 ;==============================================================================;
 ; Macro: ppu_writeScrollInt
-; Writes the values from X and Y into the internal scroll registers.
+; Writes the values from X and Y into the internal scroll register copies.
 ;
 ; Parameters:
 ; - *X* - new X scroll value
@@ -101,7 +100,7 @@
 
 ;==============================================================================;
 ; Routine: ppu_resetScroll
-; Resets the scroll to the first nametable by writing to PPU_CTRL and PPU_SCROLL.
+; Resets the scroll to the first nametable by writing to <PPU_CTRL> and <PPU_SCROLL>.
 
 ppu_resetScroll:
 	; reset scroll
@@ -130,12 +129,10 @@ ppu_sprite0HitCheck:
 	bvc @notyet
 
 	lda #1
-	jmp @end
+	rts
 
 @notyet:
 	lda #0
-
-@end:
 	rts
 
 ;==============================================================================;
@@ -174,7 +171,7 @@ ppu_waitVBLClear:
 ; resets palette ($3F00) and nametable ($0000) positions.
 
 .macro ppu_resetPalNTPos:
-	ldx #$3f
+	ldx #$3F
 	ldy #$00
 	stx PPU_ADDR
 	sty PPU_ADDR		; reset palette address
