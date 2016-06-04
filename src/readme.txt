@@ -7,10 +7,10 @@ make it easier to create a NES game/utility/etc.
 Section: Prerequisites
 A list of tools either required or recommended for using the freemco NES corelib.
 
-- *Assembler*: Either *asm6* or *asm6f* can be used. asm6f is only required for
+- *Assembler*: Either *<asm6 at http://3dscapture.com/NES/>* or *<asm6f at https://github.com/freem/asm6f>* can be used. asm6f is only required for
   FCEUX .nl export, so if you're not using that, you can use the original version.
-  If you want to write your own linker scripts, I guess you could use ca65 as well,
-  but no support will be given for that.
+  If you want to write your own linker scripts, I guess you could use <ca65 at http://cc65.github.io/cc65/>
+  as well, but no support will be given for that setup (until further notice).
 - *Tile Compressor*: <tokumaru's tile compression utility at http://forums.nesdev.com/viewtopic.php?f=2&t=5860>
 - *Nametable Layout Tool*: <shiru's NES Screen Tool at http://shiru.untergrund.net/software.shtml>
 
@@ -49,11 +49,11 @@ of variables that a game will typically need.
 
 vblanked - "in VBlank" indicator
 frameCount - Current number of frames run (two bytes)
-int_ppuCtrl - internal copy of PPU_CTRL
-int_ppuMask - internal copy of PPU_MASK
-int_ppuStatus - internal PPU_STATUS read
-int_scrollX - Internal PPU_SCROLL (first write)
-int_scrollY - Internal PPU_SCROLL (second write)
+int_ppuCtrl - internal copy of <PPU_CTRL>
+int_ppuMask - internal copy of <PPU_MASK>
+int_ppuStatus - internal <PPU_STATUS> read
+int_scrollX - Internal <PPU_SCROLL> (first write)
+int_scrollY - Internal <PPU_SCROLL> (second write)
 int_last4016 - Last write to $4016/JOYSTICK1
 pad1Trigger - Button trigger status for controller 1
 pad2Trigger - Button trigger status for controller 2

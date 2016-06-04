@@ -1,7 +1,7 @@
 ; File: ppu/nametable.asm
 ; Nametable-focused PPU routines.
 ;==============================================================================;
-; todo: Add routines for attribute table fuckery
+; todo: Finish adding attribute table routines
 
 ;==============================================================================;
 
@@ -65,7 +65,7 @@ ppu_clearAllNT:
 ; Writes a string of data to the PPU at the specified location.
 ;
 ; Parameters:
-; - *A* -> tmp02 - String length
+; - *A* - String length (copied to *tmp02*)
 ; - *X* - Nametable addr high
 ; - *Y* - Nametable addr low
 ; - *tmp00* - String Pointer Low
@@ -88,8 +88,8 @@ ppu_writeString:
 
 ;==============================================================================;
 ; Routine: ppu_writeCharRepeat
-; Writes a character repeatedly.
-
+; Writes a single character to the PPU repeatedly.
+;
 ; Parameters:
 ; - *A* - Tile Number
 ; - *X* - Nametable addr high
@@ -188,7 +188,7 @@ ppu_ClearBuffer:
 @ppu_ClearBuffer_loop:
 	sta vramBufData,y
 	iny
-	cpy #$E0
+	cpy #$E0 ; xxx: hardcoded size
 	bne @ppu_ClearBuffer_loop
 	rts
 
@@ -230,6 +230,8 @@ ppu_WriteAttribFull:
 ; ppu_WriteAttribPartial
 ; routine for setting a 16x16 chunk's palette
 ; params: A (section/palette), X, Y
+
+; todo: will require masks in ROM for simplest operation
 
 ppu_WriteAttribPartial:
 	rts
