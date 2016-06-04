@@ -47,8 +47,8 @@ mul_8:
 	rts
 
 ;==============================================================================;
-; add16
-; 16-bit addition, by FMan
+; Routine: add16
+; 16-bit addition; code by FMan
 ; Sourced from http://www.codebase64.org/doku.php?id=base:16bit_addition_and_subtraction
 
 ; Params:
@@ -72,8 +72,8 @@ add16:
 	rts
 
 ;==============================================================================;
-; mul_10
-; Fast Multiply by 10, by Leo Nechaev.
+; Routine: mul_10
+; Fast Multiply by 10; code by Leo Nechaev.
 ; Sourced from http://6502.org/source/integers/fastx10.htm
 
 mul_10:
@@ -86,7 +86,7 @@ mul_10:
 	rts
 
 ;==============================================================================;
-; modulus255
+; Routine: modulus255
 ; Fast modulus 255.
 ; Sourced from http://6502org.wikidot.com/software-math-fastmod
 
@@ -103,7 +103,7 @@ modulus255:
 	rts
 
 ;==============================================================================;
-; fastRand8
+; Routine: fastRand8
 ; fast 8-bit linear feedback shift register-based random number generator
 ; Sourced from http://codebase64.org/doku.php?id=base:small_fast_8-bit_prng
 
