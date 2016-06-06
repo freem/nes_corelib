@@ -15,7 +15,7 @@ MIRRORING = %0001
 			 ; %0000 = no battery
 SRAM_BATTERY = %0000
 
-; Mapper 004 (MMC3 - TNROM) iNES v1.0 header
+; Mapper 004 (MMC3 - TNROM) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG banks
 	.byte $00				; CHR-RAM

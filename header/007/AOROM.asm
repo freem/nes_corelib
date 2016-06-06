@@ -7,7 +7,7 @@ PRG_BANKS = $08
 ; AOROM mirroring is mapper controlled single screen.
 MIRRORING = %0000
 
-; Mapper 007 (AOROM) iNES v1.0 header
+; Mapper 007 (AOROM) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG banks
 	.byte $00				; CHR-RAM

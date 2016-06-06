@@ -10,7 +10,7 @@ PRG_BANKS = $08
 		  ; %1xxx = four-screen mirroring
 MIRRORING = %1000
 
-; Mapper 004 (MMC3 - TR1ROM) iNES v1.0 header
+; Mapper 004 (MMC3 - TR1ROM) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG banks
 	.byte $08				; 8x 8K CHR-ROM banks

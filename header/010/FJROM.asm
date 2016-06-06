@@ -19,7 +19,7 @@ SRAM_BATTERY = %0000
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 010 (MMC4 - FJROM) iNES v1.0 header
+; Mapper 010 (MMC4 - FJROM) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG-ROM banks
 	.byte CHR_BANKS			; 8K CHR banks

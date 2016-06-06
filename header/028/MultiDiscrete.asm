@@ -12,7 +12,7 @@ MIRRORING = %0000
 	.byte $20				; 32x 16K PRG banks
 	.byte $00				; CHR-RAM
 	.byte $C0|MIRRORING		; flags 6
-	.byte $10				; flags 7
+	.byte $18				; flags 7
 	.byte $00				; Mapper Variant
 	.byte $00				; ROM size upper bits
 	.byte $00				; PRG-RAM size

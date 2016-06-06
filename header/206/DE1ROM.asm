@@ -7,7 +7,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 206 (DE1ROM) iNES v1.0 header
+; Mapper 206 (DE1ROM) iNES header
 	.byte "NES",$1A
 	.byte $08				; 8x 16K PRG banks
 	.byte $08				; 8x 8K CHR-ROM banks

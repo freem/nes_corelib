@@ -8,7 +8,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 004 (MMC6 - HKROM) iNES v1.0 header
+; Mapper 004 (MMC6 - HKROM) iNES header
 	.byte "NES",$1A
 	.byte $10				; 16x 16K PRG banks
 	.byte $20				; 32x 8K CHR banks

@@ -9,7 +9,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 180 (UNROM - Crazy Climber) iNES v1.0 header
+; Mapper 180 (UNROM - Crazy Climber) iNES header
 	.byte "NES",$1A
 	.byte $08				; 8x 16K PRG banks
 	.byte $00				; CHR-RAM

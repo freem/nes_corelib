@@ -20,7 +20,7 @@ SRAM_BATTERY = %0000
 ; number of 8K PRG-RAM banks
 SRAM_SIZE = $00
 
-; Mapper 004 (MMC3 - generic) iNES v1.0 header
+; Mapper 004 (MMC3 - generic) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG-ROM banks
 	.byte CHR_BANKS			; 8K CHR banks

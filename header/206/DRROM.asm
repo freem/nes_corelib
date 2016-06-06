@@ -6,7 +6,7 @@
 		  ; %1xxx = four-screen mirroring
 MIRRORING = %1000
 
-; Mapper 206 (DRROM) iNES v1.0 header
+; Mapper 206 (DRROM) iNES header
 	.byte "NES",$1A
 	.byte $08				; 8x 16K PRG banks
 	.byte $08				; 8x 8K CHR-ROM banks

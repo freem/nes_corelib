@@ -3,7 +3,7 @@
 ; AN1ROM mirroring is mapper controlled single screen.
 MIRRORING = %0000
 
-; Mapper 007 (AN1ROM) iNES v1.0 header
+; Mapper 007 (AN1ROM) iNES header
 	.byte "NES",$1A
 	.byte $04				; 4x 16K PRG banks
 	.byte $00				; CHR-RAM

@@ -10,7 +10,7 @@ CHR_BANKS = $04
 		  ; %1xxx = four-screen mirroring
 MIRRORING = %1000
 
-; Mapper 004 (MMC3 - TVROM) iNES v1.0 header
+; Mapper 004 (MMC3 - TVROM) iNES header
 	.byte "NES",$1A
 	.byte $04				; 16K PRG banks
 	.byte CHR_BANKS			; 8x 8K CHR-ROM banks

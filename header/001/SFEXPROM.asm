@@ -9,7 +9,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 001 (MMC1 - SFEXPROM) iNES v1.0 header
+; Mapper 001 (MMC1 - SFEXPROM) iNES header
 	.byte "NES",$1A
 	.byte $10				; 16x 16K PRG banks
 	.byte $08				; 8x 8K CHR banks

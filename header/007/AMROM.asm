@@ -3,7 +3,7 @@
 ; AMROM mirroring is mapper controlled single screen.
 MIRRORING = %0000
 
-; Mapper 007 (AMROM) iNES v1.0 header
+; Mapper 007 (AMROM) iNES header
 	.byte "NES",$1A
 	.byte $08				; 8x 16K PRG banks
 	.byte $00				; CHR-RAM

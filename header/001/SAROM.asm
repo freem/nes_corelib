@@ -15,7 +15,7 @@ MIRRORING = %0001
 ; Should the SRAM be battery backed or not?
 SRAM_BATTERY = %0000 ; %0010 = battery backed; %0000 = no battery
 
-; Mapper 001 (MMC1 - SAROM) iNES v1.0 header
+; Mapper 001 (MMC1 - SAROM) iNES header
 	.byte "NES",$1A
 	.byte $04				; 4x 16K PRG banks
 	.byte CHR_BANKS			; 8K CHR banks

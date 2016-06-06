@@ -1,4 +1,4 @@
-; Generic MMC1 Template (iNES v1.0)
+; Generic MMC1 Template (iNES)
 ; This template does not impose a specific "S*ROM" board layout.
 ;------------------------------------------------------------------------------;
 ; number of 16K PRG-ROM banks
@@ -21,7 +21,7 @@ SRAM_BATTERY = %0000
 ; number of 8K PRG-RAM banks
 SRAM_SIZE = $00
 
-; Mapper 001 (MMC1 - generic) iNES v1.0 header
+; Mapper 001 (MMC1 - generic) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG-ROM banks
 	.byte CHR_BANKS			; 8K CHR banks

@@ -6,7 +6,7 @@
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 002 (UOROM) iNES v1.0 header
+; Mapper 002 (UOROM) iNES header
 	.byte "NES",$1A
 	.byte $10				; 16x 16K PRG banks
 	.byte $00				; CHR-RAM

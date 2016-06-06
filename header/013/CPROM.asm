@@ -1,7 +1,7 @@
 ; CPROM: 32KB PRG-ROM + 16KB CHR-RAM
 ; http://bootgod.dyndns.org:7777/search.php?keywords=CPROM&kwtype=pcb
 ;------------------------------------------------------------------------------;
-; Mapper 013 (CPROM) iNES v1.0 header
+; Mapper 013 (CPROM) iNES header
 	.byte "NES",$1A
 	.byte $04				; 4x 16K PRG banks
 	.byte $00				; CHR-RAM

@@ -14,7 +14,7 @@ CHR_BANKS = $04
 		  ; %0001 = Vertical
 MIRRORING = %0001
 
-; Mapper 005 (MMC5 - ELROM) iNES v1.0 header
+; Mapper 005 (MMC5 - ELROM) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG banks
 	.byte CHR_BANKS			; 8K CHR-ROM banks

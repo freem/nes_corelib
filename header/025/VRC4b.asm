@@ -16,7 +16,7 @@ MIRRORING = %0001
 
 ; xxx: PRG-RAM thing
 
-; Mapper 021 (VRC4b) iNES v1.0 header
+; Mapper 021 (VRC4b) iNES header
 	.byte "NES",$1A
 	.byte PRG_BANKS			; 16K PRG banks
 	.byte CHR_BANKS			; 8K CHR banks
