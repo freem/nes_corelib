@@ -200,7 +200,7 @@ References to look over later:
 109		(currently unassigned?)
 ------------------------------------------------------------------------------
 110		(currently unassigned?)
-111		(currently unassigned?)
+111		(tentatively assigned to Membler Industries GTROM/"Cheapocabra" board)
 112		Asder/NTDEC Board
 113		Hacker/Sachen Board
 114		Super Game Prot. A (MMC3)

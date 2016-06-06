@@ -5,7 +5,7 @@ publisher logos on the NESdev Wiki's Mapper page(1). Technically, though, some
 unlicensed for the purposes of this file.
 
 [Single Entry]
-038		(gradiente) Crime Busters (BR)
+038		(gradiente/Bit Corp) Crime Busters (BR)
 144		(AGCI) Death Race (U)
 156		(Daou) Open Corp. Daou 306
 168		(RacerMate) RacerMate Challenge II

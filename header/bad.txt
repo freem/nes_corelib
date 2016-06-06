@@ -20,6 +20,10 @@ more information, please see http://wiki.nesdev.com/w/index.php/INES_Mapper_006
 Emulators take various paths in emulating the FDS BIOS. Mapper 20 is typically
 only used interally by emulators to indicate that they're running FDS games.
 
+On a technical level, "Mapper 020" would be the Famicom Disk System RAM Adapter
+cartridge, which contains the BIOS chip and other hardware. The disk system is
+plugged into the RAM Adapter cartridge by a cable.
+
 --------------------------------------------------------------------------------
 [Mapper 084]
 from http://wiki.nesdev.com/w/index.php/INES_Mapper_084 :
