@@ -2,6 +2,8 @@ freemco NES Corelib Examples
 ============================
 A number of example projects for the freemco NES Corelib are included.
 Each project is meant to be self-contained, including the necessary corelib files.
+(Because of this, please note that the corelib files may be out of date compared
+to the main repository.)
 
 The examples are meant to be short, while trying to show enough possibilities of
 what can be done.
