@@ -27,6 +27,25 @@ Checksum values for PRG and CHR should be included, and the FamicomBox header
 checksum should be set to 0. The checksum is placed into the binary file at
 the proper location.
 
+Integrating into your build system
+----------------------------------
+In order to successfully integrate this into building your NES/Famicom game, a
+few steps are required.
+
+1) You will need to find a way to create a PRG-only build. The FamicomBox header
+   has separate hashes for PRG-ROM and CHR-ROM chips. If your game does not use
+   CHR-ROM, you can leave that area as $0000.
+
+2) Once the PRG-only build is complete, run fbsectsum on your PRG (and CHR) files.
+   For each file, a corresponding ```.chk``` file will be made that can be included
+   in the FamicomBox header.
+
+3) After the .chk files are created, the FamicomBox header can finally have
+   accurate values. Assemble the FamicomBox header to a binary (it should be 26
+   bytes) and run ```fbheadsum``` on the resulting file. The modifications will
+   be made in-place, so when creating your final ROM, include the binary file
+   instead of the source code.
+
 License
 -------
 These tools are released under the following licenses; choose whatever suits you:
