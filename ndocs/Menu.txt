@@ -72,6 +72,7 @@ Group: Other  {
    File: math.asm  (math.asm)
    File: nes.inc  (nes.inc)
    File: util.asm  (util.asm)
+   File: vt03.inc  (vt03.inc)
    }  # Group: Other
 
 Group: Index  {
