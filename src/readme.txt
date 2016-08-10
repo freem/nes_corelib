@@ -13,13 +13,13 @@ A list of tools either required or recommended for using the freemco NES corelib
   as well, but no support will be given for that setup (until further notice).
 - *Tile Compressor*: <tokumaru's tile compression utility at http://forums.nesdev.com/viewtopic.php?f=2&t=5860>
 - *Nametable Layout Tool*: <shiru's NES Screen Tool at http://shiru.untergrund.net/software.shtml>
+- *Graphics Editor/Converter*: Whatever you want; I prefer YY-CHR.
 
 Section: Memory Usage
 As with any library, a number of things need to be kept track of, meaning there's
-less room for your game. The freemco NES corelib tries to keep this space to a
-minimum.
+less room for your game. The freemco NES corelib tries to keep this space to a minimum.
 
-Please see ram.example for an example RAM layout for a freemco NES corelib project.
+Please see "ram.example" for an example RAM layout for a freemco NES corelib project.
 
 Topic: Zero Page Variables
 Zero page ($00-$FF) is the best place to put variables that need to be accessed
