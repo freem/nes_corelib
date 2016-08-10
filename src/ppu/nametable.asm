@@ -221,9 +221,29 @@ ppu_ClearAttrib:
 ;==============================================================================;
 ; ppu_WriteAttribFull
 ; routine for writing a full set of attributes (64 bytes)
-; Parameters: A (NT number), tmp00, tmp01
+;
+; Parameters:
+; - *A* - Nametable to clear attributes for (0-3)
+; - *tmp00*, *tmp01* - Pointer to attribute data to write.
 
 ppu_WriteAttribFull:
+	tay
+	lda ppu_ntIndex,y
+	clc
+	adc #$03
+	sta PPU_ADDR
+	ldy #$C0
+	sty PPU_ADDR
+
+	lda #0
+	tay
+@ppu_WriteAttribFull_loop:
+	lda (tmp00),y
+	sta PPU_DATA
+	iny
+	cpy #64
+	bne @ppu_WriteAttribFull_loop
+
 	rts
 
 ;==============================================================================;
