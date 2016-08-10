@@ -1,6 +1,6 @@
 I'm not sure how many UNIF headers I'm going to end up defining, or if it's
 worth the trouble of doing so. The format has been declared dead, so unless you
-really want to create a game on the Drip mapper or some random Chinese mapper
+really want to create a game on the Drip mapper or some other random mapper
 that's only supported as UNIF, it's best to ignore it.
 
 References:
