@@ -15,6 +15,7 @@
 .macro b7c
 	cmp #$80
 .endm
+
 ;==============================================================================;
 ; Macro: asr
 ; Arithmetic shift right (4 cycles). Uses <b7c> macro.
@@ -28,6 +29,7 @@
 	b7c
 	ror a
 .endm
+
 ;==============================================================================;
 ; Macro: rsl
 ; Rotate Straight Left (4 cycles). Uses <b7c> macro.
@@ -41,6 +43,7 @@
 	b7c
 	rol
 .endm
+
 ;==============================================================================;
 ; Macro: neg
 ; Negate A (6 cycles)
@@ -56,6 +59,7 @@
 	sec
 	adc #0
 .endm
+
 ;==============================================================================;
 ; Macro: gbs
 ; Get Bits Set (6+ cycles; how many depends on how many branches)
@@ -68,6 +72,7 @@
 	bcs @1
 	bne @2
 .endm
+
 ;==============================================================================;
 ; Macro: txy
 ; Transfer X to Y (4 cycles, clobbers A)
@@ -81,6 +86,7 @@
 	txa
 	tay
 .endm
+
 ;==============================================================================;
 ; Macro: tyx
 ; Transfer Y to X (4 cycles, clobbers A)
@@ -94,6 +100,7 @@
 	tya
 	tax
 .endm
+
 ;==============================================================================;
 ; Macro: phx
 ; Push X pseudo for NMOS 6502 (5 cycles, clobbers A)
@@ -107,6 +114,7 @@
 	txa
 	pha
 .endm
+
 ;==============================================================================;
 ; Macro: phy
 ; Push Y pseudo for NMOS 6502 (5 cycles, clobbers A)
@@ -120,6 +128,7 @@
 	tya
 	pha
 .endm
+
 ;==============================================================================;
 ; Macro: plx
 ; Pull X pseudo for NMOS 6502 (6 cycles, clobbers A)
@@ -133,6 +142,7 @@
 	pla
 	tax
 .endm
+
 ;==============================================================================;
 ; Macro: ply
 ; Pull Y pseudo for NMOS 6502 (6 cycles, clobbers A)
@@ -146,6 +156,7 @@
 	pla
 	tay
 .endm
+
 ;==============================================================================;
 ; Routine: delay
 ; Delays for a number of milliseconds (1790*(Y+5) cycles).

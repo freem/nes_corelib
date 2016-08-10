@@ -221,7 +221,7 @@ ppu_ClearAttrib:
 ;==============================================================================;
 ; ppu_WriteAttribFull
 ; routine for writing a full set of attributes (64 bytes)
-; params: A (NT number), tmp00, tmp01
+; Parameters: A (NT number), tmp00, tmp01
 
 ppu_WriteAttribFull:
 	rts
@@ -229,7 +229,7 @@ ppu_WriteAttribFull:
 ;==============================================================================;
 ; ppu_WriteAttribPartial
 ; routine for setting a 16x16 chunk's palette
-; params: A (section/palette), X, Y
+; Parameters: A (section/palette), X, Y
 
 ; todo: will require masks in ROM for simplest operation
 
@@ -239,7 +239,7 @@ ppu_WriteAttribPartial:
 ;==============================================================================;
 ; ppu_WriteAttribSingle
 ; routine for setting a 32x32 chunk's palette
-; params: A (normal data, 00_00_00_00), X, Y
+; Parameters: A (normal data, 00_00_00_00), X, Y
 
 ppu_WriteAttribSingle:
 	rts
