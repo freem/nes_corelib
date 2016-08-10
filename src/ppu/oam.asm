@@ -7,6 +7,7 @@
 ;==============================================================================;
 ; todo:
 ; * metasprites (multiple sprites operated as a single sprite)
+; * animation system
 ;==============================================================================;
 ; Routine: oam_clearAll
 ; [shiru] Clears the OAM "properly", by hiding sprites.
@@ -205,3 +206,7 @@ oam_setEntryX:
 ; * Base Y position
 
 ; something about Metasprites and Animation frames
+
+;==============================================================================;
+; Animation System
+
