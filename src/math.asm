@@ -51,7 +51,7 @@ mul_8:
 ; 16-bit addition; code by FMan
 ; Sourced from http://www.codebase64.org/doku.php?id=base:16bit_addition_and_subtraction
 
-; Params:
+; Parameters:
 ; tmp00			First number Low byte
 ; tmp01			First number High byte
 ; tmp02			First number Low byte
@@ -90,7 +90,7 @@ mul_10:
 ; Fast modulus 255.
 ; Sourced from http://6502org.wikidot.com/software-math-fastmod
 
-; Params:
+; Parameters:
 ; tmp00		Low byte
 ; tmp01		High byte
 

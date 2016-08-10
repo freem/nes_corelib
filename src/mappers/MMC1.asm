@@ -225,7 +225,7 @@ MMC1_SetCHRBank1:
 ; MMC1_SetPRGBank
 ; Writes data to the MMC1 PRG Bank Register ($E000-$FFFF)
 
-; Params:
+; Parameters:
 ; A			PRG bank to switch to.
 ; Note: the value includes the PRG-RAM disable toggle in bit 4.
 
