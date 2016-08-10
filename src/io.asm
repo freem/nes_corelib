@@ -7,7 +7,7 @@
 ; However, I have modified the latter, with no indications as to why.
 ;==============================================================================;
 ; Routine: io_readJoy
-; Reads P1 and P2 controllers (not DMC fortified)
+; Reads P1 and P2 controllers. (not DMC fortified)
 
 io_readJoy:
 	; joystick latch
@@ -35,7 +35,10 @@ io_readJoy:
 
 ;==============================================================================;
 ; Routine: io_readJoySafe
-; Reads P1 and P2 controllers (DMC fortified)
+; Reads P1 and P2 controllers. (DMC fortified)
+
+; Note: Apparently, reading the controller like this can allow for arbitrary
+; code execution, if you give it inputs fast enough.
 
 io_readJoySafe:
 	; Store current keypress state
