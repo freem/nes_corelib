@@ -5,9 +5,9 @@ MIRRORING = %0000
 
 ; Mapper 007 (AN1ROM) iNES header
 	.byte "NES",$1A
-	.byte $04				; 4x 16K PRG banks
-	.byte $00				; CHR-RAM
-	.byte $70|MIRRORING		; flags 6
-	.byte $00				; flags 7
-	.byte $00				; no PRG RAM
-	.dsb 7, $00				; clear the remaining bytes
+	.byte $04 ; 4x 16K PRG banks
+	.byte $00 ; CHR-RAM
+	.byte $70|MIRRORING ; flags 6
+	.byte $00 ; flags 7
+	.byte $00 ; no PRG RAM
+	.dsb 7, $00 ; clear the remaining bytes

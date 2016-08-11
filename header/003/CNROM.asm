@@ -8,15 +8,15 @@ PRG_BANKS = $02
 CHR_BANKS = $04
 
 ; CNROM mirroring is hardwired via solder pads.
-		  ; %0000 = Horizontal
-		  ; %0001 = Vertical
+; %0000 = Horizontal
+; %0001 = Vertical
 MIRRORING = %0001
 
 ; Mapper 003 (CNROM) iNES header
 	.byte "NES",$1A
-	.byte PRG_BANKS			; 16K PRG banks
-	.byte CHR_BANKS			; 8K CHR banks
-	.byte $30|MIRRORING		; flags 6
-	.byte $00				; flags 7
-	.byte $00				; no PRG RAM
-	.dsb 7, $00				; clear the remaining bytes
+	.byte PRG_BANKS ; 16K PRG banks
+	.byte CHR_BANKS ; 8K CHR banks
+	.byte $30|MIRRORING ; flags 6
+	.byte $00 ; flags 7
+	.byte $00 ; no PRG RAM
+	.dsb 7, $00 ; clear the remaining bytes

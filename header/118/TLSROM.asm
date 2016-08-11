@@ -7,15 +7,15 @@ PRG_BANKS = $08
 
 ; TLSROM mirroring is handled in a nonstandard way.
 ; These values may or may not be used.
-		  ; %0000 = Horizontal
-		  ; %0001 = Vertical
+; %0000 = Horizontal
+; %0001 = Vertical
 MIRRORING = %0001
 
 ; Mapper 118 (TLSROM) iNES header
 	.byte "NES",$1A
-	.byte PRG_BANKS			; 16K PRG banks
-	.byte $10				; 16x 8K CHR-ROM
-	.byte $60|MIRRORING		; flags 6
-	.byte $70				; flags 7
-	.byte $00				; no PRG RAM
-	.dsb 7, $00				; clear the remaining bytes
+	.byte PRG_BANKS ; 16K PRG banks
+	.byte $10 ; 16x 8K CHR-ROM
+	.byte $60|MIRRORING ; flags 6
+	.byte $70 ; flags 7
+	.byte $00 ; no PRG RAM
+	.dsb 7, $00 ; clear the remaining bytes

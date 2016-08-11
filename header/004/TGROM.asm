@@ -6,15 +6,15 @@
 PRG_BANKS = $08
 
 ; TGROM mirroring is controlled by MMC3.
-		  ; %0000 = Horizontal
-		  ; %0001 = Vertical
+; %0000 = Horizontal
+; %0001 = Vertical
 MIRRORING = %0001
 
 ; Mapper 004 (MMC3 - TGROM) iNES header
 	.byte "NES",$1A
-	.byte PRG_BANKS			; 16K PRG banks
-	.byte $00				; CHR-RAM
-	.byte $40|MIRRORING		; flags 6
-	.byte $00				; flags 7
-	.byte $00				; no PRG RAM
-	.dsb 7, $00				; clear the remaining bytes
+	.byte PRG_BANKS ; 16K PRG banks
+	.byte $00 ; CHR-RAM
+	.byte $40|MIRRORING ; flags 6
+	.byte $00 ; flags 7
+	.byte $00 ; no PRG RAM
+	.dsb 7, $00 ; clear the remaining bytes
