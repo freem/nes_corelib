@@ -129,7 +129,7 @@ VT03_IRQ_ENABLE  = $4104
 ; Constant: VT03_HVSCROLL
 ; Horizontal/Vertical Scroll Select. ($4106)
 ;
-; Only the first bit is uses, making the only valid values:
+; Only the first bit is used, so the only valid values are...
 ; - 0 = Horizontal
 ; - 1 = Vertical
 VT03_HVSCROLL = $4106

@@ -14,10 +14,12 @@
 ; reset $2006." - tokumaru, <NESDev forums post at http://forums.nesdev.com/viewtopic.php?p=84785#p84785>
 
 ;==[External Routines]=========================================================;
-.include "ppu/nametable.asm"		; Nametable routines
-.include "ppu/oam.asm"			; OAM (Sprite) routines
-.include "ppu/palette.asm"		; Palette routines
-;.include "ppu/chr-ram.asm"		; CHR-RAM routines
+.include "ppu/nametable.asm" ; Nametable routines
+.include "ppu/oam.asm"       ; OAM (Sprite) routines
+.include "ppu/palette.asm"   ; Palette routines
+
+; todo: use some sort of define so CHR-RAM code doesn't end up in CHR-ROM games.
+;.include "ppu/chr-ram.asm"   ; CHR-RAM routines
 
 ;==[PPU Register Routines]=====================================================;
 
@@ -49,8 +51,8 @@
 ; Writes the values from X and Y into $2005 and the internal scroll registers.
 ;
 ; Parameters:
-; - *X* - new X scroll value
-; - *Y* - new Y scroll value
+; - *X* - new X scroll value (first <PPU_SCROLL> write)
+; - *Y* - new Y scroll value (second <PPU_SCROLL> write)
 
 .macro ppu_writeScroll
 	stx int_scrollX
@@ -119,7 +121,7 @@ ppu_resetScroll:
 
 ;==============================================================================;
 ; Routine: ppu_sprite0HitCheck
-; Probes PPU_STATUS once to see if the Sprite 0 hit has been triggered.
+; Probes <PPU_STATUS> once to see if the Sprite 0 hit has been triggered.
 ;
 ; Returns:
 ; Result in *A* (0 = not triggered, 1 = triggered)
@@ -158,8 +160,8 @@ ppu_waitVBLClear:
 ; Sets the current PPU address. (14 cycles)
 ;
 ; Parameters:
-; - *X* - High byte ($__00)
-; - *Y* - Low byte ($00__)
+; - *X* - High byte ($__00)/first <PPU_ADDR> write
+; - *Y* - Low byte ($00__)/second <PPU_ADDR> write
 
 .macro ppu_setAddr
 	stx PPU_ADDR
@@ -179,7 +181,7 @@ ppu_waitVBLClear:
 	sty PPU_ADDR		; reset PPU address
 .endm
 
-;==[NMI-related Routines]======================================================;
+;==[NMI-related macros]======================================================;
 ; These used to live elsewhere, but they mess with the PPU, so they probably
 ; belong here.
 ;==============================================================================;

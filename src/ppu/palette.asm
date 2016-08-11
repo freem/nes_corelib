@@ -64,7 +64,8 @@ ppu_XferFullPalToPPU:
 ;==[Palette Buffer Routines]===================================================;
 
 ; Routine: ppu_palBufToPPU
-; Transfers data from the Palette Buffer to the PPU. Clobbers A,X,Y.
+; Transfers data from the Palette Buffer to the PPU.
+; Clobbers A,X,Y. Best used during VBlank.
 
 ppu_palBufToPPU:
 	lda #$3F
