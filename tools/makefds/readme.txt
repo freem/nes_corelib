@@ -149,7 +149,8 @@ rewrite. Known values: $00 = 500 yen; $01 = 600 yen.
 Number of files on the disk that the BIOS can see.
 
 --------------------------------------------------------------------------------
-{rewrites:##} (optional)
+{rewrites:##} (optional) - not currently implemented
+Currently not supported. I need to stop being lazy about it.
 
 --------------------------------------------------------------------------------
 {file:...}
