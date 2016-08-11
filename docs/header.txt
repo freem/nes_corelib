@@ -1,0 +1,76 @@
+The Header Directory and You
+============================
+If you ever take a look in the header directory (and you'll probably have to,
+unless you have some other way of generating iNES headers), you might get
+overwhelmed by the amount of subdirectories.
+
+When developing a game, the list of mappers you'll actually want to use is
+much lower. A lot of NES/Famicom games can be described using a subset of the
+iNES mapper space (currently 256 entries; NES 2.0 expands this further).
+
+Game counts are taken from BootGod's NesCartDB (http://bootgod.dyndns.org:7777/),
+which represents a large chunk of released games (though not every regional
+variant is available).
+
+Common Mappers
+==============
+[iNES Mapper 000: NROM] 247 games across all regions
+This board was used for many early games, including the Famicom launch titles
+and Super Mario Bros.
+
+--------------------------------------------------------------------------------
+[iNES Mapper 001: MMC1] 677 across all regions
+Nintendo's first ASIC mapper is the most popular, despite its weird register
+writes. A large chunk of the NES/Famicom library uses MMC1, including (but
+certainly not limited to):
+
+Blaster Master, Bubble Bobble (U/E), Castlevania 2 (U/E), Darkwing Duck,
+Dr. Mario, Dragon Warrior 1-4 (only Dragon Quest 3 and 4 in Japan),
+Final Fantasy, Kid Icarus, The Legend of Zelda, Mega Man 2, Metroid...
+the list goes on.
+
+--------------------------------------------------------------------------------
+[iNES Mapper 002: UxROM] 268 across all regions
+The UxROM series is a discrete logic mapper used in a decent amount of games.
+
+Some good examples of UxROM games: Castlevania, Contra (U)/Probotector (E),
+Ducktales, The Guardian Legend, Mega Man, and Metal Gear.
+
+--------------------------------------------------------------------------------
+[iNES Mapper 003: CNROM] 154 across all regions
+CNROM was used in a relatively small amount of games, compared to the other
+entries in this section.
+
+Examples: Arkanoid, Gradius, Tetris (Nintendo)
+
+--------------------------------------------------------------------------------
+[iNES Mapper 004: MMC3] 585 across all regions
+The MMC3 mapper grew out of an old Namco mapper and ended up becoming the second
+most popular mapper for NES and Famicom games. It has been cloned and modified
+many times, so it's hard to keep track of all of the variants.
+
+Mapper 004 represents a large subset of the MMC3 games; there are others, but
+they are relatively rare, Japan-only, or pirate hardware.
+
+MMC3 game examples:
+Batman (U/E), Kirby's Adventure, Mega Man 3-6, Super Mario Bros. 3
+
+Less Common Mappers
+===================
+[iNES Mapper 019: Namco 163] 20 games, all Japan-only
+popular for expansion sound
+
+--------------------------------------------------------------------------------
+[iNES Mappers 024,026: Konami VRC6] 3 games, all Japan-only
+popular for expansion sound; two variants (different wiring)
+
+--------------------------------------------------------------------------------
+[iNES Mapper 069: Sunsoft FME-7/5A and 5B] 10? games across all regions
+The 5B is popular for expansion sound.
+
+--------------------------------------------------------------------------------
+[iNES Mapper 085: Konami VRC7] 2 games, both Japan-only.
+Popular for expansion sound.
+
+================================================================================
+

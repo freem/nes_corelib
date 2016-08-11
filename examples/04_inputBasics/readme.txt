@@ -3,8 +3,7 @@ freemco NES Corelib Example 04: Input Basics
 [Introduction]
 The fourth example in the series introduces the basics of handling input.
 
-(todo: this code isn't perfect; the PPU scroll is blehh just before starting,
-plus there is sprite garbage)
+(todo: needs input detection/display)
 
 ================================================================================
 [Files]
@@ -20,6 +19,11 @@ corelib/io.asm			freemco NES Corelib I/O functionality
 
 ================================================================================
 [Setup]
+An important thing to note is that the NES and original Famicom have different
+controllers. The NES controllers have plugs, while the Famicom controllers are
+hard-wired into the console. Furthermore, the original Famicom controllers have
+a microphone on controller 2 instead of Start and Select buttons. Later Famicoms
+use NES controllers for most purposes (aside from 15-pin expansion hardware).
 
 <Code>
 

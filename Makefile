@@ -1,6 +1,9 @@
 # freemco NES corelib makefile
 ################################################################################
 # this primarily exists for creating the documentation.
+
+# at some point I should probably consider having it create the examples...
+# not sure if that's a job for the exampled directory, though.
 ################################################################################
 TOOL_NATURALDOCS = naturaldocs
 

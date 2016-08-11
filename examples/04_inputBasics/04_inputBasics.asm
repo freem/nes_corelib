@@ -459,6 +459,7 @@ Reset:
 	sta PPU_MASK
 
 	; and then run your program's main loop.
+;------------------------------------------------------------------------------;
 MainLoop:
 	; things before vblank
 	jsr io_readJoy
@@ -466,7 +467,7 @@ MainLoop:
 	jsr waitVBlank				; wait for vblank
 
 	; things after vblank
-	; * handle inputs and send data to PPU buffer
+	; * handle inputs and write to vramBufData
 
 	jmp MainLoop
 
