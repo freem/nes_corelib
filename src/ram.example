@@ -7,61 +7,61 @@
 	; $00-$0F: "Operating Space"
 	; temp space for function arguments, etc.
 	.enum $0000
-		tmp00			.dsb 1, $00
-		tmp01			.dsb 1, $00
-		tmp02			.dsb 1, $00
-		tmp03			.dsb 1, $00
-		tmp04			.dsb 1, $00
-		tmp05			.dsb 1, $00
-		tmp06			.dsb 1, $00
-		tmp07			.dsb 1, $00
-		tmp08			.dsb 1, $00
-		tmp09			.dsb 1, $00
-		tmp0A			.dsb 1, $00
-		tmp0B			.dsb 1, $00
-		tmp0C			.dsb 1, $00
-		tmp0D			.dsb 1, $00
-		tmp0E			.dsb 1, $00
-		tmp0F			.dsb 1, $00
+		tmp00 .dsb 1, $00
+		tmp01 .dsb 1, $00
+		tmp02 .dsb 1, $00
+		tmp03 .dsb 1, $00
+		tmp04 .dsb 1, $00
+		tmp05 .dsb 1, $00
+		tmp06 .dsb 1, $00
+		tmp07 .dsb 1, $00
+		tmp08 .dsb 1, $00
+		tmp09 .dsb 1, $00
+		tmp0A .dsb 1, $00
+		tmp0B .dsb 1, $00
+		tmp0C .dsb 1, $00
+		tmp0D .dsb 1, $00
+		tmp0E .dsb 1, $00
+		tmp0F .dsb 1, $00
 	.ende
 
 	; $10-$2F: System Variables
 	.enum $0010
-		vblanked			.dsb 1			; are we in vblank?
-		frameCount			.dsw 1			; frame counter
+		vblanked   .dsb 1 ; are we in vblank?
+		frameCount .dsw 1 ; frame counter
 
 		; internal ppu control variables
-		int_ppuCtrl			.dsb 1			; internal PPU_CTRL (last2000)
-		int_ppuMask			.dsb 1			; internal PPU_MASK (last2001)
-		int_ppuStatus		.dsb 1			; internal PPU_STATUS read (last2002)
-		int_scrollX			.dsb 1			; internal PPU_SCROLL (first write)
-		int_scrollY			.dsb 1			; internal PPU_SCROLL (second write)
-		int_last4016		.dsb 1			; last write to $4016
+		int_ppuCtrl   .dsb 1 ; internal PPU_CTRL (last2000)
+		int_ppuMask   .dsb 1 ; internal PPU_MASK (last2001)
+		int_ppuStatus .dsb 1 ; internal PPU_STATUS read (last2002)
+		int_scrollX   .dsb 1 ; internal PPU_SCROLL (first write)
+		int_scrollY   .dsb 1 ; internal PPU_SCROLL (second write)
+		int_last4016  .dsb 1 ; last write to $4016
 
 		; controller input variables
 		; uncomment pad 3 and pad 4 if making a game with more than two players.
-		pad1Trigger			.dsb 1			; "UpDown" in some sources.
-		pad2Trigger			.dsb 1			;
-		;pad3Trigger		.dsb 1			;
-		;pad4Trigger		.dsb 1			;
+		pad1Trigger .dsb 1 ; "UpDown" in some sources.
+		pad2Trigger .dsb 1 ;
+		;pad3Trigger .dsb 1 ;
+		;pad4Trigger .dsb 1 ;
 
-		pad1State			.dsb 1			; "Data" in some sources.
-		pad2State			.dsb 1			;
-		;pad3State			.dsb 1			;
-		;pad4State			.dsb 1			;
+		pad1State .dsb 1 ; "Data" in some sources.
+		pad2State .dsb 1 ;
+		;pad3State .dsb 1 ;
+		;pad4State .dsb 1 ;
 
 		; PPU VRAM buffer update stuff (needs finalizing)
-		vramUpdateWaiting	.dsb 1,$00		; is a vram update waiting?
-		vramDataSize		.dsb 1,$00		; Overall size of the buffer
-		vramDataCurPos		.dsb 1,$00		; location in overall vram buffer
-		vramSubBufSize		.dsb 1,$00		; size of current vram sub-buffer
-		vramBufCurPos		.dsb 1,$00		; location in current sub-buffer
-		;vramControl			.dsb 1,$00		; PPU_CTRL settings
-		;vramNTPos			.dsw 1,$0000	; Current Nametable addr
+		vramUpdateWaiting .dsb 1,$00 ; is a vram update waiting?
+		vramDataSize      .dsb 1,$00 ; Overall size of the buffer
+		vramDataCurPos    .dsb 1,$00 ; location in overall vram buffer
+		vramSubBufSize    .dsb 1,$00 ; size of current vram sub-buffer
+		vramBufCurPos     .dsb 1,$00 ; location in current sub-buffer
+		;vramControl       .dsb 1,$00 ; PPU_CTRL settings
+		;vramNTPos         .dsw 1,$0000 ; Current Nametable addr
 
 		; random number generator vars
-		randSeed8			.dsb 1,$00		; random number seed for 8-bit randgen
-		randSeed16			.dsw 1,$0000	; random number seed for 16-bit randgen
+		randSeed8  .dsb 1,$00   ; random number seed for 8-bit randgen
+		randSeed16 .dsw 1,$0000 ; random number seed for 16-bit randgen
 	.ende
 
 	; Free zero page space begins at $30, though there might be some holes
@@ -73,8 +73,8 @@
 ;-- $0300 page --------------------------------;
 	; This page holds the various PPU buffers (VRAM and Palette).
 	.enum $0300
-		vramBufData		.dsb $E0			; $0300-$03DF: vram buffer data
-		palBufData		.dsb $20			; $03E0-$03FF: palette buf data
+		vramBufData .dsb $E0 ; $0300-$03DF: vram buffer data
+		palBufData  .dsb $20 ; $03E0-$03FF: palette buf data
 	.ende
 
 ;-- $0400-$07FF can be used by the program.
