@@ -38,10 +38,10 @@ Basic introduction to input handling (two regular controllers only).
 Other examples are yet to be thought of... These are in no particular order.
 
 <Basic/Intro>
-* Nametable stuff (e.g. using unrle, updating the BG)
-* Metasprites
+* Nametable stuff (e.g. using Shiru's unrle code, updating the BG)
+* Metasprites and Animation
 * Basic Scrolling (across two screens)
-* Basic Mappers (e.g. anything less complex than MMC1)
+* Basic Mappers (e.g. discrete mappers/anything less complex than MMC1)
 * CHR-RAM Basics
 * Palette buffering (will also have color cycling example)
 
