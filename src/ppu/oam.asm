@@ -188,25 +188,41 @@ oam_setEntryX:
 ;==============================================================================;
 ; Metasprites
 
-; 8x8 mode:		All tiles are based on 8x8.
-; 8x16 mode:	Width (tiles) is based on 8x8, Height (tiles) is based on 8x16.
+; Use a system like the one in "Quack - a duck simulator".
+; the system there is multi-tiered, and set up for animation.
 
-; Metasprites need the following data:
-; * metasprite width (tiles)
-; * metasprite height (tiles)
-; * general metasprite attributes (h/v flip status)
-; {
-; * metasprite tilemaps
-; * specific metasprite attributes (palette)
-; }
+; The following things need to be taken into account:
+; * number of sprites needed in metasprite
+; * sprite definitions (x offset, y offset, attribs, tilenum)
 
-; When adding a metasprite, you need to know:
+; the Quack system's metasprites are known as "animation frames", and have the
+; following information, in order:
+; * number of sprites
+; * frame length
+; * pointers to directional tilemaps (4)
+; * pointers to hitbox data (4)
+
+; The tilemaps themselves are sets of {Y offset, tile, attrib., X offset} values.
+
+; Other games may need different setups, so this isn't a 1:1 recreation.
+; Decoupling the animation data from the actual metasprite data is the first step.
+; Figuring out a flexible system (w/r/t tilemap definitions) is harder.
+
+; When adding a metasprite to the display, you need to know:
 ; * Initial sprite index (may get OAM cycled)
 ; * Base X position
 ; * Base Y position
 
-; something about Metasprites and Animation frames
-
 ;==============================================================================;
 ; Animation System
 
+; In "Quack - a duck simulator", the sprite and animation data are intertwined.
+; (The collision hitboxes are too, but that isn't dealt with here.)
+
+; Essentially, an animation is a collection of assembled metasprites, along with
+; a timer to change what frame is displayed.
+
+; Animations:
+; * number of frames in animation
+; * pointers to animation frames (metasprites)
+; * frame lengths
