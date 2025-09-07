@@ -15,8 +15,9 @@ If you're not me, good luck using it.
 
 ## History
 The freemco NES Corelib was originally developed alongside the MMC1 version of
-Family Picross, as well as (the unfinished) Bumpin' Cars. Further development
-tends to happen in parallel with other NES games/tools I come up with.
+Family Picross (freemco version), as well as (the unfinished) Bumpin' Cars.
+Further development tends to happen in parallel with other NES games/tools
+I come up with.
 
 ## Features
 - Coded by a complete 6502 asm noob!
