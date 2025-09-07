@@ -1,0 +1,94 @@
+NES Sound Drivers
+=================
+As the freemco NES Corelib does not provide a sound driver by default, you must
+either write your own, or (more likely) use one of the existing solutions.
+
+This is not a full or comprehensive list.
+
+https://www.nesdev.org/wiki/Audio_drivers
+
+================================================================================
+Famitone
+================================================================================
+Target Toolset: Famitracker
+
+The first two versions of Famitone were written by Shiru.
+https://shiru.untergrund.net/code.shtml
+
+Further enhancements were made by nesdoug, resulting in three more versions:
+- Famitone3: "all notes, volume column"
+https://github.com/nesdoug/famitone3.3
+
+- Famitone4: supports effects 1xx,2xx,4xx
+https://github.com/nesdoug/famitone4.1
+
+- Famitone5: supports effects 3xx,Rxx,Qxx, duty envelopes, sound effects larger than 256 bytes
+https://github.com/nesdoug/famitone5.0/
+
+================================================================================
+Famitracker
+================================================================================
+Target Toolset: Famitracker
+
+Famitracker and its various forks come with sound drivers, though these are
+meant for playing music, and don't handle sound effects by default.
+
+================================================================================
+FamiStudio
+================================================================================
+Target Toolset: FamiStudio
+
+The FamiStudio sound engine "is essentially a heavily modified version of
+FamiTone2 by Shiru". Sound effects are supported, though they need to be
+enabled first.
+
+https://famistudio.org/
+
+================================================================================
+GGSound
+================================================================================
+https://github.com/gradualgames/ggsound
+
+================================================================================
+Pently
+================================================================================
+Target Toolset: MML
+(can use Famitracker via https://github.com/NovaSquirrel/ft2pently/)
+
+https://github.com/pinobatch/pently
+
+================================================================================
+bhop
+================================================================================
+Target Toolset: Famitracker
+
+https://github.com/zeta0134/bhop
+
+================================================================================
+Lizard Music Engine
+================================================================================
+Target Toolset: Famitracker
+
+A music engine derived from "Lizard".
+https://github.com/bbbradsmith/lizard_music
+
+================================================================================
+NSD.Lib
+================================================================================
+Target Toolset: MML
+
+https://github.com/Shaw02/nsdlib/
+
+================================================================================
+Penguin
+================================================================================
+Target Toolset: Famitracker
+
+https://github.com/pubby/penguin
+
+================================================================================
+Sabre
+================================================================================
+Target Toolset: Famitracker
+
+https://github.com/CutterCross/Sabre
