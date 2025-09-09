@@ -1,5 +1,5 @@
 ; File: util.asm
-; Shared utility code
+; Shared utility code.
 ;==============================================================================;
 ; Topic: Sources
 ; - http://wiki.nesdev.com/w/index.php/Synthetic_Instructions
@@ -155,6 +155,20 @@
 .macro ply
 	pla
 	tay
+.endm
+
+;==============================================================================;
+; Macro: blt
+; "Branch if less than". Alias for bcc.
+.macro blt loc
+	bcc loc
+.endm
+
+;==============================================================================;
+; Macro: bge
+; "Branch if greater or equal". Alias for bcs.
+.macro bge loc
+	bcs loc
 .endm
 
 ;==============================================================================;
