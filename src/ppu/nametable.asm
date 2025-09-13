@@ -268,14 +268,13 @@ ppu_WriteBuffer:
 
 	; change PPU increment value
 	lda tmp02
-	and #$80
-	bne @ppu_WriteBuffer_Inc32
+	bmi @ppu_WriteBuffer_Inc32
 
 	; increment 1
 	lda int_ppuCtrl
 	and #%11111011
 	sta PPU_CTRL
-	jmp @ppu_WriteBuffer_SetAddr
+	bne @ppu_WriteBuffer_SetAddr
 
 @ppu_WriteBuffer_Inc32:
 	; increment 32
@@ -292,17 +291,16 @@ ppu_WriteBuffer:
 	sta PPU_ADDR
 
 	; write data
-	ldx #0
+	ldx tmp03
 	iny
 @ppu_WriteBuffer_WriteLoop:
 	lda vramBufData,y
 	sta PPU_DATA
 	iny
-	inx
-	cpx tmp03
+	dex
 	bne @ppu_WriteBuffer_WriteLoop
 
-	jmp @ppu_WriteBuffer_BufferEntry ; loop until reaching a length of 0
+	beq @ppu_WriteBuffer_BufferEntry ; loop until reaching a length of 0
 
 @ppu_WriteBuffer_end:
 	; reset to +1 increment
