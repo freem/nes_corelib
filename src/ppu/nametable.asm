@@ -108,6 +108,139 @@ ppu_writeCharRepeat:
 
 	rts
 
+;==============================================================================;
+; Routine: ppu_writeList
+; Write the contents of a list to the PPU.
+; This routine is only meant to be run when rendering is off.
+;
+; Parameters:
+; - *tmp00* - List pointer low
+; - *tmp01* - List pointer high
+;
+; List Format:
+; 0x00 - PPU address high byte
+; 0x01 - PPU address low byte
+; 0x02 - length of data to write
+; 0x03 - pointer to data to write
+;
+; List is terminated with $FF in the PPU address high byte.
+
+ppu_writeList:
+	ldy #0
+@doPage:
+	; nt addr hi
+	lda (tmp00),y
+	bmi @writeDone
+	sta PPU_ADDR
+	iny
+
+	; nt addr lo
+	lda (tmp00),y
+	sta PPU_ADDR
+	iny
+
+	; length
+	lda (tmp00),y
+	sta tmp0F ; store length for comparison
+	iny
+
+	; string pointer
+	lda (tmp00),y
+	sta tmp02
+	iny
+	lda (tmp00),y
+	sta tmp03
+	iny
+	sty tmp0E
+	ldy #0
+@writeString:
+	lda (tmp02),y
+	sta PPU_DATA
+	iny
+	cpy tmp0F
+	bne @writeString
+
+	ldy tmp0E
+	jmp @doPage
+
+@writeDone:
+	rts
+
+;==============================================================================;
+; Routine: ppu_writeListBuf
+; Writes the contents of a list to the PPU buffer.
+; Meant to be called multiple times until the Carry flag is set.
+;
+; Parameters:
+; - *Y*     - Current index into message list
+; - *tmp00* - List pointer low
+; - *tmp01* - List pointer high
+;
+; Returns:
+; - *Carry* - Set if writes are finished, clear if more writes remain
+; - *Y*     - Updated index into message list
+;
+; List format is the same as ppu_writeList.
+
+ppu_writeListBuf:
+	sty tmp08
+	ldx vramDataCurPos
+@writeLoop:
+	; nt addr hi
+	; check if this is the end
+	lda (tmp00),y
+	bpl @ntAddrHi_Normal
+
+	; writes are finished
+	sec
+	bcs @end
+
+@ntAddrHi_Normal:
+	sta vramBufData,x
+	inx
+	iny
+
+	; nt addr lo
+	lda (tmp00),y
+	sta vramBufData,x
+	iny
+	inx
+
+	; length
+	lda (tmp00),y
+	sta vramBufData,x
+	sta tmp0F ; store length for comparison
+	inx
+	iny
+
+	; string pointer
+	lda (tmp00),y
+	sta tmp02
+	iny
+	lda (tmp00),y
+	sta tmp03
+	iny
+	sty tmp08
+	ldy #0
+@writeString:
+	lda (tmp02),y
+	sta vramBufData,x
+	iny
+	inx
+	cpy tmp0F
+	bne @writeString
+
+	clc ; more writes needed
+	stx vramDataCurPos
+	lda #1
+	sta vramUpdateWaiting
+
+@end:
+	; return updated message list index
+	ldy tmp08
+	rts
+
+
 ;==[Nametable Buffer Routines]=================================================;
 
 ; Routine: ppu_WriteBuffer
