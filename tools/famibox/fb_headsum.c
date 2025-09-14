@@ -1,6 +1,7 @@
 /* famicombox header checksum calculator ($FFF2-$FFF8) */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <inttypes.h>
 
 /* algorithm is $00 minus the bytes at $FFF2-$FFF8 (file offset 0x12 in a standalone header binary) */
@@ -20,7 +21,7 @@ int main(int argc, char *argv[]){
 
 	if(argc < 2){
 		usage();
-		return;
+		return EXIT_SUCCESS;
 	}
 
 	/* try opening file */
@@ -28,7 +29,7 @@ int main(int argc, char *argv[]){
 	if(inFile == NULL){
 		printf("Error opening input file '%s",argv[1]);
 		perror("'");
-		return;
+		return EXIT_FAILURE;
 	}
 
 	/* seek to correct location in bin (0x12) */
@@ -51,7 +52,7 @@ int main(int argc, char *argv[]){
 	if(outFile == NULL){
 		printf("Error opening output file '%s",outName);
 		perror("'");
-		return;
+		return EXIT_FAILURE;
 	}
 
 	/* outFile */
@@ -59,5 +60,5 @@ int main(int argc, char *argv[]){
 	fwrite(&headsum,sizeof(uint8_t),1,outFile);
 	fclose(outFile);
 
-	return 0;
+	return EXIT_SUCCESS;
 }
