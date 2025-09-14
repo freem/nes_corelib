@@ -1,4 +1,4 @@
-CC = tcc
+CC = gcc
 INFILE_SSUM = fb_sectsum.c
 INFILE_HSUM = fb_headsum.c
 OUTFILE_SSUM = fbsectsum
