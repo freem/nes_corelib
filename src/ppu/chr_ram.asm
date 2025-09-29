@@ -157,9 +157,7 @@ ppu_loadTilesCompressed:
 	ldy #0
 	sta PPU_ADDR
 	sty PPU_ADDR
-	jsr DecompressTiles
-
-	rts
+	jmp DecompressTiles
 
 ;------------------------------------------------------------------------------;
 ; Routine: ppu_updateTile
