@@ -56,9 +56,7 @@ ppu_clearAllNT:
 	lda #2
 	jsr ppu_clearNT
 	lda #3
-	jsr ppu_clearNT
-
-	rts
+	jmp ppu_clearNT
 
 ;==============================================================================;
 ; Routine: ppu_writeString
