@@ -101,7 +101,6 @@ ppu_writeCharRepeat:
 @writeLoop:
 	sta PPU_DATA
 	dey
-	cpy #0
 	bne @writeLoop
 
 	rts
