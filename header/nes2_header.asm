@@ -266,7 +266,7 @@ HEADER_DEFAULT_EXPANSION_DEVICE = 0
 	; ||||||||
 	; ||||++++-- Mapper number MSB (bits D11--D8)
 	; ++++------ Submapper number
-	.db HEADER_SUBMAPPER_NUMBER<<4 | (HEADER_MAPPER_NUMBER & $0F00)
+	.db HEADER_SUBMAPPER_NUMBER << 4 | (HEADER_MAPPER_NUMBER & $0F00) >> 8
 
 	;----------------------------------;
 	; PRG and CHR-ROM size MSB
