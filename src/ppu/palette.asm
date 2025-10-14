@@ -23,7 +23,7 @@
 ; (usually only used at boot, but useful if you need to blank all pals)
 
 ppu_clearPal:
-	ldy #$3f
+	ldy #$3F
 	ldx #$00
 	stx PPU_ADDR
 	sty PPU_ADDR
@@ -48,7 +48,7 @@ ppu_clearPal:
 ; - *tmp01* - Address high byte
 
 ppu_XferFullPalToPPU:
-	ldx #$3f
+	ldx #$3F
 	ldy #$00
 	stx PPU_ADDR
 	sty PPU_ADDR		; set PPUADDR to $3F00 (palettes)
