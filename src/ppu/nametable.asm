@@ -9,22 +9,20 @@
 ; Clears the specified nametable using tile 0.
 ;
 ; Parameters:
-; - *A* - Nametable to clear (0-3)
+; - *Y* - Nametable to clear (0-3)
 
 ; 0=$2000, 1=$2400, 2=$2800, 3=$2C00
 ppu_ntIndex: .db $20, $24, $28, $2C
 
 ppu_clearNT:
-	tay
 	lda ppu_ntIndex,y
 	sta PPU_ADDR
-	ldy #0
-	sty PPU_ADDR
+	lda #0
+	sta PPU_ADDR
 
 	; clear tiles
 	ldy #$C0
 	ldx #4
-	lda #0
 @writeTiles:
 	sta PPU_DATA
 	dey
