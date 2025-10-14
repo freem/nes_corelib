@@ -25,8 +25,10 @@
 ppu_clearPal:
 	ldy #$3f
 	ldx #$00
-	jsr ppu_setAddr
-	lda #$0f
+	stx PPU_ADDR
+	sty PPU_ADDR
+
+	lda #$0F
 	ldx #$20
 @loop:
 	sta PPU_DATA

@@ -6,7 +6,7 @@
 ;==============================================================================;
 
 ; Routine: ppu_clearNT
-; Clears the specified nametable using tile 0.
+; Clears the specified nametable using tile 0, and sets all attributes to 0.
 ;
 ; Parameters:
 ; - *Y* - Nametable to clear (0-3)
@@ -68,8 +68,12 @@ ppu_clearAllNT:
 ; - *tmp01* - String Pointer High
 
 ppu_writeString:
-	sta tmp02			; store string length for later use.
-	jsr ppu_setAddr		; set address based on X and Y.
+	; store string length for later use.
+	sta tmp02
+
+	; set address based on X and Y.
+	stx PPU_ADDR
+	sty PPU_ADDR
 
 	; and now actually write the string.
 	ldy #0
@@ -93,7 +97,9 @@ ppu_writeString:
 ; - *tmp00* - write length
 
 ppu_writeCharRepeat:
-	jsr ppu_setAddr		; set address based on X and Y
+	; set address based on X and Y
+	stx PPU_ADDR
+	sty PPU_ADDR
 
 	ldy tmp00
 @writeLoop:
