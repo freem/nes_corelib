@@ -1,0 +1,17 @@
+NES Mapper References
+---------------------
+
+You can also check the source code of various emulators, including, but not limited to:
+- Mesen2            http://unlicensed.games/libg/static.php?page=NintendulatorNRS
+- Nintendulator     https://www.qmtpro.com/~nes/nintendulator/
+- NintendulatorNRS  http://unlicensed.games/libg/static.php?page=NintendulatorNRS
+
+[iNES and NES 2.0]
+https://www.nesdev.org/wiki/Mapper
+https://www.nesdev.org/wiki/NES_2.0_submappers
+
+[UNIF]
+http://www.codef00.com/unif_cur.txt
+http://mednafen.sourceforge.net/documentation/09x/nes.html#Introduction%01File+Formats%01UNIF
+https://github.com/mamedev/mame/blob/master/src/emu/bus/nes/nes_unif.inc
+https://github.com/eteran/libunif
