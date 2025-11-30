@@ -27,7 +27,7 @@ I come up with.
 ## To Do
 There's a lot of things to do, but here are some main ones:
 - Private version is further along but needs to be cleaned up, updated, and finished before release.
-- No APU/Sound support yet.
+- No APU/Sound support. Bring your own (or someone else's) sound driver.
 - "VRAM Buffer" routines not yet complete.
 - Missing a lot of functionality.
 
