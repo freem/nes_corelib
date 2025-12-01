@@ -1,6 +1,8 @@
 ; Common mapper names, for use with "nes2_header.asm"
 ;==============================================================================;
-; See also: https://www.nesdev.org/wiki/Mapper
+; See also:
+; https://www.nesdev.org/wiki/Mapper
+; https://www.nesdev.org/wiki/NES_2.0_submappers
 ;------------------------------------------------------------------------------;
 ; todo:
 ; - submappers
@@ -11,64 +13,75 @@
 ;==============================================================================;
 
 ; todo: various JY Company ASIC mappers
-; 035
-; 090
-; 209
-; 211
-; 281
-; 282
-; 295
-; 358
-; 386
-; 387
-; 388
-; 397
+; 035 "explicitly specifies 8 KiB of WRAM"; duplicate of mapper 209
+; 090 "inhibits...ROM nametables and Extended Mirroring"
+; 209 "standard implementation"
+; 211 "No such PCB exists in real hardware"; duplicate of mapper 209
+; 281 "outer PRG bank size of 256 KiB", different Outer Bank register bits
+; 282 "outer PRG bank size of 256 KiB", different Outer Bank register bits
+; 295 "outer PRG bank size of 128 KiB"
+; 358 "outer PRG bank size of 512 KiB selected in part by the CHR banking mode"
+; 386 "YY860729C"
+; 387 "YY850735C" and "YY850817C"
+; 388 "YY841145C" and "YY850835C"
+; 397 "1996 Soccer 6-in-1 (JY-082)"
 
 ;==============================================================================;
 ; Mapper Defines
 ;==============================================================================;
-MAPPER_NUMBER_NROM         = 0
+MAPPER_NUMBER_NROM           = 0
 
-MAPPER_NUMBER_MMC1         = 1
+MAPPER_NUMBER_MMC1           = 1
 ; "Submapper 5 denotes the SEROM/SHROM/SH1ROM circuit boards with 32 KiB of unbanked PRG-ROM"
 MAPPER_NUMBER_1_SUBMAPPER_FNS_2ME = 6 ; Famicom Network System 2ME circuit board
 ; "Submapper 7 denotes the Kaiser KS-7058 that mounts the KS 203 MMC1 clone, but with hard-wired nametable arrangement"
 
-MAPPER_NUMBER_UxROM        = 2
-MAPPER_NUMBER_CNROM        = 3
-MAPPER_NUMBER_MMC3         = 4 ; also used for MMC6
-MAPPER_NUMBER_MMC5         = 5
-; 006 = FFE
-MAPPER_NUMBER_AxROM        = 7
+MAPPER_NUMBER_UxROM          = 2
+MAPPER_NUMBER_CNROM          = 3
+
+MAPPER_NUMBER_MMC3           = 4 ; also used for MMC6
+;MAPPER_NUMBER_4_SUBMAPPER_MMC6 = 1
+;MAPPER_NUMBER_4_SUBMAPPER_MC_ACC = 3 ; Acclaim MC-ACC
+;MAPPER_NUMBER_4_NEC_MMC3 = 4 ; "Loading the latch with 0 disables IRQ" ("old" behavior)
+
+MAPPER_NUMBER_MMC5           = 5
+; 006 = FFE ("Doctor Header file denotes a Magic Card 1M/2M disk", "Submapper field denotes the initial latch-based banking mode (0-7)")
+MAPPER_NUMBER_AxROM          = 7
 ; 008 = FFE ("synonym of mapper 6 submapper 4")
-MAPPER_NUMBER_MMC2         = 9
-MAPPER_NUMBER_MMC4         = 10
-MAPPER_NUMBER_COLOR_DREAMS = 11
+MAPPER_NUMBER_MMC2           = 9
+MAPPER_NUMBER_MMC4           = 10
+MAPPER_NUMBER_COLOR_DREAMS   = 11
 ; 012 = SL-5020B (submapper 0) and FFE F6xxx (submapper 1)
-MAPPER_NUMBER_CPROM        = 13 ; Videomation
+MAPPER_NUMBER_CPROM          = 13 ; Videomation
 ; 014 = SL-1632
 ; 015 = K-1029, K-1030P (Contra multicarts)
 ; 016 = Bandai
-; 017 = FFE
+; 017 = FFE ("Doctor Header file denotes a Super Magic Card disk")
 ; 018 = Jaleco SS 88006
-MAPPER_NUMBER_NAMCO_129    = 19 ; Namco 129 and 163
-; 020 = Famicom Disk System (mostly used internally)
-MAPPER_NUMBER_KONAMI_VRC4A = 21 ; Konami VRC4a and VRC4c
-MAPPER_NUMBER_KONAMI_VRC2A = 22
-MAPPER_NUMBER_KONAMI_VRC2B = 23 ; Konami VRC2b, VRC4e, VRC4f
-MAPPER_NUMBER_KONAMI_VRC6A = 24 ; Konami VRC6a (Akumajou Densetsu)
-MAPPER_NUMBER_KONAMI_VRC4B = 25 ; Konami VRC4b, VRC4d
-MAPPER_NUMBER_KONAMI_VRC6B = 26 ; Konami VRC6b (Madara, Esper Dream 2)
+
+MAPPER_NUMBER_NAMCO_163      = 19 ; Namco 163 and 129
+;MAPPER_NUMBER_19_SUBMAPPER_NO_EXP_SOUND = 2
+;MAPPER_NUMBER_19_SUBMAPPER_EXP_SOUND_11dB = 3 ; Expansion sound 11.0-13.0dB louder than NES APU
+;MAPPER_NUMBER_19_SUBMAPPER_EXP_SOUND_16dB = 4 ; Expansion sound 16.0-17.0dB louder than NES APU
+;MAPPER_NUMBER_19_SUBMAPPER_EXP_SOUND_18dB = 5 ; Expansion sound 18.0-19.5dB louder than NES APU
+
+; 020 = Famicom Disk System (mostly used internally; you (likely) won't need this)
+MAPPER_NUMBER_KONAMI_VRC4A   = 21 ; Konami VRC4a and VRC4c
+MAPPER_NUMBER_KONAMI_VRC2A   = 22
+MAPPER_NUMBER_KONAMI_VRC2B   = 23 ; Konami VRC2b, VRC4e, VRC4f
+MAPPER_NUMBER_KONAMI_VRC6A   = 24 ; Konami VRC6a (Akumajou Densetsu)
+MAPPER_NUMBER_KONAMI_VRC4B   = 25 ; Konami VRC4b, VRC4d
+MAPPER_NUMBER_KONAMI_VRC6B   = 26 ; Konami VRC6b (Madara, Esper Dream 2)
 ; 027 = pirate VRC4 variant?
-MAPPER_NUMBER_ACTION_53    = 28
-MAPPER_NUMBER_CUFROM       = 29 ; Sealie Computing RET-CUFROM
-MAPPER_NUMBER_UNROM_512    = 30
-MAPPER_NUMBER_NSF_SUBSET   = 31 ; "created to facilitate cartridge compilations of NSF music"
-MAPPER_NUMBER_IREM_G_101   = 32
-MAPPER_NUMBER_TAITO_TC0190 = 33
+MAPPER_NUMBER_ACTION_53      = 28
+MAPPER_NUMBER_CUFROM         = 29 ; Sealie Computing RET-CUFROM
+MAPPER_NUMBER_UNROM_512      = 30
+MAPPER_NUMBER_NSF_SUBSET     = 31 ; "created to facilitate cartridge compilations of NSF music"
+MAPPER_NUMBER_IREM_G_101     = 32
+MAPPER_NUMBER_TAITO_TC0190   = 33
 
 ; 034 is both NINA-001/002 and BNROM
-MAPPER_NUMBER_BNROM_NINA   = 34
+MAPPER_NUMBER_BNROM_NINA     = 34
 MAPPER_NUMBER_34_SUBMAPPER_NINA  = 1 ; 034.1 = NINA-001/002
 MAPPER_NUMBER_34_SUBMAPPER_BNROM = 2 ; 034.2 = BNROM
 
@@ -103,36 +116,39 @@ MAPPER_NUMBER_34_SUBMAPPER_BNROM = 2 ; 034.2 = BNROM
 ; 061 = three multicart PCBs (GS-2017, {NTDEC 0324 and BS-N032})
 ; 062 = "Super 700-in-1"
 ; 063 = NTDEC POWERFUL 250-IN-1
-; 064 = Tengen RAMBO-1
-; 065 = Irem H3001
-MAPPER_NUMBER_GxROM        = 66 ; GNROM, MHROM
-; 067 = Sunsoft-3
-; 068 = Sunsoft-4
-; 069 = Sunsoft 5A, 5B, FME-7
+MAPPER_NUMBER_TENGEN_RAMBO_1 = 64 ; Tengen RAMBO-1
+MAPPER_NUMBER_IREM_H3001     = 65 ; Irem H3001
+MAPPER_NUMBER_GxROM          = 66 ; GNROM, MHROM
+MAPPER_NUMBER_SUNSOFT_3      = 67 ; Sunsoft-3
+MAPPER_NUMBER_SUNSOFT_4      = 68 ; Sunsoft-4
+MAPPER_NUMBER_SUNSOFT_FME7   = 69 ; Sunsoft 5A, 5B, FME-7
 ; 070 = Bandai
 ; 071 = Codemasters
-; 072 = Jaleco JF-17
-MAPPER_NUMBER_KONAMI_VRC3  = 73
+MAPPER_NUMBER_JALECO_JF17    = 72 ; Jaleco JF-17
+MAPPER_NUMBER_KONAMI_VRC3    = 73
 ; 074 = Waixing 43-393/43-406/860908C PCB (MMC3 clone)
-MAPPER_NUMBER_KONAMI_VRC1  = 75
+MAPPER_NUMBER_KONAMI_VRC1    = 75
 ; 076 = Namco NAMCOT-3446 (Namcot 108-based)
 ; 077 = Napoleon Senki
 
 ; 078 = Holy Diver and Uchuusen - Cosmo Carrier
-; 078.1 = Uchuusen
-; 078.3 = Holy Diver
+; 078.1 = Uchuusen   (single screen mirroring)
+; 078.3 = Holy Diver (mapper controlled H/V mirroring)
 
 ; 079 = NINA 003-006
-; 080 = Taito X1-005
+MAPPER_NUMBER_TAITO_X1_005   = 80 ; Taito X1-005
 ; 081 = NTDEC "Super Gun"
-; 082 = Taito X1-017
+; 082 = Taito X1-017 (old PRG bank order)
 
 ; 083 = Cony/Yoko
 ; 083.0 = 1 KiB CHR-ROM banking, no WRAM
 ; 083.1 = 2 KiB CHR-ROM banking, no WRAM
 ; 083.2 = 1 KiB CHR-ROM banking with outer bank, 32 KiB banked WRAM
 
-MAPPER_NUMBER_KONAMI_VRC7  = 85
+MAPPER_NUMBER_KONAMI_VRC7    = 85
+; 085.1 = VRC7b (Tiny Toon Adventures 2)
+; 085.2 = VRC7a (Lagrange Point)
+
 ; 086 = Jaleco JF-13
 ; 087 = Jaleco "J87" (unofficial name)
 ; 089 = Sunsoft-2 chip on Sunsoft-3 board
@@ -142,7 +158,7 @@ MAPPER_NUMBER_KONAMI_VRC7  = 85
 ; 091.1 = M2-based IRQ counter and selectable mirroring
 
 ; 093 = Sunsoft-2 chip on Sunsoft-3R board
-; 096 = Oeka Kids
+MAPPER_NUMBER_OEKA_KIDS      = 96 ; Oeka Kids
 ; 097 = Irem TAM-S1
 
 ; Nintendulator-specific debugging mapper
@@ -157,7 +173,7 @@ MAPPER_NUMBER_NINTENDULATOR_DEBUG = 100
 ; 108 = various FDS-to-cart conversions
 ; todo: submappers 1-4
 
-MAPPER_NUMBER_GTROM  = 111 ; Cheapocabra/GTROM
+MAPPER_NUMBER_GTROM          = 111 ; Cheapocabra/GTROM
 
 ; 112 = mapper 206 clone with scrambled registers
 ; 113 = HES NTD-8 multicart
@@ -168,15 +184,15 @@ MAPPER_NUMBER_GTROM  = 111 ; Cheapocabra/GTROM
 
 ; 115 = Ka Sheng SFC-02B/-03/-004 (MMC3 clone)
 
-; 116 = Gouder SOMARI-P
+MAPPER_NUMBER_GOUDER_SOMARI_P = 116 ; Gouder SOMARI-P
 ; 116.0 = Huang-1 chip, PAL configuration -W
 ; 116.1 = Huang-1 chip, PAL confituration -P
 ; 116.2 = Huang-2 chip
 ; 116.3 = "Reset-based multicart with Huang-1 chip"
 
 ; 117 = Future Media "Crayon Shin-Chan (Ch)", "San Guo Zhi 4 - Chi Bi Feng Yun"
-MAPPER_NUMBER_MMC3_TxSROM = 118 ; TxSROM (MMC3)
-MAPPER_NUMBER_MMC3_TQROM  = 119 ; TQROM (MMC3)
+MAPPER_NUMBER_MMC3_TxSROM    = 118 ; TxSROM (MMC3)
+MAPPER_NUMBER_MMC3_TQROM     = 119 ; TQROM (MMC3)
 ; 120 = Whirlwind Manu LH15
 ; 121 = Ka Sheng A9711, A9713 (MMC3 clone, protection)
 ; 122 = JY043
@@ -187,12 +203,12 @@ MAPPER_NUMBER_MMC3_TQROM  = 119 ; TQROM (MMC3)
 ; 132 = TXC boards (UNIF "UNL-22211")
 ; 133 = Sachen 3009 and 72008
 ; 134 = T4A54A, WX-KB4K, BS-5652 (MMC3 clones)
-; 136 = Sachen 3011
-; 137 = Sachen 8259D (UNIF "UNL-Sachen-8259D")
-; 138 = Sachen 8259B (UNIF "UNL-Sachen-8259B")
-; 139 = Sachen 8259C (UNIF "UNL-Sachen-8259C")
+MAPPER_NUMBER_SACHEN_3011    = 136 ; Sachen 3011
+MAPPER_NUMBER_SACHEN_8259D   = 137 ; Sachen 8259D (UNIF "UNL-Sachen-8259D")
+MAPPER_NUMBER_SACHEN_8259B   = 138 ; Sachen 8259B (UNIF "UNL-Sachen-8259B")
+MAPPER_NUMBER_SACHEN_8259C   = 139 ; Sachen 8259C (UNIF "UNL-Sachen-8259C")
 ; 140 = Jaleco JF-11, JF-14
-; 141 = Sachen 8259A (UNIF "UNL-Sachen-8259A")
+MAPPER_NUMBER_SACHEN_8259A   = 141 ; Sachen 8259A (UNIF "UNL-Sachen-8259A")
 ; 142 = Kaiser KS202 (UNIF "UNL-KS7032")
 ; 143 = Sachen NROM with protection
 ; 144 = AGCI 50282
@@ -235,7 +251,7 @@ MAPPER_NUMBER_MMC3_TQROM  = 119 ; TQROM (MMC3)
 ; todo: submappers
 
 ; 180 = "Crazy Climber" UNROM variant
-; 184 = Sunsoft-1
+MAPPER_NUMBER_SUNSOFT_1      = 184 ; Sunsoft-1
 
 ; 185 = CNROM with CHR-ROM protection
 ; todo: submappers
@@ -272,6 +288,8 @@ MAPPER_NUMBER_MMC3_TQROM  = 119 ; TQROM (MMC3)
 
 ; 208 = Gouder "Street Fighter IV" (MMC3 clone)
 ; todo: submappers
+
+; 209 = J.Y. Company ASIC "standard implementation"
 
 ; 210 = Namco 175/340
 ; 210.1 = Namco 175
