@@ -13,7 +13,8 @@
 ; Unless you've memorized the mapper number you want to use, you'll probably
 ; need to check out https://www.nesdev.org/wiki/Mapper
 
-; See "mapper_names.inc" for possible values.
+; See "mapper_names.inc" for possible values. Uncomment the line below to use them:
+;.include "mapper_names.inc"
 
 HEADER_MAPPER_NUMBER = 0
 
